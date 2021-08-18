@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
+		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
+		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
+		A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566826CD1AD40014BC35 /* BorderBtn.swift */; };
 		A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D226C91553001CE1E7 /* AppDelegate.swift */; };
 		A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* IntroVC.swift */; };
 		A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07D826C91553001CE1E7 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
+		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
+		A85A566826CD1AD40014BC35 /* BorderBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBtn.swift; sourceTree = "<group>"; };
 		A87A07CF26C91553001CE1E7 /* foz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07D226C91553001CE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A07D626C91553001CE1E7 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 				A87A07D826C91553001CE1E7 /* Main.storyboard */,
 				A87A07DD26C91559001CE1E7 /* LaunchScreen.storyboard */,
 				A87A080E26CA8829001CE1E7 /* RoundedButton.swift */,
+				A85A566326CD0B2C0014BC35 /* CurveView.swift */,
+				A85A566526CD17A30014BC35 /* CurveTextField.swift */,
+				A85A566826CD1AD40014BC35 /* BorderBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,7 +313,10 @@
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
+				A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */,
+				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
+				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

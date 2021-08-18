@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="noN-Bg-1MM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3kb-ZS-85T">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -254,10 +254,134 @@
             </objects>
             <point key="canvasLocation" x="1621.7391304347827" y="93.75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fSL-Cd-iIx">
+            <objects>
+                <viewController id="3kb-ZS-85T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lz6-Nx-5iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="otb_background" translatesAutoresizingMaskIntoConstraints="NO" id="On1-pL-O9i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="nPA-Wr-DhS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foz_white_logo" translatesAutoresizingMaskIntoConstraints="NO" id="thU-IR-RoC">
+                                <rect key="frame" x="119.5" y="94" width="175" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4e1-iB-lJ3"/>
+                                    <constraint firstAttribute="width" constant="175" id="Amx-aG-wet"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-Jd-zrT" customClass="CurveView" customModule="foz" customModuleProvider="target">
+                                <rect key="frame" x="32" y="228" width="350" height="506"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البيانات الشخصية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iar-v6-CFc">
+                                        <rect key="frame" x="99" y="16" width="152" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
+                                        <color key="textColor" red="0.0078431372549019607" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-ud-Qfd" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="89.5" width="286" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="cg0-Ii-b3s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mz-63-KMo" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="231.5" width="286" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="bw0-DC-HAr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuV-OF-icm" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="302.5" width="286" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="cNr-bW-WuO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QO1-dS-eRI" customClass="BorderBtn" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="476" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="fet-1L-amb"/>
+                                            <constraint firstAttribute="height" constant="70" id="pRw-c9-8ce"/>
+                                        </constraints>
+                                        <state key="normal" image="nextBtnImage"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-h5-NfD" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="160.5" width="286" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="85Z-iZ-v3E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSD-gv-QxQ" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="373.5" width="286" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="b3H-7l-3ws"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4Z9-h5-NfD" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="3dz-4O-LxU"/>
+                                    <constraint firstItem="RSD-gv-QxQ" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="BnH-Dc-WbX"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mz-63-KMo" secondAttribute="trailing" constant="32" id="C1r-3N-Rt4"/>
+                                    <constraint firstItem="RuV-OF-icm" firstAttribute="top" secondItem="6mz-63-KMo" secondAttribute="bottom" constant="16" id="CWC-Nf-EKv"/>
+                                    <constraint firstItem="iar-v6-CFc" firstAttribute="centerX" secondItem="Q6x-Jd-zrT" secondAttribute="centerX" id="Jod-HZ-wGp"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZpC-ud-Qfd" secondAttribute="trailing" constant="32" id="K8B-Rn-8Hf"/>
+                                    <constraint firstAttribute="bottom" secondItem="QO1-dS-eRI" secondAttribute="bottom" constant="-40" id="Ls4-FN-7a9"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Z9-h5-NfD" secondAttribute="trailing" constant="32" id="Mat-x9-nE2"/>
+                                    <constraint firstItem="ZpC-ud-Qfd" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="OhM-Dd-ahf"/>
+                                    <constraint firstAttribute="trailing" secondItem="RuV-OF-icm" secondAttribute="trailing" constant="32" id="Tig-lb-DaK"/>
+                                    <constraint firstItem="4Z9-h5-NfD" firstAttribute="top" secondItem="ZpC-ud-Qfd" secondAttribute="bottom" constant="16" id="Wc4-hr-Uh2"/>
+                                    <constraint firstItem="RSD-gv-QxQ" firstAttribute="top" secondItem="RuV-OF-icm" secondAttribute="bottom" constant="16" id="eDj-eh-Bbv"/>
+                                    <constraint firstItem="6mz-63-KMo" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="eyS-kt-oe2"/>
+                                    <constraint firstAttribute="trailing" secondItem="RSD-gv-QxQ" secondAttribute="trailing" constant="32" id="f7m-0S-Tp9"/>
+                                    <constraint firstItem="ZpC-ud-Qfd" firstAttribute="top" secondItem="iar-v6-CFc" secondAttribute="bottom" constant="32" id="fRH-wH-xHg"/>
+                                    <constraint firstItem="6mz-63-KMo" firstAttribute="top" secondItem="4Z9-h5-NfD" secondAttribute="bottom" constant="16" id="gP9-5O-5LN"/>
+                                    <constraint firstItem="RuV-OF-icm" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="gXe-vV-e75"/>
+                                    <constraint firstItem="QO1-dS-eRI" firstAttribute="centerX" secondItem="Q6x-Jd-zrT" secondAttribute="centerX" id="nMH-hT-sIy"/>
+                                    <constraint firstItem="iar-v6-CFc" firstAttribute="top" secondItem="Q6x-Jd-zrT" secondAttribute="top" constant="16" id="qIg-OK-75N"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ysb-gs-ayS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="On1-pL-O9i" firstAttribute="top" secondItem="lz6-Nx-5iJ" secondAttribute="top" id="3Ob-Oe-vJ8"/>
+                            <constraint firstItem="On1-pL-O9i" firstAttribute="leading" secondItem="Ysb-gs-ayS" secondAttribute="leading" id="8s7-cR-Vyf"/>
+                            <constraint firstItem="thU-IR-RoC" firstAttribute="centerX" secondItem="lz6-Nx-5iJ" secondAttribute="centerX" id="Qlu-0B-HNX"/>
+                            <constraint firstItem="thU-IR-RoC" firstAttribute="top" secondItem="Ysb-gs-ayS" secondAttribute="top" constant="50" id="Trz-bE-VVP"/>
+                            <constraint firstItem="Ysb-gs-ayS" firstAttribute="bottom" secondItem="Q6x-Jd-zrT" secondAttribute="bottom" constant="128" id="VCR-ss-fDO"/>
+                            <constraint firstItem="Q6x-Jd-zrT" firstAttribute="top" secondItem="thU-IR-RoC" secondAttribute="bottom" constant="64" id="Xwv-Z8-0a7"/>
+                            <constraint firstItem="Q6x-Jd-zrT" firstAttribute="leading" secondItem="Ysb-gs-ayS" secondAttribute="leading" constant="32" id="Z1Y-2m-5Wz"/>
+                            <constraint firstItem="Ysb-gs-ayS" firstAttribute="trailing" secondItem="Q6x-Jd-zrT" secondAttribute="trailing" constant="32" id="mTx-76-hW2"/>
+                            <constraint firstItem="Ysb-gs-ayS" firstAttribute="trailing" secondItem="On1-pL-O9i" secondAttribute="trailing" id="ohO-ib-7Hm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7us-fz-ZUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509" y="94"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Login_background" width="428" height="926"/>
         <image name="foz_white_logo" width="191.3179931640625" height="88.536003112792969"/>
+        <image name="nextBtnImage" width="62" height="62"/>
         <image name="otb_background" width="427" height="926"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
