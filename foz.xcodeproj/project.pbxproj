@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D226C91553001CE1E7 /* AppDelegate.swift */; };
-		A87A07D526C91553001CE1E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D426C91553001CE1E7 /* SceneDelegate.swift */; };
-		A87A07D726C91553001CE1E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* ViewController.swift */; };
+		A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* IntroVC.swift */; };
 		A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07D826C91553001CE1E7 /* Main.storyboard */; };
 		A87A07DC26C91559001CE1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87A07DB26C91559001CE1E7 /* Assets.xcassets */; };
 		A87A07DF26C91559001CE1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07DD26C91559001CE1E7 /* LaunchScreen.storyboard */; };
 		A87A07EA26C91559001CE1E7 /* fozTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07E926C91559001CE1E7 /* fozTests.swift */; };
 		A87A07F526C91559001CE1E7 /* fozUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07F426C91559001CE1E7 /* fozUITests.swift */; };
+		A87A080A26C960AE001CE1E7 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080626C960AE001CE1E7 /* Cairo-Regular.ttf */; };
+		A87A080B26C960AE001CE1E7 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080726C960AE001CE1E7 /* Cairo-SemiBold.ttf */; };
+		A87A080C26C960AE001CE1E7 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080826C960AE001CE1E7 /* Cairo-Light.ttf */; };
+		A87A080D26C960AE001CE1E7 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080926C960AE001CE1E7 /* Cairo-ExtraLight.ttf */; };
+		A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A080E26CA8829001CE1E7 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A87A07CF26C91553001CE1E7 /* foz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07D226C91553001CE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A87A07D426C91553001CE1E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A87A07D626C91553001CE1E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A87A07D626C91553001CE1E7 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		A87A07D926C91553001CE1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A87A07DB26C91559001CE1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87A07DE26C91559001CE1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		A87A07F026C91559001CE1E7 /* fozUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fozUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07F426C91559001CE1E7 /* fozUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fozUITests.swift; sourceTree = "<group>"; };
 		A87A07F626C91559001CE1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87A080626C960AE001CE1E7 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		A87A080726C960AE001CE1E7 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
+		A87A080826C960AE001CE1E7 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		A87A080926C960AE001CE1E7 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A87A080E26CA8829001CE1E7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,11 @@
 		A87A07D126C91553001CE1E7 /* foz */ = {
 			isa = PBXGroup;
 			children = (
+				A87A080526C96067001CE1E7 /* CustomFonts */,
+				A87A080426C915E3001CE1E7 /* View */,
+				A87A080226C915B0001CE1E7 /* Controller */,
 				A87A07D226C91553001CE1E7 /* AppDelegate.swift */,
-				A87A07D426C91553001CE1E7 /* SceneDelegate.swift */,
-				A87A07D626C91553001CE1E7 /* ViewController.swift */,
-				A87A07D826C91553001CE1E7 /* Main.storyboard */,
 				A87A07DB26C91559001CE1E7 /* Assets.xcassets */,
-				A87A07DD26C91559001CE1E7 /* LaunchScreen.storyboard */,
 				A87A07E026C91559001CE1E7 /* Info.plist */,
 			);
 			path = foz;
@@ -126,6 +135,36 @@
 				A87A07F626C91559001CE1E7 /* Info.plist */,
 			);
 			path = fozUITests;
+			sourceTree = "<group>";
+		};
+		A87A080226C915B0001CE1E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A87A07D626C91553001CE1E7 /* IntroVC.swift */,
+				A85A566126CABFA80014BC35 /* LoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A87A080426C915E3001CE1E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A87A07D826C91553001CE1E7 /* Main.storyboard */,
+				A87A07DD26C91559001CE1E7 /* LaunchScreen.storyboard */,
+				A87A080E26CA8829001CE1E7 /* RoundedButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A87A080526C96067001CE1E7 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				A87A080926C960AE001CE1E7 /* Cairo-ExtraLight.ttf */,
+				A87A080826C960AE001CE1E7 /* Cairo-Light.ttf */,
+				A87A080626C960AE001CE1E7 /* Cairo-Regular.ttf */,
+				A87A080726C960AE001CE1E7 /* Cairo-SemiBold.ttf */,
+			);
+			path = CustomFonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +272,10 @@
 			files = (
 				A87A07DF26C91559001CE1E7 /* LaunchScreen.storyboard in Resources */,
 				A87A07DC26C91559001CE1E7 /* Assets.xcassets in Resources */,
+				A87A080B26C960AE001CE1E7 /* Cairo-SemiBold.ttf in Resources */,
+				A87A080A26C960AE001CE1E7 /* Cairo-Regular.ttf in Resources */,
+				A87A080C26C960AE001CE1E7 /* Cairo-Light.ttf in Resources */,
+				A87A080D26C960AE001CE1E7 /* Cairo-ExtraLight.ttf in Resources */,
 				A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87A07D726C91553001CE1E7 /* ViewController.swift in Sources */,
+				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
+				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
+				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
-				A87A07D526C91553001CE1E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="428" height="926" viewBox="0 0 428 926">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#008f8f"/>
+      <stop offset="1" stop-color="#ff9d00"/>
+    </linearGradient>
+    <clipPath id="clip-Login">
+      <rect width="428" height="926"/>
+    </clipPath>
+  </defs>
+  <g id="Login" clip-path="url(#clip-Login)">
+    <rect width="428" height="926" fill="#fff"/>
+    <ellipse id="Ellipse_29" data-name="Ellipse 29" cx="281" cy="182.5" rx="281" ry="182.5" transform="translate(-65 -109)" fill="url(#linear-gradient)"/>
+    <ellipse id="Ellipse_34" data-name="Ellipse 34" cx="281" cy="182.5" rx="281" ry="182.5" transform="translate(-65 783)" fill="url(#linear-gradient)"/>
+    <ellipse id="Ellipse_31" data-name="Ellipse 31" cx="27" cy="26.5" rx="27" ry="26.5" transform="translate(398 186)" fill="#fb9d02"/>
+    <circle id="Ellipse_32" data-name="Ellipse 32" cx="38.5" cy="38.5" r="38.5" transform="translate(-37 745)" fill="#fb9d02"/>
+  </g>
+</svg>
