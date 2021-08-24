@@ -23,6 +23,16 @@
 		A87A080C26C960AE001CE1E7 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080826C960AE001CE1E7 /* Cairo-Light.ttf */; };
 		A87A080D26C960AE001CE1E7 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A87A080926C960AE001CE1E7 /* Cairo-ExtraLight.ttf */; };
 		A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A080E26CA8829001CE1E7 /* RoundedButton.swift */; };
+		A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F1826D3C5A7001332A5 /* OtpVC.swift */; };
+		A8C00F1B26D3C5BF001332A5 /* RegisterUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F1A26D3C5BF001332A5 /* RegisterUserVC.swift */; };
+		A8C00F1D26D3C646001332A5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F1C26D3C646001332A5 /* LoginViewModel.swift */; };
+		A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F1F26D3C6D8001332A5 /* LoginRequest.swift */; };
+		A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2526D3C72C001332A5 /* LoginResponse.swift */; };
+		A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2726D3C827001332A5 /* AuthService.swift */; };
+		A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2926D3C8F3001332A5 /* State.swift */; };
+		A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */; };
+		A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2D26D507AD001332A5 /* OtpRequest.swift */; };
+		A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +75,16 @@
 		A87A080826C960AE001CE1E7 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		A87A080926C960AE001CE1E7 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A87A080E26CA8829001CE1E7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		A8C00F1826D3C5A7001332A5 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
+		A8C00F1A26D3C5BF001332A5 /* RegisterUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserVC.swift; sourceTree = "<group>"; };
+		A8C00F1C26D3C646001332A5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A8C00F1F26D3C6D8001332A5 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		A8C00F2526D3C72C001332A5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A8C00F2726D3C827001332A5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A8C00F2926D3C8F3001332A5 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
+		A8C00F2D26D507AD001332A5 /* OtpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpRequest.swift; sourceTree = "<group>"; };
+		A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				A87A080526C96067001CE1E7 /* CustomFonts */,
+				A8C00F1E26D3C658001332A5 /* Service */,
+				A8C00F1726D3C527001332A5 /* Model */,
 				A87A080426C915E3001CE1E7 /* View */,
+				A8C00F1626D3C519001332A5 /* ViewModel */,
 				A87A080226C915B0001CE1E7 /* Controller */,
-				A87A07D226C91553001CE1E7 /* AppDelegate.swift */,
 				A87A07DB26C91559001CE1E7 /* Assets.xcassets */,
 				A87A07E026C91559001CE1E7 /* Info.plist */,
 			);
@@ -146,8 +168,11 @@
 		A87A080226C915B0001CE1E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A87A07D226C91553001CE1E7 /* AppDelegate.swift */,
 				A87A07D626C91553001CE1E7 /* IntroVC.swift */,
 				A85A566126CABFA80014BC35 /* LoginVC.swift */,
+				A8C00F1826D3C5A7001332A5 /* OtpVC.swift */,
+				A8C00F1A26D3C5BF001332A5 /* RegisterUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +199,51 @@
 				A87A080726C960AE001CE1E7 /* Cairo-SemiBold.ttf */,
 			);
 			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		A8C00F1626D3C519001332A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8C00F1C26D3C646001332A5 /* LoginViewModel.swift */,
+				A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */,
+				A8C00F2926D3C8F3001332A5 /* State.swift */,
+				A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A8C00F1726D3C527001332A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8C00F2426D3C718001332A5 /* Response */,
+				A8C00F2126D3C6DE001332A5 /* Request */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8C00F1E26D3C658001332A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A8C00F2726D3C827001332A5 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A8C00F2126D3C6DE001332A5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A8C00F1F26D3C6D8001332A5 /* LoginRequest.swift */,
+				A8C00F2D26D507AD001332A5 /* OtpRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		A8C00F2426D3C718001332A5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A8C00F2526D3C72C001332A5 /* LoginResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,10 +326,10 @@
 			};
 			buildConfigurationList = A87A07CA26C91552001CE1E7 /* Build configuration list for PBXProject "foz" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ar;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				ar,
 				Base,
 			);
 			mainGroup = A87A07C626C91552001CE1E7;
@@ -310,13 +380,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
+				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
+				A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */,
+				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
+				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
+				A8C00F1B26D3C5BF001332A5 /* RegisterUserVC.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
+				A8C00F1D26D3C646001332A5 /* LoginViewModel.swift in Sources */,
+				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
+				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
+				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

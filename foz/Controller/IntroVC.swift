@@ -76,10 +76,10 @@ class IntroVC: UIViewController {
             button.backgroundColor = #colorLiteral(red: 0.9843137255, green: 0.6156862745, blue: 0.007843137255, alpha: 1)
             button.layer.cornerRadius = button.frame.size.height / 2
             button.setTitle("التالي", for: .normal)
-//            if x == 2 {
-//                button.setTitle("إبدأ", for: .normal)
-//                title.textColor = #colorLiteral(red: 0.1764705882, green: 0.7333333333, blue: 0.3294117647, alpha: 1)
-//            }
+            if x == 2 {
+                button.setTitle("إبدأ", for: .normal)
+                title.textColor = #colorLiteral(red: 0.1764705882, green: 0.7333333333, blue: 0.3294117647, alpha: 1)
+            }
             button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
             pageView.addSubview(button)
             
@@ -97,13 +97,11 @@ class IntroVC: UIViewController {
             //dismiss
             return
         }
-        print("button taggggg\(button.tag)")
         if button.titleLabel?.text == "إبدأ" {
-//            print(button.tag)
-//            let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
-//            let loginVC = storyboard.instantiateViewController(identifier: "login") as! LoginVC
-//            loginVC.modalPresentationStyle = .fullScreen
-//            present(loginVC, animated: true)
+            let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+            let loginVC = storyboard.instantiateViewController(identifier: "login_view_controller") as! LoginVC
+            loginVC.modalPresentationStyle = .fullScreen
+            present(loginVC, animated: true)
         } else {
             //scroll to next page
             scrollView.setContentOffset(CGPoint(x: holderView.frame.size.width * CGFloat(button.tag), y: 0), animated: true)
