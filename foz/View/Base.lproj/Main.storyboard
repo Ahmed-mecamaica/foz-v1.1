@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3kb-ZS-85T">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -319,49 +320,20 @@
                                         <color key="textColor" red="0.0078431372549019607" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-ud-Qfd" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الإسم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-ud-Qfd" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
                                         <rect key="frame" x="32" y="89.5" width="286" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="cg0-Ii-b3s"/>
                                         </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personIcon" translatesAutoresizingMaskIntoConstraints="NO" id="oTp-Me-yoa">
-                                        <rect key="frame" x="270" y="102" width="30" height="30"/>
+                                        <rect key="frame" x="280" y="107" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="YCB-nk-KT1"/>
-                                            <constraint firstAttribute="height" constant="30" id="uzQ-0h-DI4"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mz-63-KMo" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="231.5" width="286" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="bw0-DC-HAr"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gender_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7vA-Va-iiQ">
-                                        <rect key="frame" x="270" y="244" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Geb-EZ-T5P"/>
-                                            <constraint firstAttribute="width" constant="30" id="cma-H7-c14"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuV-OF-icm" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="302.5" width="286" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="cNr-bW-WuO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_city" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-8w-MPE">
-                                        <rect key="frame" x="270" y="315" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="YOE-AO-v0a"/>
-                                            <constraint firstAttribute="width" constant="30" id="qzg-R6-d3y"/>
+                                            <constraint firstAttribute="width" constant="20" id="YCB-nk-KT1"/>
+                                            <constraint firstAttribute="height" constant="20" id="uzQ-0h-DI4"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QO1-dS-eRI" customClass="BorderBtn" customModule="foz" customModuleProvider="target">
@@ -371,8 +343,11 @@
                                             <constraint firstAttribute="height" constant="70" id="pRw-c9-8ce"/>
                                         </constraints>
                                         <state key="normal" image="nextBtnImage"/>
+                                        <connections>
+                                            <action selector="registerBtnPressed:" destination="3kb-ZS-85T" eventType="touchUpInside" id="rbk-MS-rXr"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-h5-NfD" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="تاريخ الميلاد" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-h5-NfD" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
                                         <rect key="frame" x="32" y="160.5" width="286" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="85Z-iZ-v3E"/>
@@ -381,60 +356,88 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_calender" translatesAutoresizingMaskIntoConstraints="NO" id="YkJ-e8-2zr">
-                                        <rect key="frame" x="270" y="173" width="30" height="30"/>
+                                        <rect key="frame" x="280" y="178" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="FLg-Li-VTa"/>
-                                            <constraint firstAttribute="width" constant="30" id="k84-3A-kI8"/>
+                                            <constraint firstAttribute="height" constant="20" id="FLg-Li-VTa"/>
+                                            <constraint firstAttribute="width" constant="20" id="k84-3A-kI8"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSD-gv-QxQ" customClass="CurveTextField" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="373.5" width="286" height="55"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6i-dX-Zmo" customClass="RegisterUserBorderBtn" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="231.5" width="290" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="b3H-7l-3ws"/>
+                                            <constraint firstAttribute="height" constant="55" id="HXj-ar-1A2"/>
                                         </constraints>
-                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_incom_level" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-6R-wHL">
-                                        <rect key="frame" x="270" y="386" width="30" height="30"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="220" maxY="0.0"/>
+                                        <state key="normal" title="الجنس" image="gender_icon">
+                                            <color key="titleColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="genderBtnPressed:" destination="3kb-ZS-85T" eventType="touchUpInside" id="xm6-AN-XXZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-3Q-9qU" customClass="RegisterUserBorderBtn" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="373.5" width="290" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="0Uj-Jx-JzU"/>
-                                            <constraint firstAttribute="width" constant="30" id="mxX-Hu-hv5"/>
+                                            <constraint firstAttribute="height" constant="55" id="pnv-f2-HjK"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="220" maxY="0.0"/>
+                                        <state key="normal" title="مستوى الدخل" image="Icon_incom_level">
+                                            <color key="titleColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="incomeLevelBtnPressed:" destination="3kb-ZS-85T" eventType="touchUpInside" id="lLP-uU-TxZ"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2ED-ZU-m33">
+                                        <rect key="frame" x="165" y="277" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWU-92-4Ys" customClass="RegisterUserBorderBtn" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="302.5" width="290" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="a0K-jQ-dAa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="220" maxY="0.0"/>
+                                        <state key="normal" title="المدينة" image="Icon_city">
+                                            <color key="titleColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cityBtnPressed:" destination="3kb-ZS-85T" eventType="touchUpInside" id="keJ-fg-aOi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="3lB-8w-MPE" secondAttribute="trailing" constant="50" id="0dK-Zf-74v"/>
+                                    <constraint firstItem="BWU-92-4Ys" firstAttribute="top" secondItem="v6i-dX-Zmo" secondAttribute="bottom" constant="16" id="1kA-Wc-iH4"/>
                                     <constraint firstItem="4Z9-h5-NfD" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="3dz-4O-LxU"/>
                                     <constraint firstAttribute="trailing" secondItem="YkJ-e8-2zr" secondAttribute="trailing" constant="50" id="4Zv-fH-SNu"/>
                                     <constraint firstAttribute="trailing" secondItem="oTp-Me-yoa" secondAttribute="trailing" constant="50" id="6zh-Al-4R8"/>
-                                    <constraint firstItem="RSD-gv-QxQ" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="BnH-Dc-WbX"/>
-                                    <constraint firstAttribute="trailing" secondItem="6mz-63-KMo" secondAttribute="trailing" constant="32" id="C1r-3N-Rt4"/>
-                                    <constraint firstItem="RuV-OF-icm" firstAttribute="top" secondItem="6mz-63-KMo" secondAttribute="bottom" constant="16" id="CWC-Nf-EKv"/>
+                                    <constraint firstItem="v6i-dX-Zmo" firstAttribute="top" secondItem="4Z9-h5-NfD" secondAttribute="bottom" constant="16" id="JH3-d7-5fz"/>
                                     <constraint firstItem="iar-v6-CFc" firstAttribute="centerX" secondItem="Q6x-Jd-zrT" secondAttribute="centerX" id="Jod-HZ-wGp"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZpC-ud-Qfd" secondAttribute="trailing" constant="32" id="K8B-Rn-8Hf"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ZpC-ud-Qfd" secondAttribute="trailing" constant="32" id="K8B-Rn-8Hf"/>
                                     <constraint firstAttribute="bottom" secondItem="QO1-dS-eRI" secondAttribute="bottom" constant="-40" id="Ls4-FN-7a9"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Z9-h5-NfD" secondAttribute="trailing" constant="32" id="Mat-x9-nE2"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4Z9-h5-NfD" secondAttribute="trailing" constant="32" id="Mat-x9-nE2"/>
+                                    <constraint firstItem="2ED-ZU-m33" firstAttribute="centerY" secondItem="Q6x-Jd-zrT" secondAttribute="centerY" id="MuK-sa-M1u"/>
                                     <constraint firstItem="ZpC-ud-Qfd" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="OhM-Dd-ahf"/>
-                                    <constraint firstAttribute="trailing" secondItem="RuV-OF-icm" secondAttribute="trailing" constant="32" id="Tig-lb-DaK"/>
+                                    <constraint firstItem="BWU-92-4Ys" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="30" id="REr-Sb-Gqo"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fWg-3Q-9qU" secondAttribute="trailing" constant="30" id="SzO-uQ-cGf"/>
                                     <constraint firstItem="4Z9-h5-NfD" firstAttribute="top" secondItem="ZpC-ud-Qfd" secondAttribute="bottom" constant="16" id="Wc4-hr-Uh2"/>
-                                    <constraint firstItem="j8X-6R-wHL" firstAttribute="centerY" secondItem="RSD-gv-QxQ" secondAttribute="centerY" id="cy2-g0-g3y"/>
-                                    <constraint firstAttribute="trailing" secondItem="j8X-6R-wHL" secondAttribute="trailing" constant="50" id="dHM-VX-Qvh"/>
-                                    <constraint firstItem="RSD-gv-QxQ" firstAttribute="top" secondItem="RuV-OF-icm" secondAttribute="bottom" constant="16" id="eDj-eh-Bbv"/>
-                                    <constraint firstItem="6mz-63-KMo" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="eyS-kt-oe2"/>
-                                    <constraint firstAttribute="trailing" secondItem="RSD-gv-QxQ" secondAttribute="trailing" constant="32" id="f7m-0S-Tp9"/>
+                                    <constraint firstItem="2ED-ZU-m33" firstAttribute="centerX" secondItem="Q6x-Jd-zrT" secondAttribute="centerX" id="asD-5A-S0C"/>
+                                    <constraint firstItem="fWg-3Q-9qU" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="30" id="dQ1-rC-Byo"/>
                                     <constraint firstItem="ZpC-ud-Qfd" firstAttribute="top" secondItem="iar-v6-CFc" secondAttribute="bottom" constant="32" id="fRH-wH-xHg"/>
-                                    <constraint firstItem="6mz-63-KMo" firstAttribute="top" secondItem="4Z9-h5-NfD" secondAttribute="bottom" constant="16" id="gP9-5O-5LN"/>
-                                    <constraint firstItem="RuV-OF-icm" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="32" id="gXe-vV-e75"/>
-                                    <constraint firstItem="7vA-Va-iiQ" firstAttribute="centerY" secondItem="6mz-63-KMo" secondAttribute="centerY" id="giN-Cc-dFs"/>
-                                    <constraint firstItem="3lB-8w-MPE" firstAttribute="centerY" secondItem="RuV-OF-icm" secondAttribute="centerY" id="lhG-RW-79I"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="v6i-dX-Zmo" secondAttribute="trailing" constant="30" id="kP6-Bh-OJv"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="BWU-92-4Ys" secondAttribute="trailing" constant="30" id="lvw-Xn-xP7"/>
                                     <constraint firstItem="YkJ-e8-2zr" firstAttribute="centerY" secondItem="4Z9-h5-NfD" secondAttribute="centerY" id="nIA-rM-Zy6"/>
                                     <constraint firstItem="QO1-dS-eRI" firstAttribute="centerX" secondItem="Q6x-Jd-zrT" secondAttribute="centerX" id="nMH-hT-sIy"/>
                                     <constraint firstItem="oTp-Me-yoa" firstAttribute="centerY" secondItem="ZpC-ud-Qfd" secondAttribute="centerY" id="pKP-fA-dUi"/>
+                                    <constraint firstItem="fWg-3Q-9qU" firstAttribute="top" secondItem="BWU-92-4Ys" secondAttribute="bottom" constant="16" id="ppW-dn-Hqs"/>
                                     <constraint firstItem="iar-v6-CFc" firstAttribute="top" secondItem="Q6x-Jd-zrT" secondAttribute="top" constant="16" id="qIg-OK-75N"/>
-                                    <constraint firstAttribute="trailing" secondItem="7vA-Va-iiQ" secondAttribute="trailing" constant="50" id="swO-du-E1H"/>
+                                    <constraint firstItem="v6i-dX-Zmo" firstAttribute="leading" secondItem="Q6x-Jd-zrT" secondAttribute="leading" constant="30" id="xCy-Ib-Hqp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -452,6 +455,15 @@
                             <constraint firstItem="Ysb-gs-ayS" firstAttribute="trailing" secondItem="On1-pL-O9i" secondAttribute="trailing" id="ohO-ib-7Hm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="2ED-ZU-m33" id="Mzb-9K-6xG"/>
+                        <outlet property="birthDateTxtField" destination="4Z9-h5-NfD" id="4H7-gI-7Qj"/>
+                        <outlet property="cityBtn" destination="BWU-92-4Ys" id="aDX-lO-uKm"/>
+                        <outlet property="genderBtn" destination="v6i-dX-Zmo" id="izm-JK-agv"/>
+                        <outlet property="incomLevelBtn" destination="fWg-3Q-9qU" id="BAe-Fh-OsJ"/>
+                        <outlet property="registerBtn" destination="QO1-dS-eRI" id="1EZ-hN-A7m"/>
+                        <outlet property="userNameTxtField" destination="ZpC-ud-Qfd" id="doO-x9-fPp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7us-fz-ZUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

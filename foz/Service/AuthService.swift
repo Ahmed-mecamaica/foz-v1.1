@@ -21,6 +21,10 @@ class AuthService {
         
         case login
         case otp
+        case userInterest
+        case cities
+        case incomeLevels
+        case register
         
         var stringValue: String {
             switch self {
@@ -28,6 +32,14 @@ class AuthService {
                 return Endpoints.base + Endpoints.auth + "login"
             case .otp:
                 return Endpoints.base + Endpoints.auth + "verify"
+            case .userInterest:
+                return Endpoints.base + Endpoints.auth + "getOptions/Interests"
+            case .cities:
+                return Endpoints.base + Endpoints.auth + "getOptions/Cities"
+            case .incomeLevels:
+                return Endpoints.base + Endpoints.auth + "getOptions/Incomelevels"
+            case .register:
+                return Endpoints.base + Endpoints.auth + "getOptions/register"
             }
         }
         
@@ -36,6 +48,7 @@ class AuthService {
         }
     }
     
+    //MARK:- LOGIN USER REQUEST
     func login(phoneNum: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.login.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -60,6 +73,7 @@ class AuthService {
         task.resume()
     }
     
+    //MARK:- OTP CONTROLLER REQUEST
     func sendOtp(otp: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.otp.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -77,6 +91,101 @@ class AuthService {
             do {
                 let result = try decoder.decode(LoginResponse.self, from: data)
                 completion(result.new, nil)
+            } catch {
+                completion("", error)
+            }
+        }
+        task.resume()
+    }
+    
+    //MARK:- REGISTER USER REQUESTS
+    //TODO:- revision this method
+    func userInterests(completion: @escaping ([DropListData], Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.userInterest.url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion([], error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(DropListDataResponse.self, from: data)
+                completion(result.data, nil)
+            } catch {
+                completion([], error)
+            }
+        }
+        task.resume()
+    }
+    
+    func cities(completion: @escaping ([DropListData], Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.cities.url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer 66a75d2a19e5a7764ae711e259b80b68", forHTTPHeaderField: "Api-token")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion([], error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(DropListDataResponse.self, from: data)
+                completion(result.data, nil)
+            } catch {
+                completion([], error)
+            }
+        }
+        task.resume()
+    }
+    
+    func IncomeLevels(completion: @escaping ([DropListData], Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.incomeLevels.url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer 66a75d2a19e5a7764ae711e259b80b68", forHTTPHeaderField: "Api-token")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion([], error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(DropListDataResponse.self, from: data)
+                completion(result.data, nil)
+            } catch {
+                completion([], error)
+            }
+        }
+        task.resume()
+    }
+    
+    func registerUser(userName: String, birthDate: String, gender: String, city: String, incomeLevel: String, completion: @escaping (String, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.register.url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.httpMethod = "POST"
+        let body = RegisterUserRequest(username: userName, birthdate: birthDate, city: city, incomelevel: incomeLevel, gender: gender)
+        request.httpBody = try! JSONEncoder().encode(body)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion("", error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(LoginResponse.self, from: data)
+                completion(result.data.access_token, nil)
             } catch {
                 completion("", error)
             }

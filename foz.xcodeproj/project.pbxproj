@@ -33,6 +33,9 @@
 		A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */; };
 		A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2D26D507AD001332A5 /* OtpRequest.swift */; };
 		A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */; };
+		A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F5B26D6420E001332A5 /* RegisterUserBorderBtn.swift */; };
+		A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */; };
+		A8C00F6026D6595D001332A5 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C00F5F26D6595D001332A5 /* RegisterUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
 		A8C00F2D26D507AD001332A5 /* OtpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpRequest.swift; sourceTree = "<group>"; };
 		A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
+		A8C00F5B26D6420E001332A5 /* RegisterUserBorderBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserBorderBtn.swift; sourceTree = "<group>"; };
+		A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropListDataResponse.swift; sourceTree = "<group>"; };
+		A8C00F5F26D6595D001332A5 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 				A85A566326CD0B2C0014BC35 /* CurveView.swift */,
 				A85A566526CD17A30014BC35 /* CurveTextField.swift */,
 				A85A566826CD1AD40014BC35 /* BorderBtn.swift */,
+				A8C00F5B26D6420E001332A5 /* RegisterUserBorderBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,8 +213,8 @@
 			children = (
 				A8C00F1C26D3C646001332A5 /* LoginViewModel.swift */,
 				A8C00F2B26D4FC25001332A5 /* OtpViewModel.swift */,
-				A8C00F2926D3C8F3001332A5 /* State.swift */,
 				A8C00F2F26D5366F001332A5 /* RegisterUserViewModel.swift */,
+				A8C00F2926D3C8F3001332A5 /* State.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 			children = (
 				A8C00F1F26D3C6D8001332A5 /* LoginRequest.swift */,
 				A8C00F2D26D507AD001332A5 /* OtpRequest.swift */,
+				A8C00F5F26D6595D001332A5 /* RegisterUserRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C00F2526D3C72C001332A5 /* LoginResponse.swift */,
+				A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -393,8 +402,11 @@
 				A8C00F1B26D3C5BF001332A5 /* RegisterUserVC.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
 				A8C00F1D26D3C646001332A5 /* LoginViewModel.swift in Sources */,
+				A8C00F6026D6595D001332A5 /* RegisterUserRequest.swift in Sources */,
 				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,
+				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
+				A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 			);
@@ -502,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -557,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
