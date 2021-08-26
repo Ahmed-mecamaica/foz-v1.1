@@ -56,4 +56,27 @@ class RegisterUserViewModel {
         })
     }
     
+    func initSignupUser(userName: String, birthDate: String, city: String, gender: String, incomeLevel: String) {
+        state = .loading
+        if userName == "" || birthDate == "" || city == "" || gender == "" || incomeLevel == "" {
+            self.state = .empty
+            self.alertMessage = "ماتشغلش دماغك وإملا كل الخانات اللي قدامك ديه"
+        } else {
+            AuthService.instance.registerUser(userName: userName, birthDate: birthDate, gender: gender, city: city, incomeLevel: incomeLevel) { Status, error in
+            if error == nil {
+                if Status == "Success" {
+                    self.state = .populated
+                } else {
+                    self.state = .error
+                    self.alertMessage = "عندي انا الغلط ده غير الاسم كده عشان تقريبا حد واخد الاسم ده"
+                }
+            }
+            else {
+                self.state = .error
+                self.alertMessage = error?.localizedDescription
+            }
+        }}
+        
+    }
+    
 }

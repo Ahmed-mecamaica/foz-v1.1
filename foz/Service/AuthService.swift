@@ -39,7 +39,7 @@ class AuthService {
             case .incomeLevels:
                 return Endpoints.base + Endpoints.auth + "getOptions/Incomelevels"
             case .register:
-                return Endpoints.base + Endpoints.auth + "getOptions/register"
+                return Endpoints.base + Endpoints.auth + "register"
             }
         }
         
@@ -100,7 +100,7 @@ class AuthService {
     
     //MARK:- REGISTER USER REQUESTS
     //TODO:- revision this method
-    func userInterests(completion: @escaping ([DropListData], Error?) -> Void) {
+    func userInterests(completion: @escaping ([InterestsPhoto], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.userInterest.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
@@ -114,7 +114,7 @@ class AuthService {
             
             let decoder = JSONDecoder()
             do {
-                let result = try decoder.decode(DropListDataResponse.self, from: data)
+                let result = try decoder.decode(InterestsDataResponse.self, from: data)
                 completion(result.data, nil)
             } catch {
                 completion([], error)
@@ -126,7 +126,7 @@ class AuthService {
     func cities(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.cities.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer 66a75d2a19e5a7764ae711e259b80b68", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -149,7 +149,7 @@ class AuthService {
     func IncomeLevels(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.incomeLevels.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer 66a75d2a19e5a7764ae711e259b80b68", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -177,6 +177,7 @@ class AuthService {
         let body = RegisterUserRequest(username: userName, birthdate: birthDate, city: city, incomelevel: incomeLevel, gender: gender)
         request.httpBody = try! JSONEncoder().encode(body)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print("response is: \(response)")
             guard let data = data else {
                 completion("", error)
                 return
@@ -184,8 +185,8 @@ class AuthService {
             
             let decoder = JSONDecoder()
             do {
-                let result = try decoder.decode(LoginResponse.self, from: data)
-                completion(result.data.access_token, nil)
+                let result = try decoder.decode(RegisterUserResponse.self, from: data)
+                completion(result.state, nil)
             } catch {
                 completion("", error)
             }

@@ -25,14 +25,8 @@ class LoginVC: UIViewController {
         UIView.animate(withDuration: 2.0) {
             self.loginBtn.alpha = 1
         }
-//        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-//        let image = UIImage(named: "personIcon")
-//        imageview.contentMode = .scaleAspectFit
-//        imageview.image = image
-//        phoneNumTxtField.rightView = imageview
-//        phoneNumTxtField.leftView = imageview
-//        phoneNumTxtField.rightViewMode = .always
-//        phoneNumTxtField.leftViewMode = .always
+        hideKeyboardWhenTappedAround()
+
     }
     
     @IBAction func loginBtnPresssed(_ sender: Any) {

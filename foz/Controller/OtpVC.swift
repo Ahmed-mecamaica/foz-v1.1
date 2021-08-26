@@ -67,7 +67,9 @@ class OtpVC: UIViewController, UITextFieldDelegate {
                         let otpVC = storyboard.instantiateViewController(identifier: "register-new_user")
                         self?.present(otpVC, animated: true, completion: nil)
                     } else {
-                        self?.showAlert(message: "done")
+                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                        let otpVC = storyboard.instantiateViewController(identifier: "home-VC")
+                        self?.present(otpVC, animated: true, completion: nil)
                     }
                 }
             }

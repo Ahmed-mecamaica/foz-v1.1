@@ -147,6 +147,34 @@ class RegisterUserVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerBtnPressed(_ sender: Any) {
+        viewModel.showAlertClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlert(message: message)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingState = { [weak self] () in
+            guard let self = self else {
+                return
+            }
+            DispatchQueue.main.async { [weak self] in
+                switch self!.viewModel.state {
+                case .error, .empty:
+                    self?.activityIndicator.stopAnimating()
+                case .loading:
+                    self?.activityIndicator.startAnimating()
+                case .populated:
+                    self?.activityIndicator.stopAnimating()
+                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                    let otpVC = storyboard.instantiateViewController(identifier: "interests-VC")
+                    self?.present(otpVC, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        viewModel.initSignupUser(userName: userNameTxtField.text ?? "", birthDate: birthDateTxtField.text ?? "", city: cityBtn.titleLabel?.text ?? "", gender: genderBtn.titleLabel?.text ?? "", incomeLevel: incomLevelBtn.titleLabel?.text ?? "")
     }
     
     func addTransparentView(frame: CGRect) {
