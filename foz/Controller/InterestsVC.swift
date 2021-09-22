@@ -16,12 +16,34 @@ class InterestsVC: UIViewController {
         return InterestListViewModel()
     }()
     
+    var selectedIndex = 0
+    var selectedRowIndex = -1
+    var thereIsCellHasSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         interestCollectionView.delegate = self
         interestCollectionView.dataSource = self
+        initView()
         intitVm()
+    }
+    
+    func initView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: interestCollectionView.frame.width/3 - 40, height: 120)
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+//        flowLayout.scrollDirection = .
+        self.interestCollectionView.setCollectionViewLayout(flowLayout, animated: true)
+    }
+    
+    @objc func changeRadioBtnStatus(_ sender: UIButton) {
+        if sender.backgroundImage(for: .normal) == UIImage(named: "empty-radio-button") {
+            sender.setBackgroundImage(UIImage(named: "checked-radio-button"), for: .normal)
+//            print(viewModel.photos[sender.tag].name)
+        } else {
+            sender.setBackgroundImage(UIImage(named: "empty-radio-button"), for: .normal)
+        }
     }
     
     func intitVm() {
@@ -61,6 +83,13 @@ class InterestsVC: UIViewController {
                 }
             }
         }
+        
+        viewModel.reloadCollectionViewClousure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.interestCollectionView.reloadData()
+            }
+        }
+        viewModel.initFetch()
     }
     
     func showAlert(message: String) {
@@ -79,12 +108,29 @@ extension InterestsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InterestCollectionViewCell
+        cell.radioBtn.tag = indexPath.row
+        cell.radioBtn.setBackgroundImage(UIImage(named: "empty-radio-button"), for: .normal)
+        cell.radioBtn.addTarget(self, action: #selector(changeRadioBtnStatus(_:)), for: .touchUpInside)
         let cellVM = viewModel.getCellViewModel(at: indexPath)
         cell.interestListCellViewModel = cellVM
         return cell
     }
     
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//        selectedIndex = indexPath.row
+//        if self.selectedRowIndex != -1 {
+//            self.interestCollectionView.cellForItem(at: NSIndexPath(row: self.selectedRowIndex, section: 0) as IndexPath)?.backgroundColor = UIColor.white
+//        }
+//
+//        if selectedRowIndex != indexPath.row {
+//            self.thereIsCellHasSelected = true
+//            self.selectedRowIndex = indexPath.row
+//        } else {
+//            self.thereIsCellHasSelected = false
+//            self.selectedRowIndex = -1
+//        }
+//
+//
 //    }
 }

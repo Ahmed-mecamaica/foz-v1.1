@@ -10,7 +10,7 @@ class InterestListViewModel {
     
     
     
-    private var photos: [InterestsPhoto] = [InterestsPhoto]()
+    var photos: [InterestsPhoto] = [InterestsPhoto]()
     
     //cotainer of all cell
     private var cellViewModel: [InterestListCellViewModel] = [InterestListCellViewModel]() {

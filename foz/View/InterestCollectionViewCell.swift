@@ -11,7 +11,8 @@ import SDWebImage
 class InterestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var interestImage: UIImageView!
     @IBOutlet weak var interestTitle: UILabel!
-    @IBOutlet weak var interestRadioBtn: UIImageView!
+    @IBOutlet weak var radioBtn: UIButton!
+    
     
     var interestListCellViewModel: InterestListCellViewModel? {
         didSet {

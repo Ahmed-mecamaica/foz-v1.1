@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7D84526FB2AE44BCB10F5489 /* Pods_foz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE85A4B82EE591BFEC181A43 /* Pods_foz.framework */; };
+		A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D83C26FB3483002FADED /* HomeTableViewCell.swift */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
 		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
 		A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566826CD1AD40014BC35 /* BorderBtn.swift */; };
+		A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D60A26E4E9CA0050F500 /* CustomRoundedView.swift */; };
+		A860D60D26E4F9A00050F500 /* BottomRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D60C26E4F9A00050F500 /* BottomRadiusView.swift */; };
+		A860D60F26E60F380050F500 /* AuctionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D60E26E60F380050F500 /* AuctionsVC.swift */; };
+		A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D61026E630060050F500 /* ActiveAuctionVC.swift */; };
 		A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D226C91553001CE1E7 /* AppDelegate.swift */; };
 		A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* IntroVC.swift */; };
 		A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07D826C91553001CE1E7 /* Main.storyboard */; };
@@ -74,10 +79,15 @@
 		822AC5A148CFC88317AFFEC1 /* Pods-foz-fozUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foz-fozUITests.release.xcconfig"; path = "Target Support Files/Pods-foz-fozUITests/Pods-foz-fozUITests.release.xcconfig"; sourceTree = "<group>"; };
 		890668816745338058F32EE8 /* Pods_fozTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fozTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1C286FE9AB753F1B3934CB /* Pods-foz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foz.release.xcconfig"; path = "Target Support Files/Pods-foz/Pods-foz.release.xcconfig"; sourceTree = "<group>"; };
+		A807D83C26FB3483002FADED /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
 		A85A566826CD1AD40014BC35 /* BorderBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBtn.swift; sourceTree = "<group>"; };
+		A860D60A26E4E9CA0050F500 /* CustomRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedView.swift; sourceTree = "<group>"; };
+		A860D60C26E4F9A00050F500 /* BottomRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRadiusView.swift; sourceTree = "<group>"; };
+		A860D60E26E60F380050F500 /* AuctionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionsVC.swift; sourceTree = "<group>"; };
+		A860D61026E630060050F500 /* ActiveAuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAuctionVC.swift; sourceTree = "<group>"; };
 		A87A07CF26C91553001CE1E7 /* foz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07D226C91553001CE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A07D626C91553001CE1E7 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
@@ -243,6 +253,8 @@
 				A8A1EE3E26D7B2FC00A6D044 /* HomeVC.swift */,
 				A8A1EE4026D7B30E00A6D044 /* SideMenuVC.swift */,
 				A8A1EE4226D7B52400A6D044 /* InterestsVC.swift */,
+				A860D60E26E60F380050F500 /* AuctionsVC.swift */,
+				A860D61026E630060050F500 /* ActiveAuctionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +270,9 @@
 				A85A566826CD1AD40014BC35 /* BorderBtn.swift */,
 				A8C00F5B26D6420E001332A5 /* RegisterUserBorderBtn.swift */,
 				A8A1EE4A26D7CA2900A6D044 /* InterestCollectionViewCell.swift */,
+				A860D60A26E4E9CA0050F500 /* CustomRoundedView.swift */,
+				A860D60C26E4F9A00050F500 /* BottomRadiusView.swift */,
+				A807D83C26FB3483002FADED /* HomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,8 +592,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A860D60D26E4F9A00050F500 /* BottomRadiusView.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
+				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
 				A8C00F6226D79F13001332A5 /* RegisterUserResponse.swift in Sources */,
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
 				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
@@ -586,6 +603,7 @@
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
+				A860D60F26E60F380050F500 /* AuctionsVC.swift in Sources */,
 				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
@@ -604,7 +622,9 @@
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
+				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
+				A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */,
 				A8A1EE4726D7C99300A6D044 /* InterestListCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
