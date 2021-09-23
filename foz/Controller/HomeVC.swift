@@ -64,7 +64,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
         cell.cellTitleLbl.text = sectionTitleArray[indexPath.row]
         let imageName = sectionBackgroundArray[indexPath.row]
-        print("image name is: \(imageName)")
         cell.cellImage.image = UIImage(named: imageName)
         return cell
     }

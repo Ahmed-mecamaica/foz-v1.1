@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4B-D9-kvJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -862,9 +862,9 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="26N-g7-eHI">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="26N-g7-eHI">
                                                         <rect key="frame" x="170" y="54" width="198" height="56.5"/>
-                                                        <string key="text">النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر</string>
+                                                        <mutableString key="text">النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر النجاررر </mutableString>
                                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="10"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -886,11 +886,16 @@
                                                             <constraint firstAttribute="height" constant="30" id="Cdq-S5-X3h"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-6g-kMj">
+                                                        <rect key="frame" x="179" y="90" width="20" height="20"/>
+                                                        <color key="color" red="0.0039215686269999999" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="c9C-Uo-OEW" firstAttribute="leading" secondItem="0NJ-Od-O9m" secondAttribute="trailing" constant="10" id="0yB-c8-W2S"/>
                                                     <constraint firstItem="mj0-yg-n4s" firstAttribute="top" secondItem="0NJ-Od-O9m" secondAttribute="bottom" constant="5" id="5ML-mU-JQw"/>
+                                                    <constraint firstItem="7Ih-6g-kMj" firstAttribute="centerY" secondItem="9M4-C7-aXP" secondAttribute="centerY" id="8io-Wa-iom"/>
                                                     <constraint firstAttribute="height" constant="200" id="8km-OZ-0qt"/>
                                                     <constraint firstItem="ooP-bZ-gYt" firstAttribute="top" secondItem="26N-g7-eHI" secondAttribute="bottom" constant="10" id="B0Y-24-ZTH"/>
                                                     <constraint firstItem="c9C-Uo-OEW" firstAttribute="top" secondItem="9M4-C7-aXP" secondAttribute="top" constant="10" id="Dfr-GU-bfb"/>
@@ -900,6 +905,7 @@
                                                     <constraint firstItem="uVi-m3-FaM" firstAttribute="leading" secondItem="mj0-yg-n4s" secondAttribute="trailing" constant="59" id="O70-l8-ouM"/>
                                                     <constraint firstItem="ooP-bZ-gYt" firstAttribute="leading" secondItem="mj0-yg-n4s" secondAttribute="trailing" constant="40" id="PA0-Fx-M7g"/>
                                                     <constraint firstItem="26N-g7-eHI" firstAttribute="top" secondItem="c9C-Uo-OEW" secondAttribute="bottom" constant="10" id="RQd-Uu-Ja9"/>
+                                                    <constraint firstItem="7Ih-6g-kMj" firstAttribute="centerX" secondItem="9M4-C7-aXP" secondAttribute="centerX" id="RUc-fc-Pra"/>
                                                     <constraint firstAttribute="trailing" secondItem="ooP-bZ-gYt" secondAttribute="trailing" constant="40" id="Ttk-Gb-qlr"/>
                                                     <constraint firstItem="0NJ-Od-O9m" firstAttribute="leading" secondItem="9M4-C7-aXP" secondAttribute="leading" constant="10" id="W9b-60-P5b"/>
                                                     <constraint firstAttribute="trailing" secondItem="c9C-Uo-OEW" secondAttribute="trailing" constant="10" id="Xs5-tO-CAL"/>
@@ -1159,7 +1165,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activeAUctionDescLbl" destination="26N-g7-eHI" id="obV-Kk-qH8"/>
+                        <outlet property="activeAuctionEnterBtn" destination="ooP-bZ-gYt" id="rCW-jO-MU9"/>
+                        <outlet property="activeAuctionSpinner" destination="7Ih-6g-kMj" id="wBW-F3-sgB"/>
                         <outlet property="inactiveAuctionCollectionView" destination="Fgp-ld-8lc" id="bTf-zb-Dvu"/>
+                        <outlet property="productIdLbl" destination="FJf-F7-ghF" id="cNh-kB-HHa"/>
+                        <outlet property="productIdView" destination="0NJ-Od-O9m" id="IC1-ge-5Te"/>
+                        <outlet property="productImage" destination="Ps4-Od-gUw" id="00k-pF-zkZ"/>
+                        <outlet property="productNameLbl" destination="c9C-Uo-OEW" id="N2u-eN-AL0"/>
+                        <outlet property="providerLogoImage" destination="uVi-m3-FaM" id="JLT-f3-fpi"/>
                         <outlet property="soldAuctionCollectionView" destination="GYK-dL-n9K" id="daM-gu-WvH"/>
                     </connections>
                 </viewController>

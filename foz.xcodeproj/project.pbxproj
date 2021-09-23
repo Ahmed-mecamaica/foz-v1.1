@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D84526FB2AE44BCB10F5489 /* Pods_foz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE85A4B82EE591BFEC181A43 /* Pods_foz.framework */; };
 		A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D83C26FB3483002FADED /* HomeTableViewCell.swift */; };
+		A807D83F26FB67FE002FADED /* ActiveAuctionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D83E26FB67FE002FADED /* ActiveAuctionsResponse.swift */; };
+		A807D84126FB6C55002FADED /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D84026FB6C55002FADED /* ClientService.swift */; };
+		A807D84326FB7373002FADED /* AuctionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D84226FB7372002FADED /* AuctionViewModel.swift */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
 		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
@@ -80,6 +83,9 @@
 		890668816745338058F32EE8 /* Pods_fozTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fozTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1C286FE9AB753F1B3934CB /* Pods-foz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foz.release.xcconfig"; path = "Target Support Files/Pods-foz/Pods-foz.release.xcconfig"; sourceTree = "<group>"; };
 		A807D83C26FB3483002FADED /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		A807D83E26FB67FE002FADED /* ActiveAuctionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAuctionsResponse.swift; sourceTree = "<group>"; };
+		A807D84026FB6C55002FADED /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		A807D84226FB7372002FADED /* AuctionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionViewModel.swift; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
@@ -307,6 +313,7 @@
 				A8C00F2926D3C8F3001332A5 /* State.swift */,
 				A8A1EE4626D7C99300A6D044 /* InterestListCellViewModel.swift */,
 				A8A1EE4826D7C9EA00A6D044 /* InterestListViewModel.swift */,
+				A807D84226FB7372002FADED /* AuctionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C00F2726D3C827001332A5 /* AuthService.swift */,
+				A807D84026FB6C55002FADED /* ClientService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 				A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */,
 				A8C00F6126D79F13001332A5 /* RegisterUserResponse.swift */,
 				A8A1EE4426D7C82500A6D044 /* InterestsDataResponse.swift */,
+				A807D83E26FB67FE002FADED /* ActiveAuctionsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -593,6 +602,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A860D60D26E4F9A00050F500 /* BottomRadiusView.swift in Sources */,
+				A807D83F26FB67FE002FADED /* ActiveAuctionsResponse.swift in Sources */,
+				A807D84126FB6C55002FADED /* ClientService.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
@@ -612,6 +623,7 @@
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
 				A8A1EE3F26D7B2FC00A6D044 /* HomeVC.swift in Sources */,
 				A8A1EE4126D7B30E00A6D044 /* SideMenuVC.swift in Sources */,
+				A807D84326FB7373002FADED /* AuctionViewModel.swift in Sources */,
 				A8C00F1D26D3C646001332A5 /* LoginViewModel.swift in Sources */,
 				A8C00F6026D6595D001332A5 /* RegisterUserRequest.swift in Sources */,
 				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,

@@ -6,11 +6,26 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AuctionsVC: UIViewController {
 
     @IBOutlet weak var inactiveAuctionCollectionView: UICollectionView!
     @IBOutlet weak var soldAuctionCollectionView: UICollectionView!
+    
+    //MARK: actineAuction outlets
+    @IBOutlet weak var activeAUctionDescLbl: UILabel!
+    @IBOutlet weak var productNameLbl: UILabel!
+    @IBOutlet weak var providerLogoImage: UIImageView!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productIdLbl: UILabel!
+    @IBOutlet weak var activeAuctionEnterBtn: RoundedButton!
+    @IBOutlet weak var productIdView: CurveView!
+    @IBOutlet weak var activeAuctionSpinner: UIActivityIndicatorView!
+    
+    
+    var viewModel = AuctionViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +34,29 @@ class AuctionsVC: UIViewController {
         soldAuctionCollectionView.delegate = self
         soldAuctionCollectionView.dataSource = self
         initView()
+        initData()
+        hideActiveAuctionView()
     }
 
+    func hideActiveAuctionView() {
+        productImage.isHidden = true
+        productIdLbl.isHidden = true
+        productNameLbl.isHidden = true
+        providerLogoImage.isHidden = true
+        activeAUctionDescLbl.isHidden = true
+        activeAuctionEnterBtn.isHidden = true
+        productIdView.isHidden = true
+    }
+    
+    func showActiveAuctionComponent() {
+        productImage.isHidden = false
+        productIdLbl.isHidden = false
+        productNameLbl.isHidden = false
+        providerLogoImage.isHidden = false
+        activeAUctionDescLbl.isHidden = false
+        activeAuctionEnterBtn.isHidden = false
+        productIdView.isHidden = false
+    }
     
     func initView() {
         let flowLayout = UICollectionViewFlowLayout()
@@ -33,6 +69,49 @@ class AuctionsVC: UIViewController {
         inactiveAuctionCollectionView.setCollectionViewLayout(flowLayout, animated: true)
 
     }
+    
+    func initData() {
+        viewModel.showAlertClosure = { [weak self] in
+            if let message = self?.viewModel.alertMesssage {
+                self?.showAlert(message)
+            }
+        }
+        
+        viewModel.updateLoadingStatus = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                switch self!.viewModel.state {
+                    case .empty, .error:
+                        self!.activeAuctionSpinner.stopAnimating()
+                        print("err")
+                case .populated:
+                    self!.activeAuctionSpinner.stopAnimating()
+                    self!.showActiveAuctionComponent()
+                        print("data come back")
+                    self!.activeAUctionDescLbl.text = self!.viewModel.ActiveUctionData?.active.description
+                    self!.productNameLbl.text = self!.viewModel.ActiveUctionData?.active.title
+                    self!.productIdLbl.text = self!.viewModel.ActiveUctionData?.active.serial_number
+                    self?.providerLogoImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.provider_image)!))
+                    self?.productImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.image_url)!))
+                case .loading:
+                    self!.activeAuctionSpinner.startAnimating()
+                }
+                
+            }
+        }
+        viewModel.initData()
+        
+    }
+    
+    func showAlert( _ message: String ) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -47,5 +126,4 @@ extension AuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UICollectionViewCell
         return cell
     }
-
 }
