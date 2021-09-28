@@ -8,6 +8,10 @@
 import UIKit
 import SDWebImage
 
+protocol sideSelection  {
+    func didTapAuction(auctionId: String)
+}
+
 class AuctionsVC: UIViewController {
 
     @IBOutlet weak var inactiveAuctionCollectionView: UICollectionView!
@@ -23,7 +27,7 @@ class AuctionsVC: UIViewController {
     @IBOutlet weak var productIdView: CurveView!
     @IBOutlet weak var activeAuctionSpinner: UIActivityIndicatorView!
     
-    
+    var sideSelectionDelegate: sideSelection!
     var viewModel = AuctionViewModel()
     
     override func viewDidLoad() {
@@ -31,8 +35,8 @@ class AuctionsVC: UIViewController {
 
         inactiveAuctionCollectionView.delegate = self
         inactiveAuctionCollectionView.dataSource = self
-//        soldAuctionCollectionView.delegate = self
-//        soldAuctionCollectionView.dataSource = self
+        soldAuctionCollectionView.delegate = self
+        soldAuctionCollectionView.dataSource = self
         initView()
         initData()
         hideActiveAuctionView()
@@ -88,27 +92,30 @@ class AuctionsVC: UIViewController {
                         self!.activeAuctionSpinner.stopAnimating()
                         UIView.animate(withDuration: 2) {
                             self!.inactiveAuctionCollectionView.alpha = 0
+                            self!.soldAuctionCollectionView.alpha = 0
                         }
-                        print("err")
-                case .populated:
-                    self!.activeAuctionSpinner.stopAnimating()
-                    UIView.animate(withDuration: 2) {
-                        self!.inactiveAuctionCollectionView.alpha = 1
+                        
+                    case .populated:
+                        self!.activeAuctionSpinner.stopAnimating()
+                        UIView.animate(withDuration: 2) {
+                            self!.inactiveAuctionCollectionView.alpha = 1
+                            self!.soldAuctionCollectionView.alpha = 1
+                        }
+                        self!.showActiveAuctionComponent()
+                        
+                        self!.activeAUctionDescLbl.text = self!.viewModel.ActiveUctionData?.active.description
+                        self!.productNameLbl.text = self!.viewModel.ActiveUctionData?.active.title
+                        self!.productIdLbl.text = self!.viewModel.ActiveUctionData?.active.serial_number
+                        self?.providerLogoImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.provider_image)!))
+                        self?.productImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.image_url)!))
+                        
+                    case .loading:
+                        self!.activeAuctionSpinner.startAnimating()
+                        UIView.animate(withDuration: 2) {
+                            self!.inactiveAuctionCollectionView.alpha = 0
+                            self!.soldAuctionCollectionView.alpha = 0
+                        }
                     }
-                    self!.showActiveAuctionComponent()
-                        print("data come back")
-                    print("num of inactive : \(self!.viewModel.numberOfCell)")
-                    self!.activeAUctionDescLbl.text = self!.viewModel.ActiveUctionData?.active.description
-                    self!.productNameLbl.text = self!.viewModel.ActiveUctionData?.active.title
-                    self!.productIdLbl.text = self!.viewModel.ActiveUctionData?.active.serial_number
-                    self?.providerLogoImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.provider_image)!))
-                    self?.productImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.image_url)!))
-                case .loading:
-                    self!.activeAuctionSpinner.startAnimating()
-                    UIView.animate(withDuration: 2) {
-                        self!.inactiveAuctionCollectionView.alpha = 0
-                    }
-                }
                 
             }
         }
@@ -116,6 +123,7 @@ class AuctionsVC: UIViewController {
         viewModel.reloadCollectionViewClousure = { [weak self] () in
             DispatchQueue.main.async {
                 self!.inactiveAuctionCollectionView.reloadData()
+                self!.soldAuctionCollectionView.reloadData()
             }
         }
         viewModel.initData()
@@ -131,29 +139,42 @@ class AuctionsVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func enterActiveAuctionBtnTapped(_ sender: Any) {
+//        sideSelectionDelegate.didTapAuction(auctionId: "\(viewModel.ActiveUctionData?.active.id)")
+        let activeAuctionVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "active_auction_id") as! ActiveAuctionVC
+        activeAuctionVC.auctionId = "\(viewModel.ActiveUctionData!.active.id)"
+        present(activeAuctionVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension AuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if collectionView == inactiveAuctionCollectionView {
-        print("num of inactive : \(viewModel.numberOfCell)")
-            return viewModel.numberOfCell
+        if collectionView == inactiveAuctionCollectionView {
+       
+            return viewModel.inactiveAuctionNumberOfCell
             
-//        } else {
-//            print("doesn't enter inactive scope")
-//            return 5
-//        }
+        } else {
+            
+            return viewModel.soldAuctionNumberOfCell
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InactiveAuctionCellinAuctions
-//        if collectionView == inactiveAuctionCollectionView {
-            
+        
+        if collectionView == inactiveAuctionCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InactiveAuctionCellinAuctions
             let cellVM = viewModel.getCellViewModel(at: indexPath)
             cell.inactiveAuctionListCellinAuctions = cellVM
             return cell
-//        }
-//        return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SoldAuctionCellinAuctions
+            let cellVM = viewModel.getSoldCellViewModel(at: indexPath)
+            cell.soldAuctionListCellinAuctions = cellVM
+            return cell
+        }
+        
     }
 }

@@ -10,8 +10,9 @@ import Foundation
 class AuctionViewModel {
     
     
-    var ActiveUctionData: ActiveAuctionsData?
+    var ActiveUctionData: AuctionsAllData?
     var InactiveAuctionData: [AuctionData] = [AuctionData]()
+    var soldAuctionData: [AuctionData] = [AuctionData]()
     
     //cotainer of all cell
     private var inActiveAuctionCellViewModel: [InactiveAuctionListCellinAuctions] = [InactiveAuctionListCellinAuctions]() {
@@ -20,8 +21,18 @@ class AuctionViewModel {
         }
     }
     
-    var numberOfCell: Int {
+    private var soldAuctionCellViewModel: [SoldAuctionListCellinAuctions] = [SoldAuctionListCellinAuctions]() {
+        didSet {
+            self.reloadCollectionViewClousure?()
+        }
+    }
+    
+    var inactiveAuctionNumberOfCell: Int {
         return inActiveAuctionCellViewModel.count
+    }
+    
+    var soldAuctionNumberOfCell: Int {
+        return soldAuctionCellViewModel.count
     }
     
     var state: State = .empty {
@@ -40,7 +51,8 @@ class AuctionViewModel {
     var updateLoadingStatus: (()->())?
     var reloadCollectionViewClousure: (()->())?
     
-    var selectedPhoto: InterestsPhoto?
+    var selectedInactiveAuction: AuctionData?
+    var selectedSoldAuction: AuctionData?
     
     func initData() {
         state = .loading
@@ -53,6 +65,7 @@ class AuctionViewModel {
                 self.state = .populated
                 self.ActiveUctionData = result?.data
                 self.proccessFetchedInactivAuctionData(data: (result?.data.inactive)!)
+                self.proccessFetchedSoldAuctionData(data: (result?.data.sold)!)
             }
         }
     }
@@ -61,8 +74,16 @@ class AuctionViewModel {
         return inActiveAuctionCellViewModel[indesxPath.row]
     }
     
+    func getSoldCellViewModel(at indesxPath: IndexPath) -> SoldAuctionListCellinAuctions {
+        return soldAuctionCellViewModel[indesxPath.row]
+    }
+    
     func createCellViewModel(data: AuctionData) -> InactiveAuctionListCellinAuctions {
         return InactiveAuctionListCellinAuctions(title: data.title, id: data.serial_number, image_url: data.image_url)
+    }
+    
+    func createSoldCellViewModel(data: AuctionData) -> SoldAuctionListCellinAuctions {
+        return SoldAuctionListCellinAuctions(title: data.title, id: data.serial_number, image_url: data.image_url)
     }
     
     private func proccessFetchedInactivAuctionData(data: [AuctionData]) {
@@ -72,5 +93,14 @@ class AuctionViewModel {
             vms.append(createCellViewModel(data: aucrion))
         }
         self.inActiveAuctionCellViewModel = vms
+    }
+    
+    private func proccessFetchedSoldAuctionData(data: [AuctionData]) {
+        self.soldAuctionData = data
+        var vms = [SoldAuctionListCellinAuctions]()
+        for aucrion in data {
+            vms.append(createSoldCellViewModel(data: aucrion))
+        }
+        self.soldAuctionCellViewModel = vms
     }
 }

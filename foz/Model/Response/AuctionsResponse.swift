@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct ActiveAuctionsResponse: Codable {
-    let data: ActiveAuctionsData
+struct AuctionsResponse: Codable {
+    let data: AuctionsAllData
 }
 
 
-struct ActiveAuctionsData: Codable {
+struct AuctionsAllData: Codable {
     let active: AuctionData
     let inactive: [AuctionData]
+    let sold: [AuctionData]
 }
 
 struct AuctionData: Codable {

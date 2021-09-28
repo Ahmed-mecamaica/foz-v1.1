@@ -15,12 +15,15 @@ class ClientService {
     
     enum Endpoint {
         
-        case activeAuction
+        case auctions
+        case activeAuction(String)
         
         var stringValue: String {
             switch self {
-            case .activeAuction:
+            case .auctions:
                 return AuthService.Endpoints.base + "api/auctions"
+            case .activeAuction(let auctionID):
+                return AuthService.Endpoints.base + "api/auctions/active?auction_id=" + auctionID
             }
         }
         
@@ -79,11 +82,27 @@ class ClientService {
     
     
     //MARK:- auctions screen calls
-    func getAllAuctionsData(completion: @escaping (ActiveAuctionsResponse?, Error?) -> ()) {
-        let task = taskForGetRequest(url: Endpoint.activeAuction.url, response: ActiveAuctionsResponse.self) { response, error in
+    func getAllAuctionsData(completion: @escaping (AuctionsResponse?, Error?) -> ()) {
+        let task = taskForGetRequest(url: Endpoint.auctions.url, response: AuctionsResponse.self) { response, error in
+            
             if let response = response {
                 completion(response, nil)
             } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    //MARK: active Auction screen
+
+    func getActiveAuctionData(auctionId: String, completion: @escaping (ActiveAuctionResponse?, Error?) -> Void) {
+        let task = taskForGetRequest(url: Endpoint.activeAuction(auctionId).url, response: ActiveAuctionResponse.self) { result, error in
+//            print("active api: \(Endpoint.activeAuction(auctionId).url)")
+            if let response = result {
+//                print("active response: \(response)")
+                completion(response, nil)
+            } else {
+//                print("active error: \(error?.localizedDescription)")
                 completion(nil, error)
             }
         }
