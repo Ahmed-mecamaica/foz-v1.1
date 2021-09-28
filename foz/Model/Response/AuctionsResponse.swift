@@ -26,4 +26,5 @@ struct AuctionData: Codable {
     let image_url: String
     let serial_number: String
     let provider_image: String
+    let time: String
 }

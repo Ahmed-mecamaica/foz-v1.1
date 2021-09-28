@@ -177,4 +177,14 @@ extension AuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == inactiveAuctionCollectionView {
+            let inactiveAuctionVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "inactive_auction_vc")
+            DispatchQueue.main.async {
+                self.present(inactiveAuctionVC, animated: true, completion: nil)
+            }
+            
+        }
+    }
 }

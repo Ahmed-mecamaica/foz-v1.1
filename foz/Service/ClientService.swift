@@ -17,6 +17,7 @@ class ClientService {
         
         case auctions
         case activeAuction(String)
+        case inactiveAuction
         
         var stringValue: String {
             switch self {
@@ -24,6 +25,8 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/auctions"
             case .activeAuction(let auctionID):
                 return AuthService.Endpoints.base + "api/auctions/active?auction_id=" + auctionID
+            case .inactiveAuction:
+                return AuthService.Endpoints.base + "api/auctions/view/inactive"
             }
         }
         
@@ -104,6 +107,19 @@ class ClientService {
             } else {
 //                print("active error: \(error?.localizedDescription)")
                 completion(nil, error)
+            }
+        }
+    }
+    
+    //MARK: inactive auction screen
+    
+    func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, Error?) -> Void) {
+        let task = taskForGetRequest(url: Endpoint.inactiveAuction.url, response: InactiveAuctionsResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
             }
         }
     }
