@@ -23,8 +23,10 @@ struct AuctionData: Codable {
     let title: String
     let description: String
     let start_price: String
+    let end_price: String
     let image_url: String
     let serial_number: String
     let provider_image: String
     let time: String
+    
 }

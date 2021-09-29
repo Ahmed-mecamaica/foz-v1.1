@@ -184,7 +184,12 @@ extension AuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
             DispatchQueue.main.async {
                 self.present(inactiveAuctionVC, animated: true, completion: nil)
             }
-            
+        }
+        else {
+            let inactiveAuctionVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "sold_auction_vc")
+            DispatchQueue.main.async {
+                self.present(inactiveAuctionVC, animated: true, completion: nil)
+            }
         }
     }
 }

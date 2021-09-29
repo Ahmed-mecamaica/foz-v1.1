@@ -1,24 +1,23 @@
 //
-//  InactiveAuctionsVC.swift
+//  SoldAuctionsVC.swift
 //  foz
 //
-//  Created by Ahmed Medhat on 28/09/2021.
+//  Created by Ahmed Medhat on 29/09/2021.
 //
 
 import UIKit
 
-class InactiveAuctionsVC: UIViewController {
+class SoldAuctionsVC: UIViewController {
 
     @IBOutlet weak var auctionsCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    lazy var viewModel: InactiveAuctionsListViewModel = {
-        return InactiveAuctionsListViewModel()
+    lazy var viewModel: SoldAuctionsListViewModel = {
+        return SoldAuctionsListViewModel()
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         auctionsCollectionView.delegate = self
         auctionsCollectionView.dataSource = self
         initView()
@@ -27,7 +26,7 @@ class InactiveAuctionsVC: UIViewController {
     
     func initView() {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 20, height: 300)
+        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 20, height: 280)
         
         flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         auctionsCollectionView.setCollectionViewLayout(flowLayout, animated: true)
@@ -77,24 +76,29 @@ class InactiveAuctionsVC: UIViewController {
         alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 
-extension InactiveAuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SoldAuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.inactiveAuctionNumberOfCell
+        
+        return viewModel.soldAuctionNumberOfCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InactiveAuctionsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SoldAuctionsCell
         cell.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
         let cellvm = viewModel.getCellViewModel(at: indexPath)
-        cell.inactiveAuctionCellViewModel = cellvm
+        cell.soldAuctionCellViewModel = cellvm
         return cell
     }
     
-   
+    
 }
