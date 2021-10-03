@@ -28,6 +28,8 @@
 		A807D86127047BD5002FADED /* SoldAuctionsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86027047BD5002FADED /* SoldAuctionsCellViewModel.swift */; };
 		A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86227047D2F002FADED /* SoldAuctionsVC.swift */; };
 		A807D86527048073002FADED /* SoldAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86427048073002FADED /* SoldAuctionResponse.swift */; };
+		A807D8692709A52F002FADED /* OffersCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D8682709A52F002FADED /* OffersCategoryVC.swift */; };
+		A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86A2709A866002FADED /* OfferCategoryCell.swift */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
 		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
@@ -118,6 +120,8 @@
 		A807D86027047BD5002FADED /* SoldAuctionsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldAuctionsCellViewModel.swift; sourceTree = "<group>"; };
 		A807D86227047D2F002FADED /* SoldAuctionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldAuctionsVC.swift; sourceTree = "<group>"; };
 		A807D86427048073002FADED /* SoldAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldAuctionResponse.swift; sourceTree = "<group>"; };
+		A807D8682709A52F002FADED /* OffersCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCategoryVC.swift; sourceTree = "<group>"; };
+		A807D86A2709A866002FADED /* OfferCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCategoryCell.swift; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
@@ -224,6 +228,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A807D8662709A4B8002FADED /* Offers  */ = {
+			isa = PBXGroup;
+			children = (
+				A807D8682709A52F002FADED /* OffersCategoryVC.swift */,
+			);
+			path = "Offers ";
+			sourceTree = "<group>";
+		};
+		A807D8672709A4D1002FADED /* Auctions */ = {
+			isa = PBXGroup;
+			children = (
+				A860D60E26E60F380050F500 /* AuctionsVC.swift */,
+				A860D61026E630060050F500 /* ActiveAuctionVC.swift */,
+				A807D85227033DC8002FADED /* InactiveAuctionsVC.swift */,
+				A807D86227047D2F002FADED /* SoldAuctionsVC.swift */,
+			);
+			path = Auctions;
+			sourceTree = "<group>";
+		};
 		A87A07C626C91552001CE1E7 = {
 			isa = PBXGroup;
 			children = (
@@ -283,18 +306,16 @@
 		A87A080226C915B0001CE1E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A807D8672709A4D1002FADED /* Auctions */,
+				A807D8662709A4B8002FADED /* Offers  */,
 				A87A07D226C91553001CE1E7 /* AppDelegate.swift */,
 				A87A07D626C91553001CE1E7 /* IntroVC.swift */,
 				A85A566126CABFA80014BC35 /* LoginVC.swift */,
 				A8C00F1826D3C5A7001332A5 /* OtpVC.swift */,
 				A8C00F1A26D3C5BF001332A5 /* RegisterUserVC.swift */,
+				A8A1EE4226D7B52400A6D044 /* InterestsVC.swift */,
 				A8A1EE3E26D7B2FC00A6D044 /* HomeVC.swift */,
 				A8A1EE4026D7B30E00A6D044 /* SideMenuVC.swift */,
-				A8A1EE4226D7B52400A6D044 /* InterestsVC.swift */,
-				A860D60E26E60F380050F500 /* AuctionsVC.swift */,
-				A860D61026E630060050F500 /* ActiveAuctionVC.swift */,
-				A807D85227033DC8002FADED /* InactiveAuctionsVC.swift */,
-				A807D86227047D2F002FADED /* SoldAuctionsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +338,7 @@
 				A807D84C26FCC404002FADED /* SoldAuctionCellinAuctions.swift */,
 				A807D8582703405C002FADED /* InactiveAuctionsCell.swift */,
 				A807D85C27047B99002FADED /* SoldAuctionsCell.swift */,
+				A807D86A2709A866002FADED /* OfferCategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +690,7 @@
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A807D85B2703431F002FADED /* InactiveAuctionsResponse.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
+				A807D8692709A52F002FADED /* OffersCategoryVC.swift in Sources */,
 				A860D60F26E60F380050F500 /* AuctionsVC.swift in Sources */,
 				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A807D84526FC8E42002FADED /* InactiveAuctionListCellinAuctions.swift in Sources */,
@@ -695,6 +718,7 @@
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
 				A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */,
+				A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */,
 				A807D85327033DC8002FADED /* InactiveAuctionsVC.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
