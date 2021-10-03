@@ -30,6 +30,8 @@
 		A807D86527048073002FADED /* SoldAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86427048073002FADED /* SoldAuctionResponse.swift */; };
 		A807D8692709A52F002FADED /* OffersCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D8682709A52F002FADED /* OffersCategoryVC.swift */; };
 		A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86A2709A866002FADED /* OfferCategoryCell.swift */; };
+		A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86C2709BC4C002FADED /* OffersVC.swift */; };
+		A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86E2709BD0C002FADED /* OffersCell.swift */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
 		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
@@ -122,6 +124,8 @@
 		A807D86427048073002FADED /* SoldAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldAuctionResponse.swift; sourceTree = "<group>"; };
 		A807D8682709A52F002FADED /* OffersCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCategoryVC.swift; sourceTree = "<group>"; };
 		A807D86A2709A866002FADED /* OfferCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCategoryCell.swift; sourceTree = "<group>"; };
+		A807D86C2709BC4C002FADED /* OffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVC.swift; sourceTree = "<group>"; };
+		A807D86E2709BD0C002FADED /* OffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				A807D8682709A52F002FADED /* OffersCategoryVC.swift */,
+				A807D86C2709BC4C002FADED /* OffersVC.swift */,
 			);
 			path = "Offers ";
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				A807D8582703405C002FADED /* InactiveAuctionsCell.swift */,
 				A807D85C27047B99002FADED /* SoldAuctionsCell.swift */,
 				A807D86A2709A866002FADED /* OfferCategoryCell.swift */,
+				A807D86E2709BD0C002FADED /* OffersCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 				A860D60F26E60F380050F500 /* AuctionsVC.swift in Sources */,
 				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A807D84526FC8E42002FADED /* InactiveAuctionListCellinAuctions.swift in Sources */,
+				A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */,
 				A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
 				A807D85F27047BC1002FADED /* SoldAuctionsListViewModel.swift in Sources */,
@@ -721,6 +728,7 @@
 				A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */,
 				A807D85327033DC8002FADED /* InactiveAuctionsVC.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
+				A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */,
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 				A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */,

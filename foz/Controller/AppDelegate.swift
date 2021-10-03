@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initWindow()
         return true
     }
 
@@ -32,6 +33,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 
 
+}
+
+extension AppDelegate {
+    @available(iOS 13.0, *)
+    @available(iOS 13.0, *)
+    func initWindow() {
+        let controller: UIViewController
+        let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+        if let current = LoginResponse.current {
+            AuthService.Auth.token = current.data.access_token
+            controller = storyboard.instantiateViewController(identifier: "home-VC")
+
+        } else {
+            controller = storyboard.instantiateViewController(identifier: "FirstScreen")
+        }
+        
+        window?.rootViewController = controller
+        window?.makeKeyAndVisible()
+    }
 }
 
 extension UIViewController {

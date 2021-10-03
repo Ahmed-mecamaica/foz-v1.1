@@ -40,6 +40,9 @@ class AuctionsVC: UIViewController {
         initView()
         initData()
         hideActiveAuctionView()
+        
+        //logout
+        LoginResponse.current = nil
     }
 
     func hideActiveAuctionView() {
