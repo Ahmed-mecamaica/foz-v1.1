@@ -31,6 +31,7 @@ class OtpVC: UIViewController, UITextFieldDelegate {
 //        tf2.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.hideKeyboardWhenTappedAround()
         
     }
     
