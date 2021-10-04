@@ -32,8 +32,11 @@
 		A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86A2709A866002FADED /* OfferCategoryCell.swift */; };
 		A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86C2709BC4C002FADED /* OffersVC.swift */; };
 		A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86E2709BD0C002FADED /* OffersCell.swift */; };
+		A807D871270B2E9C002FADED /* DiscountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D870270B2E9B002FADED /* DiscountVC.swift */; };
+		A807D873270B2FBB002FADED /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D872270B2FBB002FADED /* DiscountCell.swift */; };
+		A807D875270B3E4A002FADED /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D874270B3E49002FADED /* CurveView.swift */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
-		A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveView.swift */; };
+		A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveShadowView.swift */; };
 		A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566526CD17A30014BC35 /* CurveTextField.swift */; };
 		A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566826CD1AD40014BC35 /* BorderBtn.swift */; };
 		A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D60A26E4E9CA0050F500 /* CustomRoundedView.swift */; };
@@ -126,8 +129,11 @@
 		A807D86A2709A866002FADED /* OfferCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCategoryCell.swift; sourceTree = "<group>"; };
 		A807D86C2709BC4C002FADED /* OffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVC.swift; sourceTree = "<group>"; };
 		A807D86E2709BD0C002FADED /* OffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
+		A807D870270B2E9B002FADED /* DiscountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVC.swift; sourceTree = "<group>"; };
+		A807D872270B2FBB002FADED /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		A807D874270B3E49002FADED /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		A85A566326CD0B2C0014BC35 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
+		A85A566326CD0B2C0014BC35 /* CurveShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveShadowView.swift; sourceTree = "<group>"; };
 		A85A566526CD17A30014BC35 /* CurveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveTextField.swift; sourceTree = "<group>"; };
 		A85A566826CD1AD40014BC35 /* BorderBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBtn.swift; sourceTree = "<group>"; };
 		A860D60A26E4E9CA0050F500 /* CustomRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedView.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 			children = (
 				A807D8682709A52F002FADED /* OffersCategoryVC.swift */,
 				A807D86C2709BC4C002FADED /* OffersVC.swift */,
+				A807D870270B2E9B002FADED /* DiscountVC.swift */,
 			);
 			path = "Offers ";
 			sourceTree = "<group>";
@@ -331,7 +338,8 @@
 				A87A07D826C91553001CE1E7 /* Main.storyboard */,
 				A87A07DD26C91559001CE1E7 /* LaunchScreen.storyboard */,
 				A87A080E26CA8829001CE1E7 /* RoundedButton.swift */,
-				A85A566326CD0B2C0014BC35 /* CurveView.swift */,
+				A85A566326CD0B2C0014BC35 /* CurveShadowView.swift */,
+				A807D874270B3E49002FADED /* CurveView.swift */,
 				A85A566526CD17A30014BC35 /* CurveTextField.swift */,
 				A85A566826CD1AD40014BC35 /* BorderBtn.swift */,
 				A8C00F5B26D6420E001332A5 /* RegisterUserBorderBtn.swift */,
@@ -345,6 +353,7 @@
 				A807D85C27047B99002FADED /* SoldAuctionsCell.swift */,
 				A807D86A2709A866002FADED /* OfferCategoryCell.swift */,
 				A807D86E2709BD0C002FADED /* OffersCell.swift */,
+				A807D872270B2FBB002FADED /* DiscountCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -682,6 +691,7 @@
 				A807D84126FB6C55002FADED /* ClientService.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A807D84B26FCC3C2002FADED /* SoldAuctionListCellinAuctions.swift in Sources */,
+				A807D871270B2E9C002FADED /* DiscountVC.swift in Sources */,
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
@@ -694,6 +704,7 @@
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
 				A807D8592703405C002FADED /* InactiveAuctionsCell.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
+				A807D875270B3E4A002FADED /* CurveView.swift in Sources */,
 				A807D85B2703431F002FADED /* InactiveAuctionsResponse.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
 				A807D8692709A52F002FADED /* OffersCategoryVC.swift in Sources */,
@@ -701,7 +712,7 @@
 				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A807D84526FC8E42002FADED /* InactiveAuctionListCellinAuctions.swift in Sources */,
 				A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */,
-				A85A566426CD0B2C0014BC35 /* CurveView.swift in Sources */,
+				A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
 				A807D85F27047BC1002FADED /* SoldAuctionsListViewModel.swift in Sources */,
 				A8A1EE4326D7B52400A6D044 /* InterestsVC.swift in Sources */,
@@ -717,6 +728,7 @@
 				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,
 				A807D84726FC8EAF002FADED /* InactiveAuctionCellinAuctions.swift in Sources */,
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
+				A807D873270B2FBB002FADED /* DiscountCell.swift in Sources */,
 				A807D85D27047B99002FADED /* SoldAuctionsCell.swift in Sources */,
 				A8A1EE4926D7C9EA00A6D044 /* InterestListViewModel.swift in Sources */,
 				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,

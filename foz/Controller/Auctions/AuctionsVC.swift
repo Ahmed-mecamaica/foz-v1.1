@@ -24,7 +24,7 @@ class AuctionsVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productIdLbl: UILabel!
     @IBOutlet weak var activeAuctionEnterBtn: RoundedButton!
-    @IBOutlet weak var productIdView: CurveView!
+    @IBOutlet weak var productIdView: CurveShadowView!
     @IBOutlet weak var activeAuctionSpinner: UIActivityIndicatorView!
     
     var sideSelectionDelegate: sideSelection!
