@@ -11,6 +11,7 @@ class DiscountCell: UITableViewCell {
 
     @IBOutlet weak var realPriceLbl: UILabel!
     @IBOutlet weak var priceBeforDiscountLbl: UILabel!
+    @IBOutlet weak var lineOnPriceBeforDiscount: UIView!
     @IBOutlet weak var couponCodeLbl: UILabel!
     @IBOutlet weak var expireDateLbl: UILabel!
     override func awakeFromNib() {
