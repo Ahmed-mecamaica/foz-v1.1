@@ -26,7 +26,7 @@ class SoldAuctionsVC: UIViewController {
     
     func initView() {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 20, height: 280)
+        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 40, height: 280)
         
         flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         auctionsCollectionView.setCollectionViewLayout(flowLayout, animated: true)

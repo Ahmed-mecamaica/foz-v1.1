@@ -27,8 +27,8 @@ class InactiveAuctionsVC: UIViewController {
     
     func initView() {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 20, height: 300)
-        
+        flowLayout.itemSize = CGSize(width: auctionsCollectionView.frame.width/2 - 40, height: 300)
+        flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         auctionsCollectionView.setCollectionViewLayout(flowLayout, animated: true)
     }
@@ -77,6 +77,10 @@ class InactiveAuctionsVC: UIViewController {
         alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 

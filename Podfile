@@ -7,6 +7,8 @@ target 'foz' do
 
   # Pods for foz
 	pod 'SDWebImage'
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Messaging'
 
   target 'fozTests' do
     inherit! :search_paths

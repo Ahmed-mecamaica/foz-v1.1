@@ -79,9 +79,12 @@ class AuctionsVC: UIViewController {
     
     func initData() {
         viewModel.showAlertClosure = { [weak self] in
-            if let message = self?.viewModel.alertMesssage {
-                self?.showAlert(message)
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMesssage {
+                    self?.showAlert(message)
+                }
             }
+            
         }
         
         viewModel.updateLoadingStatus = { [weak self] in

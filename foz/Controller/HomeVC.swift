@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     
     var sectionBackgroundArray = ["auction_home", "ads_home", "offers_home", "market_home", "reward_home", "coupons_home"]
     var sectionTitleArray = ["المزادات", "الإعلانات", "العروض", "السوق", "المكافآت", "كوبوناتي"]
-    
+    var homeVCIsShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +25,10 @@ class HomeVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         homeTblView.alpha = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.homeVCIsShown = true
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +38,13 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        UIView.animate(withDuration: 2) {
-            self.homeTblView.alpha = 1
+        if homeVCIsShown == false {
+            UIView.animate(withDuration: 2) {
+                self.homeTblView.alpha = 1
+            }
+            animateTable()
         }
-        animateTable()
+        
     }
     
     

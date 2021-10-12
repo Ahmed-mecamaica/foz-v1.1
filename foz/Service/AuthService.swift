@@ -21,6 +21,7 @@ class AuthService {
         
         case login
         case otp
+        case fcmPostToken
         case userInterest
         case cities
         case incomeLevels
@@ -32,6 +33,8 @@ class AuthService {
                 return Endpoints.base + Endpoints.auth + "login"
             case .otp:
                 return Endpoints.base + Endpoints.auth + "verify"
+            case .fcmPostToken:
+                return Endpoints.base + Endpoints.auth + "storeFcm"
             case .userInterest:
                 return Endpoints.base + Endpoints.auth + "getOptions/Interests"
             case .cities:
@@ -48,7 +51,7 @@ class AuthService {
         }
     }
     
-    //MARK:- LOGIN USER REQUEST
+    //MARK: LOGIN USER REQUEST
     func login(phoneNum: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.login.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -73,7 +76,7 @@ class AuthService {
         task.resume()
     }
     
-    //MARK:- OTP CONTROLLER REQUEST
+    //MARK: OTP CONTROLLER REQUEST
     func sendOtp(otp: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.otp.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -99,8 +102,34 @@ class AuthService {
         task.resume()
     }
     
-    //MARK:- REGISTER USER REQUESTS
-    //TODO:- revision this method
+
+    //MARK: post fcm-token Push notification
+    func postFcm(fcmtoken: String, completion: @escaping (Bool, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.fcmPostToken.url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Api-token")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body = FcmTokenRequest(fcm: fcmtoken) //TODO:- set encoded struct
+        request.httpBody = try! JSONEncoder().encode(body)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else {
+                completion(false, error)
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(fcmTokenResponse.self, from: data)
+                completion(true, error)
+            } catch {
+                completion(false, error)
+            }
+        }
+        task.resume()
+    }
+    
+    
+    //MARK: REGISTER USER REQUESTS
+    //TODO: revision this method
     func userInterests(completion: @escaping ([InterestsPhoto], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.userInterest.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -123,6 +152,8 @@ class AuthService {
         }
         task.resume()
     }
+    
+    
     
     func cities(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.cities.url)

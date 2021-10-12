@@ -20,6 +20,7 @@ class OtpVC: UIViewController, UITextFieldDelegate {
         return OtpViewModel()
     }()
     
+    static var fcm_token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,8 +32,9 @@ class OtpVC: UIViewController, UITextFieldDelegate {
 //        tf2.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
+        print("fcm is : \(OtpVC.fcm_token)")
         self.hideKeyboardWhenTappedAround()
-        
+        viewModel.setFcmToken(fcm_token: OtpVC.fcm_token)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,4 +162,9 @@ extension OtpVC {
            return false
         }
     }
+}
+
+extension OtpVC {
+    //setting up fcm token
+    
 }

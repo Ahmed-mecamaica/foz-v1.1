@@ -44,4 +44,12 @@ class OtpViewModel {
             }
         }
     }
+    
+    func setFcmToken(fcm_token: String) {
+        AuthService.instance.postFcm(fcmtoken: fcm_token) { (success, error) in
+            if success {
+            } else {
+            }
+        }
+    }
 }
