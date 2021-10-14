@@ -15,7 +15,12 @@ class SideMenuVC: UIViewController {
         self.revealViewController().rearViewRevealWidth = self.view.frame.width - 80
     }
     
-
+    @IBAction func cotactUsBtnTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let contactUsVC = storyboard.instantiateViewController(withIdentifier: "ChatVC")
+        present(contactUsVC, animated: true, completion: nil)
+    }
+    
    
 
 }

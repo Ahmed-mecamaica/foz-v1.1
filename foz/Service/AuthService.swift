@@ -8,6 +8,10 @@
 import Foundation
 
 class AuthService {
+    // Disable Policies
+//    let policies: [String: ServerTrustPolicy] = [
+//        "example.entrydns.org": .DisableEvaluation
+//    ]
     static let instance = AuthService()
     
     struct Auth {
@@ -16,8 +20,15 @@ class AuthService {
     }
     
     enum Endpoints {
-        static let base = "https://fooz.macber-eg.com/"
-        static let auth = "auth/authapi/"
+        
+        //first base
+//        static let base = "https://fooz.macber-eg.com/"
+        
+        //second base
+//        static let base = "https://foz.qbizns.com/current/"
+        //local host
+        static let base = "http://192.168.1.217/macber/laravel/fooooooz/"
+        static let auth = "api/auth/"
         
         case login
         case otp
@@ -59,6 +70,7 @@ class AuthService {
         let body = LoginRequest(phone: phoneNum)
         request.httpBody = try! JSONEncoder().encode(body)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
             guard let data = data else {
                 completion("", error)
                 return
@@ -80,7 +92,7 @@ class AuthService {
     func sendOtp(otp: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.otp.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
         let body = OtpRequest(otp: otp)
         request.httpBody = try! JSONEncoder().encode(body)
@@ -107,7 +119,7 @@ class AuthService {
     func postFcm(fcmtoken: String, completion: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.fcmPostToken.url)
         request.httpMethod = "POST"
-        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Api-token")
+        request.addValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let body = FcmTokenRequest(fcm: fcmtoken) //TODO:- set encoded struct
         request.httpBody = try! JSONEncoder().encode(body)
@@ -133,7 +145,7 @@ class AuthService {
     func userInterests(completion: @escaping ([InterestsPhoto], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.userInterest.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -158,7 +170,7 @@ class AuthService {
     func cities(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.cities.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -181,7 +193,7 @@ class AuthService {
     func IncomeLevels(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.incomeLevels.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -204,7 +216,7 @@ class AuthService {
     func registerUser(userName: String, birthDate: String, gender: String, city: String, incomeLevel: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.register.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Api-token")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
         let body = RegisterUserRequest(username: userName, birthdate: birthDate, city: city, incomelevel: incomeLevel, gender: gender)
         request.httpBody = try! JSONEncoder().encode(body)

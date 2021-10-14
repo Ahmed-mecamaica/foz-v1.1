@@ -19,6 +19,7 @@ class ClientService {
         case activeAuction(String)
         case inactiveAuction
         case soldAuction
+        case contactUs
         
         var stringValue: String {
             switch self {
@@ -30,6 +31,8 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/auctions/view/inactive"
             case .soldAuction:
                 return AuthService.Endpoints.base + "api/auctions/view/sold"
+            case .contactUs:
+                return AuthService.Endpoints.base + "api/sidemenu/contacts"
             }
         }
         
@@ -43,7 +46,8 @@ class ClientService {
     func taskForGetRequest<ResponseType: Codable> (url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Api-token")
+        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 completion(nil, error)
@@ -66,7 +70,8 @@ class ClientService {
     func taskForPostRequest<RequestType: Codable, ResponseType: Codable>(url: URL, body: RequestType, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Api-token")
+        request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONEncoder().encode(body)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
@@ -87,7 +92,7 @@ class ClientService {
     }
     
     
-    //MARK:- auctions screen calls
+    //MARK: auctions screen calls
     func getAllAuctionsData(completion: @escaping (AuctionsResponse?, Error?) -> ()) {
         let task = taskForGetRequest(url: Endpoint.auctions.url, response: AuctionsResponse.self) { response, error in
             
@@ -136,6 +141,29 @@ class ClientService {
             }
             else {
                 completion(result, nil)
+            }
+        }
+    }
+    
+    //MARK: contact us VC calls
+    func sendMessage(message: String, completion: @escaping (Bool, Error?) -> ()) {
+        taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: ContactUsResponse.self) { result, error in
+            if let error = error {
+                completion(false, error)
+            }
+            else {
+                completion(true, nil)
+            }
+        }
+    }
+    
+    func getAllMessage( completion: @escaping ([ContactusMessageArray], Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.contactUs.url, response: ContactUsResponse.self) { result, error in
+            if let error = error {
+                completion([], error)
+            }
+            else {
+                completion(result!.result, nil)
             }
         }
     }

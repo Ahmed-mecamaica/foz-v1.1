@@ -16,6 +16,8 @@ class HomeVC: UIViewController {
     var sectionBackgroundArray = ["auction_home", "ads_home", "offers_home", "market_home", "reward_home", "coupons_home"]
     var sectionTitleArray = ["المزادات", "الإعلانات", "العروض", "السوق", "المكافآت", "كوبوناتي"]
     var homeVCIsShown = false
+    
+    let rectInsets = UIEdgeInsets(top: -19, left: -61, bottom: -19, right: -61)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,12 @@ class HomeVC: UIViewController {
             self.homeVCIsShown = true
         }
         
+        //make image cap
+//
+//        let capInsets = UIEdgeInsets(top: 12, left: 22, bottom: 20, right: 12)
+//        adAreaImage.image = UIImage(named: "auction_home")
+//        adAreaImage.image?.resizableImage(withCapInsets: capInsets)
+//        adAreaImage.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +54,6 @@ class HomeVC: UIViewController {
         }
         
     }
-    
-    
     
     func animateTable() {
             self.homeTblView.reloadData()
@@ -77,9 +83,12 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
+        
         cell.cellTitleLbl.text = sectionTitleArray[indexPath.row]
         let imageName = sectionBackgroundArray[indexPath.row]
         cell.cellImage.image = UIImage(named: imageName)
+//        let insets = UIEdgeInsets(top: 12.0, left: 20.0, bottom: 22.0, right: 12)
+//        cell.cellImage.image = cell.cellImage.image!.resizableImage(withCapInsets: insets, resizingMode: .stretch)
         return cell
     }
     
