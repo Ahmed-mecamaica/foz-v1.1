@@ -9,4 +9,5 @@ import Foundation
 
 struct ContactUsMessageCellViewModel {
     let mesaage: String
+    let status: String
 }

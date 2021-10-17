@@ -59,8 +59,10 @@ class ContactUsMessageListViewModel {
             if let error = error, status == false {
                 self.state = .error
                 self.alertMesssage = error.localizedDescription
+//                completion(false, error)
             } else {
                 self.state = .populated
+//                completion(true, nil)
             }
         }
     }
@@ -70,7 +72,7 @@ class ContactUsMessageListViewModel {
     }
     
     func createCellViewModel(data: ContactusMessageArray) -> ContactUsMessageCellViewModel {
-        return ContactUsMessageCellViewModel(mesaage: data.message)
+        return ContactUsMessageCellViewModel(mesaage: data.message, status: data.status)
     }
     
     private func proccessFetchedSoldAuctionData(data: [ContactusMessageArray]) {

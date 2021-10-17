@@ -32,7 +32,6 @@ class OtpVC: UIViewController, UITextFieldDelegate {
 //        tf2.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
 //        tf3.addTarget(self, action: #selector(textDidChange(textField:)), for: UIControl.Event.editingChanged)
-        print("fcm is : \(OtpVC.fcm_token)")
         self.hideKeyboardWhenTappedAround()
         viewModel.setFcmToken(fcm_token: OtpVC.fcm_token)
     }

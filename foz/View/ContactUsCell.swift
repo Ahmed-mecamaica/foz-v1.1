@@ -10,6 +10,8 @@ import UIKit
 class ContactUsCell: UITableViewCell {
 
     @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var messageLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var messageTrailingConstraint: NSLayoutConstraint!
     
     var contactUsMessageCellViewModel: ContactUsMessageCellViewModel? {
         didSet {

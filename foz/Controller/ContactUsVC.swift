@@ -21,7 +21,8 @@ class ContactUsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        messageTblView.delegate = self
+        messageTblView.dataSource = self
         // Do any additional setup after loading the view.
         initFetchData()
     }
@@ -73,6 +74,19 @@ class ContactUsVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func countLines(of label: UILabel, maxHeight: CGFloat) -> Int {
+            // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
+            guard let labelText = label.text else {
+                return 0
+            }
+            
+            let rect = CGSize(width: label.bounds.width, height: maxHeight)
+            let labelSize = labelText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil)
+            
+            let lines = Int(ceil(CGFloat(labelSize.height) / label.font.lineHeight))
+            return labelText.contains("\n") && lines == 1 ? lines + 1 : lines
+       }
+    
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -80,6 +94,8 @@ class ContactUsVC: UIViewController {
     @IBAction func sendMessageBtnTapped(_ sender: Any) {
         if messageTxtField.text != "" {
             viewModel.initSendMessage(message: messageTxtField.text!)
+            initFetchData()
+            messageTxtField.text = ""
         }
     }
     
@@ -93,12 +109,22 @@ extension ContactUsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContactUsCell
+        if cell.contactUsMessageCellViewModel?.status == "recive" {
+            cell.messageLeadingConstraint.constant = 40
+            cell.messageTrailingConstraint.constant = 5
+        }
+        else {
+            cell.messageLeadingConstraint.constant = 5
+            cell.messageTrailingConstraint.constant = 40
+        }
+        cell.messageLbl.backgroundColor = .magenta
+        cell.messageLbl.layer.cornerRadius = 5
         let cellVM = viewModel.getCellViewModel(at: indexPath)
         cell.contactUsMessageCellViewModel = cellVM
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 400
+//    }
 }

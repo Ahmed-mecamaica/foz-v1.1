@@ -21,16 +21,17 @@ class ClientService {
         case soldAuction
         case contactUs
         
+        
         var stringValue: String {
             switch self {
             case .auctions:
-                return AuthService.Endpoints.base + "api/auctions"
+                return AuthService.Endpoints.base + "api/auction"
             case .activeAuction(let auctionID):
-                return AuthService.Endpoints.base + "api/auctions/active?auction_id=" + auctionID
+                return AuthService.Endpoints.base + "api/auction/active?auction_id=" + auctionID
             case .inactiveAuction:
-                return AuthService.Endpoints.base + "api/auctions/view/inactive"
+                return AuthService.Endpoints.base + "api/auction/view/inactive"
             case .soldAuction:
-                return AuthService.Endpoints.base + "api/auctions/view/sold"
+                return AuthService.Endpoints.base + "api/auction/view/sold"
             case .contactUs:
                 return AuthService.Endpoints.base + "api/sidemenu/contacts"
             }
@@ -47,7 +48,7 @@ class ClientService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 completion(nil, error)
@@ -90,6 +91,9 @@ class ClientService {
         task.resume()
         return task
     }
+    
+    //MARK: terms and conditions VC
+    
     
     
     //MARK: auctions screen calls
@@ -147,7 +151,7 @@ class ClientService {
     
     //MARK: contact us VC calls
     func sendMessage(message: String, completion: @escaping (Bool, Error?) -> ()) {
-        taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: ContactUsResponse.self) { result, error in
+        taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: SendMessageResponse.self) { result, error in
             if let error = error {
                 completion(false, error)
             }

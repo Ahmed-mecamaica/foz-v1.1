@@ -2824,7 +2824,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-51-FXU">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-51-FXU">
                                 <rect key="frame" x="20" y="100" width="374" height="716"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -2835,8 +2835,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="187"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zo-f2-Ukl">
-                                                    <rect key="frame" x="25" y="16" width="324" height="155"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zo-f2-Ukl">
+                                                    <rect key="frame" x="25" y="16" width="289" height="155"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2845,13 +2845,15 @@
                                             <constraints>
                                                 <constraint firstItem="3zo-f2-Ukl" firstAttribute="leading" secondItem="R6E-PI-IVC" secondAttribute="leadingMargin" constant="5" id="eG7-l1-SH9"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3zo-f2-Ukl" secondAttribute="bottom" constant="5" id="ghj-MF-RXj"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3zo-f2-Ukl" secondAttribute="trailing" constant="5" id="hlq-sK-SIC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3zo-f2-Ukl" secondAttribute="trailing" constant="40" id="hlq-sK-SIC"/>
                                                 <constraint firstItem="3zo-f2-Ukl" firstAttribute="top" secondItem="R6E-PI-IVC" secondAttribute="topMargin" constant="5" id="l0t-pp-I03"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="messageLbl" destination="3zo-f2-Ukl" id="tvb-Uq-A8K"/>
+                                            <outlet property="messageLeadingConstraint" destination="eG7-l1-SH9" id="i0Z-mE-1w0"/>
+                                            <outlet property="messageTrailingConstraint" destination="hlq-sK-SIC" id="yvB-Sa-eHc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2859,7 +2861,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="46l-Rq-1ai">
                                 <rect key="frame" x="20" y="826" width="374" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-7m-ONT" customClass="RoundedButton" customModule="Over" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-7m-ONT" customClass="RoundedButton" customModule="foz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eEf-Ny-utV"/>

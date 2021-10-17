@@ -15,5 +15,4 @@ struct ContactUsResponse: Codable {
 struct ContactusMessageArray: Codable {
     let message: String
     let status: String
-    
 }

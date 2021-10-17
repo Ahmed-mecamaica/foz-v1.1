@@ -46,6 +46,7 @@
 		A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D61026E630060050F500 /* ActiveAuctionVC.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
+		A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */; };
 		A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D226C91553001CE1E7 /* AppDelegate.swift */; };
 		A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* IntroVC.swift */; };
 		A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07D826C91553001CE1E7 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		A860D61026E630060050F500 /* ActiveAuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAuctionVC.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
+		A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageResponse.swift; sourceTree = "<group>"; };
 		A87A07CF26C91553001CE1E7 /* foz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07D226C91553001CE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A07D626C91553001CE1E7 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				A807D86427048073002FADED /* SoldAuctionResponse.swift */,
 				A8643B3F27144B700055E128 /* FcmTokenResponse.swift */,
 				A8A06142271827D2000A546F /* ContactUsResponse.swift */,
+				A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				A8C00F1B26D3C5BF001332A5 /* RegisterUserVC.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
 				A807D86527048073002FADED /* SoldAuctionResponse.swift in Sources */,
+				A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */,
 				A8A1EE3F26D7B2FC00A6D044 /* HomeVC.swift in Sources */,
 				A8A1EE4126D7B30E00A6D044 /* SideMenuVC.swift in Sources */,
 				A807D84326FB7373002FADED /* AuctionViewModel.swift in Sources */,
