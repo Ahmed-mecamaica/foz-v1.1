@@ -53,15 +53,15 @@ class ContactUsMessageListViewModel {
     }
     
     func initSendMessage(message: String) {
-        state = .loading
+//        state = .loading
         ClientService.shared.sendMessage(message: message) { [weak self] status, error in
             guard let self = self else { return }
-            if let error = error, status == false {
-                self.state = .error
+            if let error = error {
+//                self.state = .error
                 self.alertMesssage = error.localizedDescription
 //                completion(false, error)
             } else {
-                self.state = .populated
+//                self.state = .populated
 //                completion(true, nil)
             }
         }

@@ -47,6 +47,12 @@
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
 		A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */; };
+		A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */; };
+		A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */; };
+		A873D3E8271C4976009EDFCF /* TermsAndConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */; };
+		A873D3EA271C681E009EDFCF /* ResendOtpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E9271C681E009EDFCF /* ResendOtpResponse.swift */; };
+		A873D3EC271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3EB271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift */; };
+		A8780E58271F6D75002B0CA6 /* completeWatchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8780E57271F6D75002B0CA6 /* completeWatchingResponse.swift */; };
 		A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D226C91553001CE1E7 /* AppDelegate.swift */; };
 		A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A07D626C91553001CE1E7 /* IntroVC.swift */; };
 		A87A07DA26C91553001CE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A07D826C91553001CE1E7 /* Main.storyboard */; };
@@ -155,6 +161,12 @@
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
 		A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageResponse.swift; sourceTree = "<group>"; };
+		A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionResponse.swift; sourceTree = "<group>"; };
+		A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewModel.swift; sourceTree = "<group>"; };
+		A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionVC.swift; sourceTree = "<group>"; };
+		A873D3E9271C681E009EDFCF /* ResendOtpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendOtpResponse.swift; sourceTree = "<group>"; };
+		A873D3EB271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAuctionVideoAdsResponse.swift; sourceTree = "<group>"; };
+		A8780E57271F6D75002B0CA6 /* completeWatchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completeWatchingResponse.swift; sourceTree = "<group>"; };
 		A87A07CF26C91553001CE1E7 /* foz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A07D226C91553001CE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A07D626C91553001CE1E7 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
@@ -352,6 +364,7 @@
 				A8A1EE3E26D7B2FC00A6D044 /* HomeVC.swift */,
 				A8A1EE4026D7B30E00A6D044 /* SideMenuVC.swift */,
 				A8A0614A2718390B000A546F /* ContactUsVC.swift */,
+				A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +436,7 @@
 				A807D86027047BD5002FADED /* SoldAuctionsCellViewModel.swift */,
 				A8A061462718344C000A546F /* ContactUsMessageListViewModel.swift */,
 				A8A0614827183460000A546F /* ContactUsMessageCellViewModel.swift */,
+				A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -471,6 +485,10 @@
 				A8643B3F27144B700055E128 /* FcmTokenResponse.swift */,
 				A8A06142271827D2000A546F /* ContactUsResponse.swift */,
 				A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */,
+				A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */,
+				A873D3E9271C681E009EDFCF /* ResendOtpResponse.swift */,
+				A873D3EB271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift */,
+				A8780E57271F6D75002B0CA6 /* completeWatchingResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -729,6 +747,7 @@
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A8A061472718344C000A546F /* ContactUsMessageListViewModel.swift in Sources */,
+				A873D3E8271C4976009EDFCF /* TermsAndConditionVC.swift in Sources */,
 				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
 				A8C00F6226D79F13001332A5 /* RegisterUserResponse.swift in Sources */,
 				A807D85727034016002FADED /* InactiveAuctionsCellViewModel.swift in Sources */,
@@ -738,6 +757,7 @@
 				A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */,
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
 				A807D8592703405C002FADED /* InactiveAuctionsCell.swift in Sources */,
+				A873D3EA271C681E009EDFCF /* ResendOtpResponse.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A807D875270B3E4A002FADED /* CurveView.swift in Sources */,
 				A807D85B2703431F002FADED /* InactiveAuctionsResponse.swift in Sources */,
@@ -752,6 +772,7 @@
 				A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */,
 				A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
+				A873D3EC271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift in Sources */,
 				A807D85F27047BC1002FADED /* SoldAuctionsListViewModel.swift in Sources */,
 				A8A0614927183460000A546F /* ContactUsMessageCellViewModel.swift in Sources */,
 				A8A1EE4326D7B52400A6D044 /* InterestsVC.swift in Sources */,
@@ -766,6 +787,7 @@
 				A8C00F1D26D3C646001332A5 /* LoginViewModel.swift in Sources */,
 				A8C00F6026D6595D001332A5 /* RegisterUserRequest.swift in Sources */,
 				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,
+				A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */,
 				A807D84726FC8EAF002FADED /* InactiveAuctionCellinAuctions.swift in Sources */,
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
 				A807D873270B2FBB002FADED /* DiscountCell.swift in Sources */,
@@ -773,11 +795,13 @@
 				A8A1EE4926D7C9EA00A6D044 /* InterestListViewModel.swift in Sources */,
 				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,
 				A8A0614527183408000A546F /* ContactUsCell.swift in Sources */,
+				A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
 				A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */,
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
 				A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */,
+				A8780E58271F6D75002B0CA6 /* completeWatchingResponse.swift in Sources */,
 				A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */,
 				A807D85327033DC8002FADED /* InactiveAuctionsVC.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
@@ -977,7 +1001,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "foz/SupportFiles/foz-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1000,7 +1024,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Macbereg.fozproduction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "foz/SupportFiles/foz-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

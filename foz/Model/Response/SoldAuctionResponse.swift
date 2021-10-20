@@ -22,5 +22,5 @@ struct SoldAuctionData: Codable {
     let provider_image: String
     let time: String
     let winner_name: String
-    let winner_amount: String
+    let winner_amount: Double
 }

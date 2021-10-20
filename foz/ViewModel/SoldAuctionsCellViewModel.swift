@@ -13,5 +13,5 @@ struct SoldAuctionsCellViewModel{
     let productName: String
     let bidWinnerName: String
     let bidWinnerImage: String
-    let bidTotalAmount: String
+    let bidTotalAmount: Double
 }

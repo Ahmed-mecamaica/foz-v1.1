@@ -20,7 +20,9 @@ class ClientService {
         case inactiveAuction
         case soldAuction
         case contactUs
-        
+        case termsAndConditions
+        case ActiveAuctionVideoAd(String)
+        case completWatching(String)
         
         var stringValue: String {
             switch self {
@@ -34,6 +36,12 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/auction/view/sold"
             case .contactUs:
                 return AuthService.Endpoints.base + "api/sidemenu/contacts"
+            case .termsAndConditions:
+                return AuthService.Endpoints.base + "api/sidemenu/page/TERMS_CONDITIONS"
+            case .ActiveAuctionVideoAd(let auctionID):
+                return AuthService.Endpoints.base + "api/ad/auctions?auction_id=" + auctionID
+            case .completWatching(let adID):
+                return AuthService.Endpoints.base + "api/ad/watch?ad_id=" + adID
             }
         }
         
@@ -93,7 +101,16 @@ class ClientService {
     }
     
     //MARK: terms and conditions VC
-    
+    func getTermsAndConditions(completion: @escaping (String, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.termsAndConditions.url, response: TermsAndConditionResponse.self) { result, error in
+            if let error = error {
+                completion("", error)
+            }
+            else {
+                completion(result!.data.description, nil)
+            }
+        }
+    }
     
     
     //MARK: auctions screen calls
@@ -112,15 +129,47 @@ class ClientService {
 
     func getActiveAuctionData(auctionId: String, completion: @escaping (ActiveAuctionResponse?, Error?) -> Void) {
         let task = taskForGetRequest(url: Endpoint.activeAuction(auctionId).url, response: ActiveAuctionResponse.self) { result, error in
-//            print("active api: \(Endpoint.activeAuction(auctionId).url)")
             if let response = result {
-//                print("active response: \(response)")
                 completion(response, nil)
             } else {
-//                print("active error: \(error?.localizedDescription)")
                 completion(nil, error)
             }
         }
+    }
+    
+    
+    //this function to bring the ad video url inside active auction vc
+    func getActiveAuctionVideoAdData(auctionId: String, completion: @escaping (ActiveAuctionVideoAdsResponse?, Error?) -> Void) {
+        let task = taskForGetRequest(url: Endpoint.ActiveAuctionVideoAd(auctionId).url, response: ActiveAuctionVideoAdsResponse.self) { result, error in
+            if let response = result {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func completeWatchingVideoAd(adId: String, completion: @escaping (completeWatchingResponse?, Error?) -> Void) {
+        var request = URLRequest(url: Endpoint.completWatching(adId).url)
+        request.setValue("Bearer \(AuthService.Auth.token)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(completeWatchingResponse.self, from: data)
+                
+                completion(result, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+        task.resume()
+    
     }
     
     //MARK: inactive auction screen
@@ -150,13 +199,15 @@ class ClientService {
     }
     
     //MARK: contact us VC calls
-    func sendMessage(message: String, completion: @escaping (Bool, Error?) -> ()) {
+    func sendMessage(message: String, completion: @escaping (String, Error?) -> ()) {
         taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: SendMessageResponse.self) { result, error in
             if let error = error {
-                completion(false, error)
+                print("error of send message: \(error)")
+                completion("False", error)
             }
             else {
-                completion(true, nil)
+                print("result of send message: \(result)")
+                completion(result!.state, nil)
             }
         }
     }
@@ -167,6 +218,7 @@ class ClientService {
                 completion([], error)
             }
             else {
+               
                 completion(result!.result, nil)
             }
         }

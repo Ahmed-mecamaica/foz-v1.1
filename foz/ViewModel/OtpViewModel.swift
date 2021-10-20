@@ -52,4 +52,18 @@ class OtpViewModel {
             }
         }
     }
+    
+    func resendOtp() {
+        state = .loading
+        AuthService.instance.resendOtp() { status, error in
+            if let error = error {
+                self.state = .error
+                self.alertMessage = error.localizedDescription
+            }
+             else {
+                self.state =  .populated
+                self.alertMessage = "تم إعادة إرسال الرمز"
+            }
+        }
+    }
 }

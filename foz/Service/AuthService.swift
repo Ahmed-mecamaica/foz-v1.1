@@ -25,13 +25,14 @@ class AuthService {
 //        static let base = "https://fooz.macber-eg.com/"
         
         //second base
-//        static let base = "https://foz.qbizns.com/current/"
+        static let base = "https://foz.qbizns.com/current/"
         //local host
-        static let base = "http://192.168.1.217/macber/laravel/fooooooz/"
+//        static let base = "http://192.168.1.217/macber/laravel/fooooooz/"
         static let auth = "api/auth/"
         
         case login
         case otp
+        case resendOtp
         case fcmPostToken
         case userInterest
         case cities
@@ -44,6 +45,8 @@ class AuthService {
                 return Endpoints.base + Endpoints.auth + "login"
             case .otp:
                 return Endpoints.base + Endpoints.auth + "verify"
+            case .resendOtp:
+                return Endpoints.base + Endpoints.auth + "resend"
             case .fcmPostToken:
                 return Endpoints.base + Endpoints.auth + "storeFcm"
             case .userInterest:
@@ -88,7 +91,7 @@ class AuthService {
         task.resume()
     }
     
-    //MARK: OTP CONTROLLER REQUEST
+    //MARK: OTP vc calls
     func sendOtp(otp: String, completion: @escaping (String, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.otp.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -105,10 +108,34 @@ class AuthService {
             let decoder = JSONDecoder()
             do {
                 let result = try decoder.decode(LoginResponse.self, from: data)
-                result.save()
+//                result.save()
                 completion(result.new, nil)
             } catch {
                 completion("", error)
+            }
+        }
+        task.resume()
+    }
+    
+    func resendOtp(completion: @escaping (Bool, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.resendOtp.url)
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+//        let body = OtpRequest(otp: otp)
+//        request.httpBody = try! JSONEncoder().encode(body)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion(false, error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(ResendOtpResponse.self, from: data)
+                completion(true, nil)
+            } catch {
+                completion(false, error)
             }
         }
         task.resume()

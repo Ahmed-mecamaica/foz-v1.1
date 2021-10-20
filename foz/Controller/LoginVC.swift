@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginBtn: RoundedButton!
     @IBOutlet weak var phoneNumTxtField: UITextField!
@@ -19,14 +19,22 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        phoneNumTxtField.delegate = self
         phoneNumTxtField.attributedPlaceholder = NSAttributedString(string: "رقم الجوال", attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))])
         
         UIView.animate(withDuration: 2.0) {
             self.loginBtn.alpha = 1
         }
         hideKeyboardWhenTappedAround()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        phoneNumTxtField.becomeFirstResponder()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
     
     @IBAction func loginBtnPresssed(_ sender: Any) {

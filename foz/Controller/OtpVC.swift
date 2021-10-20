@@ -64,7 +64,7 @@ class OtpVC: UIViewController, UITextFieldDelegate {
                     self?.activityIndicator.startAnimating()
                 case .populated:
                     self?.activityIndicator.stopAnimating()
-                    if self!.viewModel.isNewUser == "True" {
+                    if self!.viewModel.isNewUser == "true" {
                         let storyboard = UIStoryboard(name: "Main", bundle: .main)
                         let otpVC = storyboard.instantiateViewController(identifier: "register-new_user")
                         self?.present(otpVC, animated: true, completion: nil)
@@ -80,6 +80,35 @@ class OtpVC: UIViewController, UITextFieldDelegate {
         viewModel.initSendOtp(otp: otp)
     }
     
+    @IBAction func resendOtpBtnTapped(_ sender: Any) {
+        viewModel.showAlertMessage = { [weak self] in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlert(message: message)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = { [weak self] () in
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                switch self!.viewModel.state {
+                case .empty, .error:
+                    self?.activityIndicator.stopAnimating()
+                case .loading:
+                    self?.activityIndicator.startAnimating()
+                case .populated:
+                    self?.activityIndicator.stopAnimating()
+                    self?.tf1.becomeFirstResponder()
+                }
+            }
+        }
+        
+        viewModel.resendOtp()
+    }
     
     
     func showAlert(message: String) {

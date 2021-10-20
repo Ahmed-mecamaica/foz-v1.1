@@ -29,7 +29,7 @@ class AuctionsVC: UIViewController {
     
     var sideSelectionDelegate: sideSelection!
     var viewModel = AuctionViewModel()
-    
+    var activeauctionId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -96,28 +96,43 @@ class AuctionsVC: UIViewController {
                 switch self!.viewModel.state {
                     case .empty, .error:
                         self!.activeAuctionSpinner.stopAnimating()
-                        UIView.animate(withDuration: 2) {
+                    UIView.animate(withDuration: 0.7) {
                             self!.inactiveAuctionCollectionView.alpha = 0
                             self!.soldAuctionCollectionView.alpha = 0
                         }
                         
                     case .populated:
                         self!.activeAuctionSpinner.stopAnimating()
-                        UIView.animate(withDuration: 2) {
-                            self!.inactiveAuctionCollectionView.alpha = 1
-                            self!.soldAuctionCollectionView.alpha = 1
+//                        UIView.animate(withDuration: 2) {
+//                            self!.inactiveAuctionCollectionView.alpha = 1
+//                            self!.soldAuctionCollectionView.alpha = 1
+//                        }
+//                        self!.showActiveAuctionComponent()
+                        
+                        self!.activeAUctionDescLbl.text = self!.viewModel.activeAuctionData?.active.description
+                        self!.productNameLbl.text = self!.viewModel.activeAuctionData?.active.title
+                        self!.productIdLbl.text = self!.viewModel.activeAuctionData?.active.serial_number
+                        
+                        if let activeAuctionData = self!.viewModel.activeAuctionData {
+                            self?.providerLogoImage.sd_setImage(with: URL(string: (activeAuctionData.active.provider_image)))
+                            self?.productImage.sd_setImage(with: URL(string: (activeAuctionData.active.image_url)))
+                            
                         }
-                        self!.showActiveAuctionComponent()
-                        
-                        self!.activeAUctionDescLbl.text = self!.viewModel.ActiveUctionData?.active.description
-                        self!.productNameLbl.text = self!.viewModel.ActiveUctionData?.active.title
-                        self!.productIdLbl.text = self!.viewModel.ActiveUctionData?.active.serial_number
-                        self?.providerLogoImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.provider_image)!))
-                        self?.productImage.sd_setImage(with: URL(string: (self!.viewModel.ActiveUctionData?.active.image_url)!))
-                        
+                    
+                        self?.activeauctionId = "\(self?.viewModel.activeAuctionData?.active.id)"
+                        if let activeAuctionVideoData = self!.viewModel.activeAuctionViedoData {
+                            ActiveAuctionVC.activeAuctionVideoUrl = activeAuctionVideoData.data.video_url
+                            ActiveAuctionVC.adId = "\(activeAuctionVideoData.data.id)"
+                            UIView.animate(withDuration: 0.7) {
+                                self!.inactiveAuctionCollectionView.alpha = 1
+                                self!.soldAuctionCollectionView.alpha = 1
+                            }
+                            self!.showActiveAuctionComponent()
+                        }
+                    
                     case .loading:
                         self!.activeAuctionSpinner.startAnimating()
-                        UIView.animate(withDuration: 2) {
+                    UIView.animate(withDuration: 0.7) {
                             self!.inactiveAuctionCollectionView.alpha = 0
                             self!.soldAuctionCollectionView.alpha = 0
                         }
@@ -132,8 +147,9 @@ class AuctionsVC: UIViewController {
                 self!.soldAuctionCollectionView.reloadData()
             }
         }
-        viewModel.initData()
         
+        viewModel.initData()
+        viewModel.initFetchActiveAuctionVideoAdUrl(auctionId: self.activeauctionId)
     }
     
     func showAlert( _ message: String ) {
@@ -149,7 +165,7 @@ class AuctionsVC: UIViewController {
     @IBAction func enterActiveAuctionBtnTapped(_ sender: Any) {
 //        sideSelectionDelegate.didTapAuction(auctionId: "\(viewModel.ActiveUctionData?.active.id)")
         let activeAuctionVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "active_auction_id") as! ActiveAuctionVC
-        activeAuctionVC.auctionId = "\(viewModel.ActiveUctionData!.active.id)"
+        activeAuctionVC.auctionId = "\(viewModel.activeAuctionData!.active.id)"
         present(activeAuctionVC, animated: true, completion: nil)
     }
     

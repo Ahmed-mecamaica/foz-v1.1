@@ -10,7 +10,8 @@ import Foundation
 class AuctionViewModel {
     
     
-    var ActiveUctionData: AuctionsAllData?
+    var activeAuctionData: AuctionsAllData?
+    var activeAuctionViedoData: ActiveAuctionVideoAdsResponse?
     var InactiveAuctionData: [AuctionData] = [AuctionData]()
     var soldAuctionData: [AuctionData] = [AuctionData]()
     
@@ -63,9 +64,24 @@ class AuctionViewModel {
                 self.alertMesssage = error.localizedDescription
             } else {
                 self.state = .populated
-                self.ActiveUctionData = result?.data
+                self.activeAuctionData = result?.data
                 self.proccessFetchedInactivAuctionData(data: (result?.data.inactive)!)
                 self.proccessFetchedSoldAuctionData(data: (result?.data.sold)!)
+            }
+        }
+    }
+    
+    func initFetchActiveAuctionVideoAdUrl(auctionId: String) {
+        state = .loading
+        ClientService.shared.getActiveAuctionVideoAdData(auctionId: auctionId) { [weak self] result, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.state = .error
+                self.alertMesssage = error.localizedDescription
+            } else {
+                self.state = .populated
+                self.activeAuctionViedoData = result
+                
             }
         }
     }

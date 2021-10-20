@@ -34,8 +34,10 @@ class SoldAuctionsVC: UIViewController {
     
     func initFetchData() {
         viewModel.showAlertClosure = { [weak self] in
-            if let message = self?.viewModel.alertMesssage {
-                self?.showAlert(message)
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMesssage {
+                    self?.showAlert(message)
+                }
             }
         }
         
@@ -55,7 +57,6 @@ class SoldAuctionsVC: UIViewController {
                         
                     case .populated:
                         self!.spinner.stopAnimating()
-                        self!.auctionsCollectionView.reloadData()
                         UIView.animate(withDuration: 2) {
                             self!.auctionsCollectionView.alpha = 1
                         }
@@ -68,6 +69,13 @@ class SoldAuctionsVC: UIViewController {
                     }
             }
         }
+        
+        viewModel.reloadCollectionViewClousure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.auctionsCollectionView.reloadData()
+            }
+        }
+        
         viewModel.initData()
     }
     
@@ -99,6 +107,4 @@ extension SoldAuctionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.soldAuctionCellViewModel = cellvm
         return cell
     }
-    
-    
 }

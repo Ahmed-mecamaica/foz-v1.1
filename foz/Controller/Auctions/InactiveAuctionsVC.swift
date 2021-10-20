@@ -35,8 +35,10 @@ class InactiveAuctionsVC: UIViewController {
     
     func initFetchData() {
         viewModel.showAlertClosure = { [weak self] in
-            if let message = self?.viewModel.alertMesssage {
-                self?.showAlert(message)
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMesssage {
+                    self?.showAlert(message)
+                }
             }
         }
         
@@ -56,7 +58,6 @@ class InactiveAuctionsVC: UIViewController {
                         
                     case .populated:
                         self!.spinner.stopAnimating()
-                        self!.auctionsCollectionView.reloadData()
                         UIView.animate(withDuration: 2) {
                             self!.auctionsCollectionView.alpha = 1
                         }
@@ -69,6 +70,13 @@ class InactiveAuctionsVC: UIViewController {
                     }
             }
         }
+        
+        viewModel.reloadCollectionViewClousure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.auctionsCollectionView.reloadData()
+            }
+        }
+        
         viewModel.initData()
     }
     

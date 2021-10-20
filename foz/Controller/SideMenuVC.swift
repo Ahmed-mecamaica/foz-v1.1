@@ -17,12 +17,17 @@ class SideMenuVC: UIViewController {
     
     @IBAction func cotactUsBtnTapped(_ sender: Any) {
         //next line to log out
-//        LoginResponse.current = nil
+        LoginResponse.current = nil
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let contactUsVC = storyboard.instantiateViewController(withIdentifier: "ChatVC")
         present(contactUsVC, animated: true, completion: nil)
     }
     
-   
+    @IBAction func termsAndConditionBtnTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let contactUsVC = storyboard.instantiateViewController(withIdentifier: "terms_and_condition_vc") as! TermsAndConditionVC
+        present(contactUsVC, animated: true, completion: nil)
+    }
+    
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="noN-Bg-1MM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MEx-T2-BzX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -248,6 +248,9 @@
                                         <state key="normal" title="إضغط هنا">
                                             <color key="titleColor" red="0.96671038870000003" green="0.36271375420000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resendOtpBtnTapped:" destination="7Fn-gQ-8Wr" eventType="touchUpInside" id="vQk-vg-dfv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -549,6 +552,9 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-6p-qyF">
                                                     <rect key="frame" x="20" y="11" width="374" height="211"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR3-BD-0B9">
                                                     <rect key="frame" x="40" y="88.5" width="68" height="56.5"/>
@@ -621,11 +627,28 @@
                                     <action selector="cotactUsBtnTapped:" destination="pVT-91-RuT" eventType="touchUpInside" id="V9K-2j-otf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-hP-fyY">
+                                <rect key="frame" x="90" y="169" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ca6-ht-l7b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="18"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="سياسه الخصوصيه">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="termsAndConditionBtnTapped:" destination="pVT-91-RuT" eventType="touchUpInside" id="DY9-ny-kQF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGs-Kv-Sxf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CmO-hP-fyY" firstAttribute="leading" secondItem="eGs-Kv-Sxf" secondAttribute="leading" constant="90" id="6xA-Pc-svp"/>
+                            <constraint firstItem="eGs-Kv-Sxf" firstAttribute="trailing" secondItem="CmO-hP-fyY" secondAttribute="trailing" constant="20" id="ItP-G1-9Rv"/>
                             <constraint firstItem="DGc-kG-QSf" firstAttribute="leading" secondItem="eGs-Kv-Sxf" secondAttribute="leading" constant="90" id="K2r-4x-0d5"/>
+                            <constraint firstItem="CmO-hP-fyY" firstAttribute="top" secondItem="DGc-kG-QSf" secondAttribute="bottom" constant="25" id="To1-Wd-W2t"/>
                             <constraint firstItem="eGs-Kv-Sxf" firstAttribute="trailing" secondItem="DGc-kG-QSf" secondAttribute="trailing" constant="25" id="XNy-mX-jdQ"/>
                             <constraint firstItem="DGc-kG-QSf" firstAttribute="top" secondItem="eGs-Kv-Sxf" secondAttribute="top" constant="50" id="fNd-IW-9w9"/>
                         </constraints>
@@ -1501,10 +1524,36 @@
                                     <constraint firstAttribute="bottom" secondItem="Fj5-JI-MBw" secondAttribute="bottom" id="yAk-LX-o13"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-99-fF1" customClass="CustomRoundedView" customModule="foz" customModuleProvider="target">
-                                <rect key="frame" x="25" y="288" width="364" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-99-fF1" customClass="CustomRoundedView" customModule="foz" customModuleProvider="target">
+                                <rect key="frame" x="25" y="276" width="364" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCo-BV-5GD">
+                                        <rect key="frame" x="0.0" y="130" width="130" height="40"/>
+                                        <color key="backgroundColor" red="0.98431372549019602" green="0.61568627450980395" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="0dL-OZ-UJa"/>
+                                            <constraint firstAttribute="height" constant="40" id="72p-fI-Hhh"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle" catalog="system">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="إتمام المشاهدة">
+                                                    <attributes>
+                                                        <font key="NSFont" size="10" name="GeezaPro"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="completeWatchingBtnPressed:" destination="brm-0b-cCd" eventType="touchUpInside" id="wOu-ft-8cS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="FCo-BV-5GD" firstAttribute="leading" secondItem="XwG-99-fF1" secondAttribute="leading" id="3cq-Zh-sTJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="FCo-BV-5GD" secondAttribute="bottom" constant="30" id="GCn-k8-Fej"/>
                                     <constraint firstAttribute="height" constant="200" id="aYX-Sf-Xqt"/>
                                 </constraints>
                             </view>
@@ -1544,6 +1593,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="completeWatchingBtn" destination="FCo-BV-5GD" id="uuh-Fw-ThM"/>
                         <outlet property="lastBidUserName" destination="JJI-7j-jsl" id="Qqi-41-B3O"/>
                         <outlet property="lastBidValue" destination="XPj-3h-qcJ" id="eR5-ZS-314"/>
                         <outlet property="productDescription" destination="PKC-cQ-jxM" id="XW0-2s-Gcx"/>
@@ -1553,11 +1603,12 @@
                         <outlet property="providerLogo" destination="k9T-ns-Py2" id="h4A-BP-nV4"/>
                         <outlet property="scrollView" destination="oOd-7X-rfA" id="ot5-aj-E9l"/>
                         <outlet property="spinner" destination="aNM-lU-VQ0" id="tKY-GC-zXa"/>
+                        <outlet property="videoView" destination="XwG-99-fF1" id="UzZ-oh-SuC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="553-2r-Ate" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7965" y="246"/>
+            <point key="canvasLocation" x="7963.7681159420299" y="245.75892857142856"/>
         </scene>
         <!--Inactive AuctionsVC-->
         <scene sceneID="wAJ-qI-qTL">
@@ -2824,7 +2875,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-51-FXU">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-51-FXU">
                                 <rect key="frame" x="20" y="100" width="374" height="716"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -2861,21 +2912,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="46l-Rq-1ai">
                                 <rect key="frame" x="20" y="826" width="374" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-7m-ONT" customClass="RoundedButton" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="eEf-Ny-utV"/>
-                                            <constraint firstAttribute="width" constant="40" id="vYL-nI-y4I"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="send_message_button">
-                                            <color key="titleColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendMessageBtnTapped:" destination="MEx-T2-BzX" eventType="touchUpInside" id="kxq-9q-DU7"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اكتب رسالتك هنا..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6NX-3A-tHM">
-                                        <rect key="frame" x="56" y="0.0" width="318" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اكتب رسالتك هنا..." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6NX-3A-tHM">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="z6r-GM-vTr"/>
@@ -2884,6 +2922,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIJ-bA-gJn">
+                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="PKd-9v-g80"/>
+                                            <constraint firstAttribute="height" constant="40" id="aox-4Z-Spv"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.98431372549999996" green="0.61568627450000002" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system" title="."/>
+                                        <connections>
+                                            <action selector="sendMessageBtnTapped:" destination="MEx-T2-BzX" eventType="touchUpInside" id="AY8-n9-Q9b"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZY-rj-F5c">
@@ -2943,6 +2994,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraintOfsendMessageStackView" destination="L0b-6O-JsN" id="EQT-gm-KB9"/>
                         <outlet property="messageTblView" destination="zAV-51-FXU" id="Oth-3p-PHH"/>
                         <outlet property="messageTxtField" destination="6NX-3A-tHM" id="bXo-87-2b4"/>
                         <outlet property="spinner" destination="KrF-hs-vpp" id="apA-Cr-ydK"/>
@@ -2951,6 +3003,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yag-89-U6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3711.594202898551" y="2180.3571428571427"/>
+        </scene>
+        <!--Terms And ConditionVC-->
+        <scene sceneID="nwK-Qf-3VT">
+            <objects>
+                <viewController storyboardIdentifier="terms_and_condition_vc" modalPresentationStyle="fullScreen" id="X7M-hI-iAk" customClass="TermsAndConditionVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfO-85-qOi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXQ-fh-3Ht">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkV-iT-HSe">
+                                        <rect key="frame" x="368" y="60" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Eir-WN-K5z"/>
+                                            <constraint firstAttribute="height" constant="30" id="GAr-rx-H9L"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="X7M-hI-iAk" eventType="touchUpInside" id="9YS-3c-NAg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط والاحكام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIJ-Cg-SYP">
+                                        <rect key="frame" x="133.5" y="48" width="147" height="42"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-m1-xM4">
+                                        <rect key="frame" x="88.5" y="59" width="20" height="20"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fkV-iT-HSe" secondAttribute="trailing" constant="16" id="7Ah-GZ-TNl"/>
+                                    <constraint firstAttribute="bottom" secondItem="AIJ-Cg-SYP" secondAttribute="bottom" constant="10" id="Ep2-lx-LXE"/>
+                                    <constraint firstItem="AIJ-Cg-SYP" firstAttribute="centerX" secondItem="aXQ-fh-3Ht" secondAttribute="centerX" id="Qhn-b1-Ul0"/>
+                                    <constraint firstAttribute="height" constant="100" id="Vif-Vo-qSa"/>
+                                    <constraint firstItem="ZAA-m1-xM4" firstAttribute="centerY" secondItem="AIJ-Cg-SYP" secondAttribute="centerY" id="bax-z2-aWZ"/>
+                                    <constraint firstItem="fkV-iT-HSe" firstAttribute="bottom" secondItem="AIJ-Cg-SYP" secondAttribute="bottom" id="g9P-Za-BsP"/>
+                                    <constraint firstItem="AIJ-Cg-SYP" firstAttribute="leading" secondItem="ZAA-m1-xM4" secondAttribute="trailing" constant="25" id="iIT-WP-HfU"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-i0-YCX">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DZU-sG-cyH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aXQ-fh-3Ht" firstAttribute="leading" secondItem="DZU-sG-cyH" secondAttribute="leading" id="4Eb-JC-jho"/>
+                            <constraint firstItem="aXQ-fh-3Ht" firstAttribute="top" secondItem="gfO-85-qOi" secondAttribute="top" id="5L3-8Q-Vcm"/>
+                            <constraint firstItem="yCg-i0-YCX" firstAttribute="top" secondItem="aXQ-fh-3Ht" secondAttribute="bottom" id="7C5-gb-HMg"/>
+                            <constraint firstItem="aXQ-fh-3Ht" firstAttribute="trailing" secondItem="DZU-sG-cyH" secondAttribute="trailing" id="CIY-El-IhC"/>
+                            <constraint firstItem="DZU-sG-cyH" firstAttribute="bottom" secondItem="yCg-i0-YCX" secondAttribute="bottom" id="jQb-K7-jVS"/>
+                            <constraint firstItem="DZU-sG-cyH" firstAttribute="trailing" secondItem="yCg-i0-YCX" secondAttribute="trailing" id="okL-UL-ECi"/>
+                            <constraint firstItem="yCg-i0-YCX" firstAttribute="leading" secondItem="DZU-sG-cyH" secondAttribute="leading" id="zMp-uN-6q6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="ZAA-m1-xM4" id="c8w-fO-m1q"/>
+                        <outlet property="termsAndConditionTxtView" destination="yCg-i0-YCX" id="XIe-Dt-Dk4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3J-4m-kaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4443" y="2195"/>
         </scene>
     </scenes>
     <resources>
@@ -2962,6 +3090,7 @@
         <image name="Icon_incom_level" width="16.047000885009766" height="11.232999801635742"/>
         <image name="Login_background" width="428" height="926"/>
         <image name="STC-pay_icon" width="110.56700134277344" height="32.507999420166016"/>
+        <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="bid-hammer" width="26.652000427246094" height="26.648000717163086"/>
         <image name="buy" width="94" height="94"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
@@ -2976,12 +3105,15 @@
         <image name="nextBtnImage" width="62" height="62"/>
         <image name="orange-bid-hammer" width="26.652000427246094" height="26.648000717163086"/>
         <image name="otb_background" width="427" height="926"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="personIcon" width="18.21299934387207" height="18.21299934387207"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="send_message_button" width="44" height="44"/>
         <image name="text.alignleft" catalog="system" width="128" height="100"/>
         <image name="timer-icon" width="11.685999870300293" height="11.689000129699707"/>
         <image name="visa_icon" width="88.537002563476562" height="29.770000457763672"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,6 +11,7 @@ import Foundation
 class ActiveAuctionViewModel {
     
     var activeAuctionData: ActiveAuctionResponse?
+    var completeWatchingVideoAdResponse: completeWatchingResponse?
     
     var alertMessage: String? {
         didSet {
@@ -33,6 +34,7 @@ class ActiveAuctionViewModel {
             guard let self = self else { return }
             if let error = error {
                 self.state = .error
+                print(error)
                 self.alertMessage = error.localizedDescription
             } else {
                
@@ -41,4 +43,22 @@ class ActiveAuctionViewModel {
             }
         }
     }
+    
+    func completeWatchingVideoAd(adID: String) {
+        state = .loading
+        ClientService.shared.completeWatchingVideoAd(adId: adID) { [weak self] result, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.state = .error
+                print(error)
+                self.alertMessage = error.localizedDescription
+            } else {
+                self.completeWatchingVideoAdResponse = result
+                self.alertMessage = result!.data
+                self.state = .populated
+            }
+        }
+    }
+    
+    
 }

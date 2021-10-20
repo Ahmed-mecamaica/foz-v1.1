@@ -23,7 +23,7 @@ class SoldAuctionsCell: UICollectionViewCell {
             bidWinnerImage.sd_setImage(with: URL(string: soldAuctionCellViewModel!.bidWinnerImage))
             productName.text = soldAuctionCellViewModel?.productName
             bidWinnerName.text = soldAuctionCellViewModel?.bidWinnerName
-            bidTotalAmount.text = soldAuctionCellViewModel?.bidTotalAmount
+            bidTotalAmount.text = "\(soldAuctionCellViewModel!.bidTotalAmount)"
         }
     }
 }

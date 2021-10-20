@@ -19,5 +19,5 @@ struct ActiveAuctionData: Codable {
 struct LastBidData: Codable {
     let id: Int
     let username: String
-    let amount: String
+    let amount: Double
 }
