@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class OffersCategoryVC: UIViewController {
 
@@ -13,6 +14,8 @@ class OffersCategoryVC: UIViewController {
     @IBOutlet weak var providerListView: CurveShadowView!
     @IBOutlet weak var providerListCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var headerAdPhoto: UIImageView!
+    @IBOutlet weak var headerAdSpinner: UIActivityIndicatorView!
     
     lazy var viewModel: ProvidersListViewModel = {
         return ProvidersListViewModel()
@@ -28,7 +31,7 @@ class OffersCategoryVC: UIViewController {
         providerListCollectionView.delegate = self
         providerListCollectionView.dataSource = self
         initView()
-        
+        getHeaderAdPhoto()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +47,53 @@ class OffersCategoryVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
 //        flowLayout.scrollDirection = .
         self.providerListCollectionView.setCollectionViewLayout(flowLayout, animated: true)
+    }
+    
+    func getHeaderAdPhoto() {
+        viewModel.showAlertClosure = { [weak self] in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMesssage {
+                    self?.showAlert(message)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                switch self!.viewModel.state {
+                    case .empty, .error:
+                        self!.headerAdSpinner.stopAnimating()
+                        UIView.animate(withDuration: 0.5) {
+                            self!.headerAdPhoto.alpha = 0
+                        }
+                        
+                    case .populated:
+                        self!.headerAdSpinner.stopAnimating()
+                        self?.headerAdPhoto.sd_setImage(with: URL(string: self!.viewModel.adsPhotoData!.image_url))
+                        UIView.animate(withDuration: 0.5) {
+                            self!.headerAdPhoto.alpha = 1
+                        }
+                        
+                    case .loading:
+                        self!.headerAdSpinner.startAnimating()
+                        UIView.animate(withDuration: 0.5) {
+                            self!.headerAdPhoto.alpha = 0
+                        }
+                    }
+            }
+        }
+        
+        viewModel.reloadCollectionViewClousure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.providerListCollectionView.reloadData()
+            }
+        }
+        
+        viewModel.initAdsPhoto()
     }
     
     func initResturantProvidersData() {
@@ -94,7 +144,6 @@ class OffersCategoryVC: UIViewController {
             }
             
             viewModel.initProviderData(query: "مطاعم")
-    
     }
     
     func initCafeProviderData() {
@@ -155,12 +204,12 @@ class OffersCategoryVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func hideProviderViewBtnTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
             self.providerListView.alpha = 0
         }
     }
-    
 }
 
 extension OffersCategoryVC: UITableViewDelegate, UITableViewDataSource {

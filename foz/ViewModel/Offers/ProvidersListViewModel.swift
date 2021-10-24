@@ -8,6 +8,9 @@
 import Foundation
 
 class ProvidersListViewModel {
+    
+    var adsPhotoData: DefaultAdsData?
+    
     var offersProvidersData: [OffersProvidersData] = [OffersProvidersData]()
     
     private var providersListCellViewModel: [ProvidersListCellViewModel] = [ProvidersListCellViewModel]() {
@@ -49,6 +52,20 @@ class ProvidersListViewModel {
             } else {
                 self.state = .populated
                 self.proccessFetchedCafeProviderData(data: (result?.data)!)
+            }
+        }
+    }
+    
+    func initAdsPhoto() {
+        state = .loading
+        ClientService.shared.getAdsPhoto { [weak self] result, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.state = .error
+                self.alertMesssage = error.localizedDescription
+            } else {
+                self.state = .populated
+                self.adsPhotoData = result?.data
             }
         }
     }

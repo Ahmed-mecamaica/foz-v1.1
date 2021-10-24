@@ -97,6 +97,7 @@
 		A8D8407827255BEB00D65632 /* ProvidersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8407727255BEB00D65632 /* ProvidersListCell.swift */; };
 		A8D8407B27255C6B00D65632 /* ProvidersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8407A27255C6B00D65632 /* ProvidersListViewModel.swift */; };
 		A8D8407D27255C8700D65632 /* ProvidersListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8407C27255C8700D65632 /* ProvidersListCellViewModel.swift */; };
+		A8D8407F272596A300D65632 /* DefaultAdsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8407E272596A300D65632 /* DefaultAdsResponse.swift */; };
 		CEEAD996A9CEA18D029E5AF6 /* Pods_foz_fozUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAA087924209B20E7445770 /* Pods_foz_fozUITests.framework */; };
 		E092A0E853942249B2A935BD /* Pods_fozTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890668816745338058F32EE8 /* Pods_fozTests.framework */; };
 /* End PBXBuildFile section */
@@ -223,6 +224,7 @@
 		A8D8407727255BEB00D65632 /* ProvidersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersListCell.swift; sourceTree = "<group>"; };
 		A8D8407A27255C6B00D65632 /* ProvidersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersListViewModel.swift; sourceTree = "<group>"; };
 		A8D8407C27255C8700D65632 /* ProvidersListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersListCellViewModel.swift; sourceTree = "<group>"; };
+		A8D8407E272596A300D65632 /* DefaultAdsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAdsResponse.swift; sourceTree = "<group>"; };
 		BDAA087924209B20E7445770 /* Pods_foz_fozUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foz_fozUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85A4B82EE591BFEC181A43 /* Pods_foz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3BF43533F79531702C0DE7 /* Pods-foz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foz.debug.xcconfig"; path = "Target Support Files/Pods-foz/Pods-foz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				A873D3EB271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift */,
 				A8780E57271F6D75002B0CA6 /* completeWatchingResponse.swift */,
 				A8D840742725572300D65632 /* OffersProvidersResponse.swift */,
+				A8D8407E272596A300D65632 /* DefaultAdsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,
 				A8A0614527183408000A546F /* ContactUsCell.swift in Sources */,
 				A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */,
+				A8D8407F272596A300D65632 /* DefaultAdsResponse.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
 				A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */,
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,

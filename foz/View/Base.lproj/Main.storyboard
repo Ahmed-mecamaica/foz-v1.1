@@ -533,7 +533,7 @@
                                     <constraint firstAttribute="bottom" secondItem="nqp-T2-pLQ" secondAttribute="bottom" constant="10" id="tHQ-VN-43C"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BNj-H3-wfy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BNj-H3-wfy">
                                 <rect key="frame" x="17" y="117" width="380" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="29u-5N-2oP"/>
@@ -579,10 +579,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="YvE-7M-yUG">
+                                <rect key="frame" x="197" y="132" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d9r-MP-44O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YvE-7M-yUG" firstAttribute="centerY" secondItem="BNj-H3-wfy" secondAttribute="centerY" id="BAw-oF-wVN"/>
                             <constraint firstItem="d9r-MP-44O" firstAttribute="trailing" secondItem="BNj-H3-wfy" secondAttribute="trailing" constant="17" id="Q8n-oi-qUQ"/>
                             <constraint firstItem="8TU-mj-LVm" firstAttribute="leading" secondItem="d9r-MP-44O" secondAttribute="leading" id="VPO-6a-YYD"/>
                             <constraint firstItem="BNj-H3-wfy" firstAttribute="leading" secondItem="d9r-MP-44O" secondAttribute="leading" constant="17" id="dhq-le-wcf"/>
@@ -591,12 +597,14 @@
                             <constraint firstItem="d9r-MP-44O" firstAttribute="trailing" secondItem="8TU-mj-LVm" secondAttribute="trailing" id="jd1-Yx-g8D"/>
                             <constraint firstItem="d9r-MP-44O" firstAttribute="trailing" secondItem="ugw-qf-ihe" secondAttribute="trailing" id="o9H-y2-9et"/>
                             <constraint firstItem="ugw-qf-ihe" firstAttribute="leading" secondItem="d9r-MP-44O" secondAttribute="leading" id="tlN-k9-9uv"/>
+                            <constraint firstItem="YvE-7M-yUG" firstAttribute="centerX" secondItem="BNj-H3-wfy" secondAttribute="centerX" id="xJt-uf-HjX"/>
                             <constraint firstItem="d9r-MP-44O" firstAttribute="bottom" secondItem="ugw-qf-ihe" secondAttribute="bottom" id="xRz-XJ-mFS"/>
                             <constraint firstItem="BNj-H3-wfy" firstAttribute="top" secondItem="8TU-mj-LVm" secondAttribute="bottom" constant="17" id="yoS-wK-N7f"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="adAreaImage" destination="BNj-H3-wfy" id="Jnv-Aj-YHW"/>
+                        <outlet property="headerAdSpinner" destination="YvE-7M-yUG" id="Pkw-y8-rda"/>
                         <outlet property="homeTblView" destination="ugw-qf-ihe" id="PFu-gV-zFG"/>
                         <outlet property="sideMenuBtn" destination="XQp-GB-bbn" id="v4Q-pk-VUc"/>
                     </connections>
@@ -2325,7 +2333,7 @@
                                     <constraint firstAttribute="height" constant="100" id="zBw-f9-sDB"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-Sz-Hvu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-Sz-Hvu">
                                 <rect key="frame" x="17" y="117" width="380" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kdR-R9-tmx"/>
@@ -2448,11 +2456,18 @@
                                     <constraint firstItem="Wcm-bm-RFb" firstAttribute="leading" secondItem="kUq-Ch-ocu" secondAttribute="leading" constant="10" id="wTZ-gx-W6N"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="Dgi-oI-J28">
+                                <rect key="frame" x="197" y="132" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gVH-fO-GF6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Dgi-oI-J28" firstAttribute="centerY" secondItem="Hmz-Sz-Hvu" secondAttribute="centerY" id="70D-Rs-bO3"/>
                             <constraint firstItem="gVH-fO-GF6" firstAttribute="trailing" secondItem="kUq-Ch-ocu" secondAttribute="trailing" constant="25" id="Im5-ET-4jO"/>
+                            <constraint firstItem="Dgi-oI-J28" firstAttribute="centerX" secondItem="Hmz-Sz-Hvu" secondAttribute="centerX" id="KNG-nM-NYm"/>
                             <constraint firstItem="gVH-fO-GF6" firstAttribute="trailing" secondItem="O9m-Ll-sSY" secondAttribute="trailing" id="PUJ-RM-01r"/>
                             <constraint firstItem="O9m-Ll-sSY" firstAttribute="top" secondItem="Hmz-Sz-Hvu" secondAttribute="bottom" constant="20" id="WYa-zd-a6h"/>
                             <constraint firstItem="gVH-fO-GF6" firstAttribute="trailing" secondItem="4ts-Bg-I8t" secondAttribute="trailing" id="Wau-zw-CVq"/>
@@ -2469,6 +2484,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerAdPhoto" destination="Hmz-Sz-Hvu" id="tSQ-0d-mWn"/>
+                        <outlet property="headerAdSpinner" destination="Dgi-oI-J28" id="vFh-PY-RkS"/>
                         <outlet property="offerCategoryTblView" destination="O9m-Ll-sSY" id="HwZ-WI-zhz"/>
                         <outlet property="providerListCollectionView" destination="Wcm-bm-RFb" id="29e-de-Ghx"/>
                         <outlet property="providerListView" destination="kUq-Ch-ocu" id="nae-Ta-ywB"/>

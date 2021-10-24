@@ -24,7 +24,7 @@ class ClientService {
         case ActiveAuctionVideoAd(String)
         case completWatching(String)
         case offersProvidersList(String)
-//        case offersResturantProvidersList(String)
+        case defaultAdPhoto
         
         var stringValue: String {
             switch self {
@@ -46,8 +46,8 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/ad/watch?ad_id=" + adID
             case .offersProvidersList(let query):
                 return AuthService.Endpoints.base + "api/offer/providers?name=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-//            case .offersResturantProvidersList(let query):
-//                return AuthService.Endpoints.base + "api/offer/providers?name=".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! + query
+            case .defaultAdPhoto:
+                return AuthService.Endpoints.base + "api/ad/default"
             }
         }
         
@@ -208,11 +208,9 @@ class ClientService {
     func sendMessage(message: String, completion: @escaping (String, Error?) -> ()) {
         taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: SendMessageResponse.self) { result, error in
             if let error = error {
-                print("error of send message: \(error)")
                 completion("False", error)
             }
             else {
-                print("result of send message: \(result)")
                 completion(result!.state, nil)
             }
         }
@@ -242,14 +240,16 @@ class ClientService {
         }
     }
     
-//    func getResturantProvidersList(completion: @escaping (OffersProvidersResponse?, Error?) -> ()) {
-//        taskForGetRequest(url: Endpoint.offersResturantProvidersList.url, response: OffersProvidersResponse.self) { result, error in
-//            if let error = error {
-//                completion(nil, error)
-//            }
-//            else {
-//                completion(result, nil)
-//            }
-//        }
-//    }
+    //MARK: defaultAds
+    
+    func getAdsPhoto(completion: @escaping (DefaultAdsResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.defaultAdPhoto.url, response: DefaultAdsResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
+            }
+        }
+    }
 }

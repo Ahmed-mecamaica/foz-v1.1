@@ -6,18 +6,25 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeVC: UIViewController {
 
     @IBOutlet weak var sideMenuBtn: UIButton!
     @IBOutlet weak var adAreaImage: UIImageView!
     @IBOutlet weak var homeTblView: UITableView!
+    @IBOutlet weak var headerAdSpinner: UIActivityIndicatorView!
+    
+    lazy var viewModel: ProvidersListViewModel = {
+        return ProvidersListViewModel()
+    }()
     
     var sectionBackgroundArray = ["auction_home", "ads_home", "offers_home", "market_home", "reward_home", "coupons_home"]
     var sectionTitleArray = ["المزادات", "الإعلانات", "العروض", "السوق", "المكافآت", "كوبوناتي"]
     var homeVCIsShown = false
     
     let rectInsets = UIEdgeInsets(top: -19, left: -61, bottom: -19, right: -61)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +37,7 @@ class HomeVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.homeVCIsShown = true
         }
+        getHeaderAdPhoto()
         
         //make image cap
 //
@@ -55,6 +63,48 @@ class HomeVC: UIViewController {
         
     }
     
+    func getHeaderAdPhoto() {
+        
+        viewModel.showAlertClosure = { [weak self] in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMesssage {
+                    self?.showAlert(message)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                switch self!.viewModel.state {
+                    case .empty, .error:
+                        self!.headerAdSpinner.stopAnimating()
+                        UIView.animate(withDuration: 0.5) {
+                            self!.adAreaImage.alpha = 0
+                        }
+                        
+                    case .populated:
+                        self!.headerAdSpinner.stopAnimating()
+                        self?.adAreaImage.sd_setImage(with: URL(string: self!.viewModel.adsPhotoData!.image_url))
+                        UIView.animate(withDuration: 0.5) {
+                            self!.adAreaImage.alpha = 1
+                        }
+                        
+                    case .loading:
+                        self!.headerAdSpinner.startAnimating()
+                        UIView.animate(withDuration: 0.5) {
+                            self!.adAreaImage.alpha = 0
+                        }
+                    }
+            }
+        }
+        viewModel.initAdsPhoto()
+      
+    }
+    
     func animateTable() {
             self.homeTblView.reloadData()
 
@@ -78,6 +128,12 @@ class HomeVC: UIViewController {
                 index += 1
             }
         }
+    
+    func showAlert( _ message: String ) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
