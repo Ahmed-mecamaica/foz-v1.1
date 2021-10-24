@@ -23,6 +23,8 @@ class ClientService {
         case termsAndConditions
         case ActiveAuctionVideoAd(String)
         case completWatching(String)
+        case offersProvidersList(String)
+//        case offersResturantProvidersList(String)
         
         var stringValue: String {
             switch self {
@@ -42,6 +44,10 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/ad/auctions?auction_id=" + auctionID
             case .completWatching(let adID):
                 return AuthService.Endpoints.base + "api/ad/watch?ad_id=" + adID
+            case .offersProvidersList(let query):
+                return AuthService.Endpoints.base + "api/offer/providers?name=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//            case .offersResturantProvidersList(let query):
+//                return AuthService.Endpoints.base + "api/offer/providers?name=".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! + query
             }
         }
         
@@ -223,4 +229,27 @@ class ClientService {
             }
         }
     }
+    
+    //MARK: offer category vc calls
+    func getProvidersList(query: String, completion: @escaping (OffersProvidersResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.offersProvidersList(query).url, response: OffersProvidersResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
+            }
+        }
+    }
+    
+//    func getResturantProvidersList(completion: @escaping (OffersProvidersResponse?, Error?) -> ()) {
+//        taskForGetRequest(url: Endpoint.offersResturantProvidersList.url, response: OffersProvidersResponse.self) { result, error in
+//            if let error = error {
+//                completion(nil, error)
+//            }
+//            else {
+//                completion(result, nil)
+//            }
+//        }
+//    }
 }

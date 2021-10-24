@@ -62,8 +62,9 @@ class ActiveAuctionVC: UIViewController {
         videoView.alpha = 0
         completeWatchingBtn.alpha = 0
         //https://192.168.1.217/macber/laravel/fooooooz/storage/ads/videos/default.mp4
+//        "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"
         if let adsurl = URL(string: videoUrl) {
-            self.player = AVPlayer(url: URL(string: "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8")!)
+            self.player = AVPlayer(url: adsurl)
             self.playerLayer = AVPlayerLayer(player: self.player)
             self.playerLayer.videoGravity = .resize
             self.videoView.layer.addSublayer(self.playerLayer)
@@ -109,19 +110,19 @@ class ActiveAuctionVC: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 switch self!.viewModel.state {
                     case .error, .empty:
-                        UIView.animate(withDuration: 2) {
+                    UIView.animate(withDuration: 1.2) {
                             self!.scrollView.alpha = 0
                         }
                         self!.spinner.stopAnimating()
                         
                     case .loading:
-                        UIView.animate(withDuration: 2) {
+                    UIView.animate(withDuration: 1.2) {
                             self!.scrollView.alpha = 0
                         }
                         self!.spinner.startAnimating()
                         
                     case .populated:
-                        UIView.animate(withDuration: 2) {
+                    UIView.animate(withDuration: 1.2) {
                             self!.scrollView.alpha = 1
                         }
                         self!.spinner.stopAnimating()

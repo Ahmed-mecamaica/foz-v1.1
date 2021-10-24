@@ -108,7 +108,7 @@ class AuthService {
             let decoder = JSONDecoder()
             do {
                 let result = try decoder.decode(LoginResponse.self, from: data)
-//                result.save()
+                result.save()
                 completion(result.new, nil)
             } catch {
                 completion("", error)

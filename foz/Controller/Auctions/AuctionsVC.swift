@@ -39,31 +39,31 @@ class AuctionsVC: UIViewController {
         soldAuctionCollectionView.dataSource = self
         initView()
         initData()
-        hideActiveAuctionView()
+        hideActiveAuctionView(status: true)
         
         //logout
         LoginResponse.current = nil
     }
 
-    func hideActiveAuctionView() {
-        productImage.isHidden = true
-        productIdLbl.isHidden = true
-        productNameLbl.isHidden = true
-        providerLogoImage.isHidden = true
-        activeAUctionDescLbl.isHidden = true
-        activeAuctionEnterBtn.isHidden = true
-        productIdView.isHidden = true
+    func hideActiveAuctionView(status: Bool) {
+        productImage.isHidden = status
+        productIdLbl.isHidden = status
+        productNameLbl.isHidden = status
+        providerLogoImage.isHidden = status
+        activeAUctionDescLbl.isHidden = status
+        activeAuctionEnterBtn.isHidden = status
+        productIdView.isHidden = status
     }
     
-    func showActiveAuctionComponent() {
-        productImage.isHidden = false
-        productIdLbl.isHidden = false
-        productNameLbl.isHidden = false
-        providerLogoImage.isHidden = false
-        activeAUctionDescLbl.isHidden = false
-        activeAuctionEnterBtn.isHidden = false
-        productIdView.isHidden = false
-    }
+//    func showActiveAuctionComponent() {
+//        productImage.isHidden = false
+//        productIdLbl.isHidden = false
+//        productNameLbl.isHidden = false
+//        providerLogoImage.isHidden = false
+//        activeAUctionDescLbl.isHidden = false
+//        activeAuctionEnterBtn.isHidden = false
+//        productIdView.isHidden = false
+//    }
     
     func initView() {
         let flowLayout = UICollectionViewFlowLayout()
@@ -99,6 +99,7 @@ class AuctionsVC: UIViewController {
                     UIView.animate(withDuration: 0.7) {
                             self!.inactiveAuctionCollectionView.alpha = 0
                             self!.soldAuctionCollectionView.alpha = 0
+                            self!.hideActiveAuctionView(status: true)
                         }
                         
                     case .populated:
@@ -127,12 +128,13 @@ class AuctionsVC: UIViewController {
                                 self!.inactiveAuctionCollectionView.alpha = 1
                                 self!.soldAuctionCollectionView.alpha = 1
                             }
-                            self!.showActiveAuctionComponent()
+                            self!.hideActiveAuctionView(status: false)
                         }
                     
                     case .loading:
+                        self!.hideActiveAuctionView(status: true)
                         self!.activeAuctionSpinner.startAnimating()
-                    UIView.animate(withDuration: 0.7) {
+                        UIView.animate(withDuration: 0.7) {
                             self!.inactiveAuctionCollectionView.alpha = 0
                             self!.soldAuctionCollectionView.alpha = 0
                         }

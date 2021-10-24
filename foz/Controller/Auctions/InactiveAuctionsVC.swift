@@ -85,6 +85,7 @@ class InactiveAuctionsVC: UIViewController {
         alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

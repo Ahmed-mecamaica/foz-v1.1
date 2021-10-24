@@ -10,7 +10,7 @@ import Foundation
 class ContactUsMessageListViewModel {
     
     var messageData: [ContactusMessageArray] = [ContactusMessageArray]()
-    
+    var isSend: [String] = [String]()
     private var contactUsMessageCellViewModel: [ContactUsMessageCellViewModel] = [ContactUsMessageCellViewModel]() {
         didSet {
             self.reloadCollectionViewClousure?()
@@ -72,7 +72,15 @@ class ContactUsMessageListViewModel {
     }
     
     func createCellViewModel(data: ContactusMessageArray) -> ContactUsMessageCellViewModel {
-        return ContactUsMessageCellViewModel(mesaage: data.message, status: data.status)
+        var message: String?
+        if data.status == "send" {
+            message = "\(data.message) :you"
+        }
+        else {
+            message = "\(data.message) :foz"
+        }
+        isSend.append(data.status)
+        return ContactUsMessageCellViewModel(mesaage: message!, status: data.status)
     }
     
     private func proccessFetchedSoldAuctionData(data: [ContactusMessageArray]) {

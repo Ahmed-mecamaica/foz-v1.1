@@ -10,6 +10,7 @@ import UIKit
 class ContactUsCell: UITableViewCell {
 
     @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var messageBackgroundView: CurveView!
     @IBOutlet weak var messageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageTrailingConstraint: NSLayoutConstraint!
     

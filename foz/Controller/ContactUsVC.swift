@@ -16,9 +16,12 @@ class ContactUsVC: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBOutlet weak var bottomConstraintOfsendMessageStackView: NSLayoutConstraint!
+    
     lazy var viewModel: ContactUsMessageListViewModel = {
         return ContactUsMessageListViewModel()
     }()
+    
+    var isSendArray: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +102,7 @@ class ContactUsVC: UIViewController {
                         }
                         
                     case .loading:
-                    
+                        
                         self!.spinner.startAnimating()
                         UIView.animate(withDuration: 2) {
                             self!.messageTblView.alpha = 0
@@ -110,6 +113,7 @@ class ContactUsVC: UIViewController {
         }
         
         viewModel.reloadCollectionViewClousure = { [weak self] () in
+            self!.isSendArray = self!.viewModel.isSend
             DispatchQueue.main.async {
                 self?.messageTblView.reloadData()
                 self?.scrollTobottomCell()
@@ -165,13 +169,16 @@ extension ContactUsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContactUsCell
-        if cell.contactUsMessageCellViewModel?.status == "recive" {
-            cell.messageLeadingConstraint.constant = 40
-            cell.messageTrailingConstraint.constant = 5
-        }
-        else {
+        if isSendArray[indexPath.row] == "send" {
             cell.messageLeadingConstraint.constant = 5
             cell.messageTrailingConstraint.constant = 40
+            cell.messageBackgroundView.backgroundColor = #colorLiteral(red: 0.0002558765991, green: 0.6109670997, blue: 0.5671326518, alpha: 1)
+        }
+        else  {
+            cell.messageLeadingConstraint.constant = 40
+            cell.messageTrailingConstraint.constant = 5
+            cell.messageBackgroundView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+
         }
 //        cell.messageLbl.layer.borderColor = CGColor.init(gray: 20, alpha: 100)
 //        cell.messageLbl.layer.borderWidth = 1.2
