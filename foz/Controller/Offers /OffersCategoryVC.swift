@@ -244,12 +244,13 @@ extension OffersCategoryVC: UITableViewDelegate, UITableViewDataSource {
 
 extension OffersCategoryVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("num of provider is: \(viewModel.providerNumberOfCell)")
         return viewModel.providerNumberOfCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProvidersListCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProvidersListCell else {
+            fatalError("Cell not exists in storyboard")
+        }
         cell.layer.cornerRadius = 10
         cell.layer.borderColor = #colorLiteral(red: 0.0002558765991, green: 0.6109670997, blue: 0.5671326518, alpha: 0.1674372187)
         cell.layer.borderWidth = 2
@@ -262,5 +263,25 @@ extension OffersCategoryVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        let providerCouponsVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "provider_coupons_vc") as! ProviderCouponsVC
+        self.viewModel.userPressed(at: indexPath)
+        let selectedProvider = viewModel.selectedProvider
+        ProviderCouponsVC.providerID = "\(selectedProvider!.id)"
+        ProviderCouponsVC.providerImageUrl = selectedProvider!.image_url
+        present(providerCouponsVC, animated: true, completion: nil)
+//        print("data passed successfully and provider id is \()")
+
+    }
+    
+    
+    
+}
+
+extension OffersCategoryVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProviderCouponsVC, let selectedProvider = viewModel.selectedProvider {
+            print("data passed successfully and provider id is \(selectedProvider.id)")
+            
+        }
     }
 }

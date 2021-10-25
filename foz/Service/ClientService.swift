@@ -25,6 +25,8 @@ class ClientService {
         case completWatching(String)
         case offersProvidersList(String)
         case defaultAdPhoto
+        case providerCoupons(String)
+        case providerAd(String)
         
         var stringValue: String {
             switch self {
@@ -48,6 +50,10 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/offer/providers?name=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             case .defaultAdPhoto:
                 return AuthService.Endpoints.base + "api/ad/default"
+            case .providerCoupons(let providerId):
+                return AuthService.Endpoints.base + "api/offer/coupons?provider_id=" + providerId
+            case .providerAd(let providerId):
+                return AuthService.Endpoints.base + "api/ad/offer?provider_id=" + providerId
             }
         }
         
@@ -249,6 +255,28 @@ class ClientService {
             }
             else {
                 completion(result, nil)
+            }
+        }
+    }
+    
+    func getProviderCoupons(providerId: String, completion: @escaping (ProviderCouponsResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.providerCoupons(providerId).url, response: ProviderCouponsResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
+            }
+        }
+    }
+    
+    func getProviderVideoAd(providerId: String, completion: @escaping (ProviderAdResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.providerAd(providerId).url, response: ProviderAdResponse.self) { reult, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(reult, nil)
             }
         }
     }

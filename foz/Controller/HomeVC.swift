@@ -88,7 +88,10 @@ class HomeVC: UIViewController {
                         
                     case .populated:
                         self!.headerAdSpinner.stopAnimating()
-                        self?.adAreaImage.sd_setImage(with: URL(string: self!.viewModel.adsPhotoData!.image_url))
+                    if let adImage = self?.viewModel.adsPhotoData {
+                        self?.adAreaImage.sd_setImage(with: URL(string: adImage.image_url))
+                    }
+                        
                         UIView.animate(withDuration: 0.5) {
                             self!.adAreaImage.alpha = 1
                         }

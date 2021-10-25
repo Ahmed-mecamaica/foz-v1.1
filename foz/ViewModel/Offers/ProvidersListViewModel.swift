@@ -39,7 +39,8 @@ class ProvidersListViewModel {
     var updateLoadingStatus: (()->())?
     var reloadCollectionViewClousure: (()->())?
     
-    var selectedSoldAuction: SoldAuctionData?
+    var isAllowSegue: Bool = false
+    var selectedProvider: OffersProvidersData?
 
     
     func initProviderData(query: String) {
@@ -85,5 +86,21 @@ class ProvidersListViewModel {
             vms.append(createCellViewModel(data: provider))
         }
         self.providersListCellViewModel = vms
+    }
+}
+
+extension ProvidersListViewModel {
+    func userPressed(at indexPath: IndexPath) {
+        let provider = self.offersProvidersData[indexPath.row]
+        if provider.image_url != "" {
+            self.selectedProvider = provider
+            self.isAllowSegue = true
+        }
+        else {
+            self.isAllowSegue = false
+            self.selectedProvider = nil
+            self.alertMesssage = "This item is not for sale"
+        }
+        
     }
 }

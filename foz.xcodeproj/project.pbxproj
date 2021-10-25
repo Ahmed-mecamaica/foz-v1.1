@@ -32,8 +32,8 @@
 		A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86A2709A866002FADED /* OfferCategoryCell.swift */; };
 		A807D86D2709BC4C002FADED /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86C2709BC4C002FADED /* OffersVC.swift */; };
 		A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D86E2709BD0C002FADED /* OffersCell.swift */; };
-		A807D871270B2E9C002FADED /* DiscountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D870270B2E9B002FADED /* DiscountVC.swift */; };
-		A807D873270B2FBB002FADED /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D872270B2FBB002FADED /* DiscountCell.swift */; };
+		A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D870270B2E9B002FADED /* ProviderCouponsVC.swift */; };
+		A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D872270B2FBB002FADED /* ProviderCouponsCell.swift */; };
 		A807D875270B3E4A002FADED /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D874270B3E49002FADED /* CurveView.swift */; };
 		A8556DAD271434A300BBE815 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8556DAC271434A200BBE815 /* GoogleService-Info.plist */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
@@ -46,6 +46,10 @@
 		A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860D61026E630060050F500 /* ActiveAuctionVC.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
+		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
+		A872EAB52726B27600FA676D /* ProviderCouponsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB42726B27600FA676D /* ProviderCouponsViewModel.swift */; };
+		A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */; };
+		A872EAB92726D3ED00FA676D /* ProviderAdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */; };
 		A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */; };
 		A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */; };
 		A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */; };
@@ -150,8 +154,8 @@
 		A807D86A2709A866002FADED /* OfferCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCategoryCell.swift; sourceTree = "<group>"; };
 		A807D86C2709BC4C002FADED /* OffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVC.swift; sourceTree = "<group>"; };
 		A807D86E2709BD0C002FADED /* OffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
-		A807D870270B2E9B002FADED /* DiscountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVC.swift; sourceTree = "<group>"; };
-		A807D872270B2FBB002FADED /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		A807D870270B2E9B002FADED /* ProviderCouponsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsVC.swift; sourceTree = "<group>"; };
+		A807D872270B2FBB002FADED /* ProviderCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsCell.swift; sourceTree = "<group>"; };
 		A807D874270B3E49002FADED /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		A8556DAB2714302600BBE815 /* foz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = foz.entitlements; sourceTree = "<group>"; };
 		A8556DAC271434A200BBE815 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -165,6 +169,10 @@
 		A860D61026E630060050F500 /* ActiveAuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAuctionVC.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
+		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
+		A872EAB42726B27600FA676D /* ProviderCouponsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsViewModel.swift; sourceTree = "<group>"; };
+		A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsCellViewModel.swift; sourceTree = "<group>"; };
+		A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderAdResponse.swift; sourceTree = "<group>"; };
 		A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageResponse.swift; sourceTree = "<group>"; };
 		A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionResponse.swift; sourceTree = "<group>"; };
 		A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewModel.swift; sourceTree = "<group>"; };
@@ -286,7 +294,7 @@
 			children = (
 				A807D8682709A52F002FADED /* OffersCategoryVC.swift */,
 				A807D86C2709BC4C002FADED /* OffersVC.swift */,
-				A807D870270B2E9B002FADED /* DiscountVC.swift */,
+				A807D870270B2E9B002FADED /* ProviderCouponsVC.swift */,
 			);
 			path = "Offers ";
 			sourceTree = "<group>";
@@ -400,7 +408,7 @@
 				A807D85C27047B99002FADED /* SoldAuctionsCell.swift */,
 				A807D86A2709A866002FADED /* OfferCategoryCell.swift */,
 				A807D86E2709BD0C002FADED /* OffersCell.swift */,
-				A807D872270B2FBB002FADED /* DiscountCell.swift */,
+				A807D872270B2FBB002FADED /* ProviderCouponsCell.swift */,
 				A8A0614427183408000A546F /* ContactUsCell.swift */,
 				A8D8407627255B9F00D65632 /* Offers */,
 			);
@@ -503,6 +511,8 @@
 				A8780E57271F6D75002B0CA6 /* completeWatchingResponse.swift */,
 				A8D840742725572300D65632 /* OffersProvidersResponse.swift */,
 				A8D8407E272596A300D65632 /* DefaultAdsResponse.swift */,
+				A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */,
+				A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -520,6 +530,8 @@
 			children = (
 				A8D8407A27255C6B00D65632 /* ProvidersListViewModel.swift */,
 				A8D8407C27255C8700D65632 /* ProvidersListCellViewModel.swift */,
+				A872EAB42726B27600FA676D /* ProviderCouponsViewModel.swift */,
+				A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */,
 			);
 			path = Offers;
 			sourceTree = "<group>";
@@ -774,8 +786,9 @@
 				A807D84126FB6C55002FADED /* ClientService.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A807D84B26FCC3C2002FADED /* SoldAuctionListCellinAuctions.swift in Sources */,
-				A807D871270B2E9C002FADED /* DiscountVC.swift in Sources */,
+				A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */,
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
+				A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A8A061472718344C000A546F /* ContactUsMessageListViewModel.swift in Sources */,
 				A873D3E8271C4976009EDFCF /* TermsAndConditionVC.swift in Sources */,
@@ -789,6 +802,7 @@
 				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
 				A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */,
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
+				A872EAB92726D3ED00FA676D /* ProviderAdResponse.swift in Sources */,
 				A807D8592703405C002FADED /* InactiveAuctionsCell.swift in Sources */,
 				A873D3EA271C681E009EDFCF /* ResendOtpResponse.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
@@ -813,6 +827,7 @@
 				A8C00F1B26D3C5BF001332A5 /* RegisterUserVC.swift in Sources */,
 				A87A07D326C91553001CE1E7 /* AppDelegate.swift in Sources */,
 				A807D86527048073002FADED /* SoldAuctionResponse.swift in Sources */,
+				A872EAB52726B27600FA676D /* ProviderCouponsViewModel.swift in Sources */,
 				A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */,
 				A8A1EE3F26D7B2FC00A6D044 /* HomeVC.swift in Sources */,
 				A8A1EE4126D7B30E00A6D044 /* SideMenuVC.swift in Sources */,
@@ -825,7 +840,7 @@
 				A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */,
 				A807D84726FC8EAF002FADED /* InactiveAuctionCellinAuctions.swift in Sources */,
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
-				A807D873270B2FBB002FADED /* DiscountCell.swift in Sources */,
+				A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */,
 				A807D85D27047B99002FADED /* SoldAuctionsCell.swift in Sources */,
 				A8A1EE4926D7C9EA00A6D044 /* InterestListViewModel.swift in Sources */,
 				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,
@@ -836,6 +851,7 @@
 				A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */,
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
+				A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */,
 				A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */,
 				A8780E58271F6D75002B0CA6 /* completeWatchingResponse.swift in Sources */,
 				A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */,
