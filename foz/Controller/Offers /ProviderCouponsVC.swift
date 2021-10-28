@@ -231,13 +231,20 @@ class ProviderCouponsVC: UIViewController {
     }
     
     @IBAction func buyBtnInssidePaymentViewTapped(_ sender: Any) {
-        UIView.animate(withDuration: 0.4) {
-            self.paymentPopupView.alpha = 0
-            self.paymentDonePopupView.alpha = 1
+        let paymentVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "payment_vc") as! PaymentVC
+        DispatchQueue.main.async {
+            self.present(paymentVC, animated: true, completion: nil)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.removePaymentMethodView()
-        }
+        
+        
+        
+//        UIView.animate(withDuration: 0.4) {
+//            self.paymentPopupView.alpha = 0
+//            self.paymentDonePopupView.alpha = 1
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            self.removePaymentMethodView()
+//        }
     }
     
 }
@@ -261,13 +268,28 @@ extension ProviderCouponsVC: UITableViewDelegate, UITableViewDataSource {
         return 150
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        viewModel.userPressed(at: indexPath)
+        if viewModel.isAllowSegue {
+            PaymentVC.screen = "offer"
+            PaymentVC.couponPrice = "\(viewModel.selectedCoupon!.price_after_discount)"
+            PaymentVC.couponId = "\(viewModel.selectedCoupon!.id)" 
+            return indexPath
+        }
+        else {
+            return nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         showPaymentMethods()
-        
-        
-        //MARK:-action sheet
-        
+    }
+}
+
+
+//MARK: action sheet
+
 //        let alert = UIAlertController(title: "PAYMENT", message: "Please Select payment Option", preferredStyle: .actionSheet)
 //
 //            alert.addAction(UIAlertAction(title: "VISA", style: .default , handler:{ (UIAlertAction)in
@@ -293,5 +315,3 @@ extension ProviderCouponsVC: UITableViewDelegate, UITableViewDataSource {
 //            self.present(alert, animated: true, completion: {
 //                print("completion block")
 //            })
-    }
-}

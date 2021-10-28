@@ -40,7 +40,7 @@ class OtpViewModel {
                 self.state = .populated
             } else {
                 self.state =  .error
-                self.alertMessage = error?.localizedDescription
+                self.alertMessage = error
             }
         }
     }

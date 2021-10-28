@@ -50,11 +50,11 @@ class AuthService {
             case .fcmPostToken:
                 return Endpoints.base + Endpoints.auth + "storeFcm"
             case .userInterest:
-                return Endpoints.base + Endpoints.auth + "getOptions/Interests"
+                return Endpoints.base + Endpoints.auth + "getoptions/interests"
             case .cities:
-                return Endpoints.base + Endpoints.auth + "getOptions/Cities"
+                return Endpoints.base + Endpoints.auth + "getoptions/cities"
             case .incomeLevels:
-                return Endpoints.base + Endpoints.auth + "getOptions/Incomelevels"
+                return Endpoints.base + Endpoints.auth + "getoptions/incomelevels"
             case .register:
                 return Endpoints.base + Endpoints.auth + "register"
             }
@@ -83,16 +83,17 @@ class AuthService {
             do {
                 let result = try decoder.decode(LoginResponse.self, from: data)
                 Auth.token = result.data.access_token
-                completion(result.data.access_token, nil)
+                UserDefaults.standard.set(result.data.id, forKey: "user-id")
+                completion(result.new, nil)
             } catch {
-                completion("", error)
+                
             }
         }
         task.resume()
     }
     
     //MARK: OTP vc calls
-    func sendOtp(otp: String, completion: @escaping (String, Error?) -> Void) {
+    func sendOtp(otp: String, completion: @escaping (String, String?) -> Void) {
         var request = URLRequest(url: Endpoints.otp.url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
@@ -100,8 +101,9 @@ class AuthService {
         let body = OtpRequest(otp: otp)
         request.httpBody = try! JSONEncoder().encode(body)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print("error of otp \(response)")
             guard let data = data else {
-                completion("", error)
+                completion("", "\(error)")
                 return
             }
             
@@ -111,7 +113,12 @@ class AuthService {
                 result.save()
                 completion(result.new, nil)
             } catch {
-                completion("", error)
+                do {
+                    let errorMessage = try decoder.decode(OtpErrorResponse.self, from: data)
+                    completion("", errorMessage.result )
+                }catch {
+                    completion("", "\(error)")
+                }
             }
         }
         task.resume()
@@ -196,11 +203,12 @@ class AuthService {
     
     func cities(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.cities.url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print("cities response: \(response)")
             guard let data = data else {
                 completion([], error)
                 return
@@ -219,11 +227,12 @@ class AuthService {
     
     func IncomeLevels(completion: @escaping ([DropListData], Error?) -> Void) {
         var request = URLRequest(url: Endpoints.incomeLevels.url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(Auth.token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print("income response: \(response)")
             guard let data = data else {
                 completion([], error)
                 return

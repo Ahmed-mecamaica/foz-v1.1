@@ -51,7 +51,7 @@ class ProviderCouponsViewModel {
     var reloadCollectionViewClousure: (()->())?
     
     var isAllowSegue: Bool = false
-    var selectedProvider: ProviderCouponsData?
+    var selectedCoupon: ProviderCouponsData?
 
     
     func initProviderData(providerId: String) {
@@ -99,5 +99,19 @@ class ProviderCouponsViewModel {
             vms.append(createCellViewModel(data: coupon))
         }
         self.providerCouponsCellViewModel = vms
+    }
+}
+
+
+extension ProviderCouponsViewModel {
+    func userPressed(at indexPath: IndexPath) {
+        let coupon = self.providerCouponsData[indexPath.row]
+        if coupon.price != "" {
+            isAllowSegue = true
+            selectedCoupon = coupon
+        }
+        else {
+            isAllowSegue = false
+        }
     }
 }

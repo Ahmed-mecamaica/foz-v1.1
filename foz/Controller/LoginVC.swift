@@ -37,6 +37,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
     }
     
+    //this function make phone text field accept only 11 character
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 11
+        let currentString: NSString = (textField.text ?? "") as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+    
     @IBAction func loginBtnPresssed(_ sender: Any) {
         viewModel.showAlertClosure = { [weak self] in
             
@@ -58,10 +67,19 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self?.activityIndicator.startAnimating()
                 case .populated:
                     self?.activityIndicator.stopAnimating()
-                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                    let otpVC = storyboard.instantiateViewController(identifier: "otp_view_controller")
-                    self?.present(otpVC, animated: true, completion: nil)
-                    
+//                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+//                    let otpVC = storyboard.instantiateViewController(identifier: "otp_view_controller")
+//                    self?.present(otpVC, animated: true, completion: nil)
+                    print("is new user \(self!.viewModel.isNewUser)")
+                    if self!.viewModel.isNewUser == "true" {
+                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                        let otpVC = storyboard.instantiateViewController(identifier: "register-new_user")
+                        self?.present(otpVC, animated: true, completion: nil)
+                    } else {
+                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                        let otpVC = storyboard.instantiateViewController(identifier: "otp_view_controller")
+                        self?.present(otpVC, animated: true, completion: nil)
+                    }
                 case .error, .empty:
                     self?.activityIndicator.stopAnimating()
                 }
@@ -77,6 +95,4 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-
 }

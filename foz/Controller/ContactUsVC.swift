@@ -29,7 +29,7 @@ class ContactUsVC: UIViewController {
         messageTblView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        hideKeyboardWhenTappedAround()
+        hideKeyboardWhenPanGestureAround()
         initFetchData()
     }
     
@@ -168,6 +168,9 @@ extension ContactUsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if messageTblView.isDragging {
+//
+//        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContactUsCell
         if isSendArray[indexPath.row] == "send" {
             cell.messageLeadingConstraint.constant = 5
@@ -180,12 +183,10 @@ extension ContactUsVC: UITableViewDelegate, UITableViewDataSource {
             cell.messageBackgroundView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
 
         }
-//        cell.messageLbl.layer.borderColor = CGColor.init(gray: 20, alpha: 100)
-//        cell.messageLbl.layer.borderWidth = 1.2
-//        cell.messageLbl.layer.cornerRadius = 5
-//        cell.messageLbl.layoutIfNeeded()
+
         let cellVM = viewModel.getCellViewModel(at: indexPath)
         cell.contactUsMessageCellViewModel = cellVM
+        
         return cell
     }
     
@@ -194,13 +195,17 @@ extension ContactUsVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 400
 //    }
     
     private func scrollTobottomCell() {
-        let bottomCell = IndexPath(row: viewModel.contactUsMessageNumberOfCell - 1, section: 0)
-        messageTblView.scrollToRow(at: bottomCell, at: .top, animated: true)
-        messageTblView.layoutIfNeeded()
+        if viewModel.contactUsMessageNumberOfCell != 0 {
+            let bottomCell = IndexPath(row: viewModel.contactUsMessageNumberOfCell - 1, section: 0)
+            messageTblView.scrollToRow(at: bottomCell, at: .top, animated: true)
+            messageTblView.layoutIfNeeded()
+        }
+        
     }
 }

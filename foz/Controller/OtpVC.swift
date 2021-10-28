@@ -64,15 +64,15 @@ class OtpVC: UIViewController, UITextFieldDelegate {
                     self?.activityIndicator.startAnimating()
                 case .populated:
                     self?.activityIndicator.stopAnimating()
-                    if self!.viewModel.isNewUser == "true" {
-                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                        let otpVC = storyboard.instantiateViewController(identifier: "register-new_user")
-                        self?.present(otpVC, animated: true, completion: nil)
-                    } else {
+//                    if self!.viewModel.isNewUser == "true" {
+//                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+//                        let otpVC = storyboard.instantiateViewController(identifier: "register-new_user")
+//                        self?.present(otpVC, animated: true, completion: nil)
+//                    } else {
                         let storyboard = UIStoryboard(name: "Main", bundle: .main)
                         let otpVC = storyboard.instantiateViewController(identifier: "home-VC")
                         self?.present(otpVC, animated: true, completion: nil)
-                    }
+//                    }
                 }
             }
         }
@@ -84,6 +84,10 @@ class OtpVC: UIViewController, UITextFieldDelegate {
         viewModel.showAlertMessage = { [weak self] in
             DispatchQueue.main.async {
                 if let message = self?.viewModel.alertMessage {
+                    self?.tf1.text = ""
+                    self?.tf2.text = ""
+                    self?.tf3.text = ""
+                    self?.tf4.text = ""
                     self?.showAlert(message: message)
                 }
             }

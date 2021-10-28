@@ -14,6 +14,7 @@ struct LoginResponse: Codable, Storable {
 }
 
 struct LoginResponseData: Codable {
+    let id: Int
     let access_token: String
 }
 

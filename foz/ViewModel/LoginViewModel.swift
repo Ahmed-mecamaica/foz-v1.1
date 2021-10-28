@@ -22,6 +22,7 @@ class LoginViewModel {
     }
     
     var isAllowSegue: Bool = false
+    var isNewUser: String?
     
     var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
@@ -29,11 +30,14 @@ class LoginViewModel {
     func initLogin(phoneNum: String) {
         state = .loading
         AuthService.instance.login(phoneNum: phoneNum) { [weak self] status, error in
-            
-            if phoneNum == "" {
-                self?.alertMessage = "يرجى إدخال رقم جوال صحيح"
+            guard let self = self else {
+                return
+                
             }
-            guard let self = self else { return }
+            if phoneNum == "" {
+                self.alertMessage = "يرجى إدخال رقم جوال صحيح"
+            }
+            
             if let error = error {
                 self.state = .error
 //                self.isAllowSegue = false
@@ -41,6 +45,7 @@ class LoginViewModel {
             }
             else {
 //                self.isAllowSegue = true
+                self.isNewUser = status
                 self.state = .populated
                 self.updateLoadingStatus?()
             }

@@ -92,6 +92,10 @@ class InterestsVC: UIViewController {
         viewModel.initFetch()
     }
     
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        let homevc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "otp_view_controller")
+        present(homevc, animated: true, completion: nil)
+    }
     func showAlert(message: String) {
         let alertVC = UIAlertController(title: "تنبية", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "موافق", style: .default, handler: nil))

@@ -52,7 +52,7 @@
         <!--LoginVC-->
         <scene sceneID="N5q-uo-LrM">
             <objects>
-                <viewController storyboardIdentifier="login_view_controller" id="noN-Bg-1MM" customClass="LoginVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login_view_controller" modalPresentationStyle="fullScreen" id="noN-Bg-1MM" customClass="LoginVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5W-1m-vTX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -649,15 +649,34 @@
                                     <action selector="termsAndConditionBtnTapped:" destination="pVT-91-RuT" eventType="touchUpInside" id="DY9-ny-kQF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu1-sB-Bvl">
+                                <rect key="frame" x="90" y="244" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MC0-hF-vtU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="18"/>
+                                <color key="tintColor" red="0.69803921570000005" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="تسجيل الخروج" image="Icon-log-out">
+                                    <color key="titleColor" red="0.69803921568627447" green="0.031372549019607843" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="pVT-91-RuT" eventType="touchUpInside" id="tYM-aG-2Sl"/>
+                                    <action selector="termsAndConditionBtnTapped:" destination="pVT-91-RuT" eventType="touchUpInside" id="T4T-ot-XAS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGs-Kv-Sxf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zu1-sB-Bvl" firstAttribute="top" secondItem="CmO-hP-fyY" secondAttribute="bottom" constant="25" id="5c5-Ke-WAM"/>
                             <constraint firstItem="CmO-hP-fyY" firstAttribute="leading" secondItem="eGs-Kv-Sxf" secondAttribute="leading" constant="90" id="6xA-Pc-svp"/>
+                            <constraint firstItem="eGs-Kv-Sxf" firstAttribute="trailing" secondItem="Zu1-sB-Bvl" secondAttribute="trailing" constant="20" id="IVm-xL-nVS"/>
                             <constraint firstItem="eGs-Kv-Sxf" firstAttribute="trailing" secondItem="CmO-hP-fyY" secondAttribute="trailing" constant="20" id="ItP-G1-9Rv"/>
                             <constraint firstItem="DGc-kG-QSf" firstAttribute="leading" secondItem="eGs-Kv-Sxf" secondAttribute="leading" constant="90" id="K2r-4x-0d5"/>
                             <constraint firstItem="CmO-hP-fyY" firstAttribute="top" secondItem="DGc-kG-QSf" secondAttribute="bottom" constant="25" id="To1-Wd-W2t"/>
                             <constraint firstItem="eGs-Kv-Sxf" firstAttribute="trailing" secondItem="DGc-kG-QSf" secondAttribute="trailing" constant="25" id="XNy-mX-jdQ"/>
+                            <constraint firstItem="Zu1-sB-Bvl" firstAttribute="leading" secondItem="eGs-Kv-Sxf" secondAttribute="leading" constant="90" id="f4U-Gp-bzY"/>
                             <constraint firstItem="DGc-kG-QSf" firstAttribute="top" secondItem="eGs-Kv-Sxf" secondAttribute="top" constant="50" id="fNd-IW-9w9"/>
                         </constraints>
                     </view>
@@ -703,6 +722,9 @@
                                             <constraint firstAttribute="width" constant="70" id="hJM-OS-jeI"/>
                                         </constraints>
                                         <state key="normal" image="nextBtnImage"/>
+                                        <connections>
+                                            <action selector="doneBtnPressed:" destination="aWS-1q-it3" eventType="touchUpInside" id="cKT-Rs-fLU"/>
+                                        </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p2p-7w-nAR">
                                         <rect key="frame" x="10" y="72.5" width="330" height="431.5"/>
@@ -2496,10 +2518,10 @@
             </objects>
             <point key="canvasLocation" x="5448" y="1373"/>
         </scene>
-        <!--OffersVC-->
+        <!--PaymentVC-->
         <scene sceneID="Ibo-VR-rPr">
             <objects>
-                <viewController storyboardIdentifier="offer_vc" modalPresentationStyle="fullScreen" id="d3P-Rb-vfc" customClass="OffersVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="payment_vc" modalPresentationStyle="fullScreen" id="d3P-Rb-vfc" customClass="PaymentVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pE-g7-jwI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2511,9 +2533,12 @@
                                         <rect key="frame" x="385" y="58.5" width="13" height="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="d3P-Rb-vfc" eventType="touchUpInside" id="J3v-AC-aMa"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العروض" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-XN-cF9">
-                                        <rect key="frame" x="172" y="48.5" width="70.5" height="41.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-XN-cF9">
+                                        <rect key="frame" x="182" y="48.5" width="50" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2528,48 +2553,14 @@
                                     <constraint firstAttribute="trailing" secondItem="cLY-AP-avt" secondAttribute="trailing" constant="16" id="qnO-kM-ojr"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="81w-8c-y92">
-                                <rect key="frame" x="0.0" y="116" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4bU-Vn-Wfr"/>
-                                </constraints>
-                            </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VYY-JR-mnS">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
-                                <color key="backgroundColor" white="0.92531134680000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DLP-E8-qeZ">
-                                    <size key="itemSize" width="190" height="364"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="CGY-Gu-xex" customClass="OffersCell" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="364"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OBZ-we-XWl">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="364"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T3e-wt-Wq1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="364"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="T3e-wt-Wq1" secondAttribute="trailing" id="6b3-Yv-EYa"/>
-                                                <constraint firstAttribute="bottom" secondItem="T3e-wt-Wq1" secondAttribute="bottom" id="V22-F1-jpl"/>
-                                                <constraint firstItem="T3e-wt-Wq1" firstAttribute="leading" secondItem="OBZ-we-XWl" secondAttribute="leading" id="YRN-Du-c9Z"/>
-                                                <constraint firstItem="T3e-wt-Wq1" firstAttribute="top" secondItem="OBZ-we-XWl" secondAttribute="top" id="k75-qg-ChF"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="0.92531134680000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="190" height="364"/>
-                                        <connections>
-                                            <outlet property="offerProvierImage" destination="T3e-wt-Wq1" id="RoN-7o-sv5"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYf-bK-5Pk">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-2R-clv">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" red="0.0039215686269999999" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -2578,30 +2569,25 @@
                         <viewLayoutGuide key="safeArea" id="Rpt-ak-gZk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="81w-8c-y92" firstAttribute="top" secondItem="2a1-ce-H7W" secondAttribute="bottom" constant="16" id="0ov-9u-EFq"/>
                             <constraint firstItem="PT5-2R-clv" firstAttribute="centerX" secondItem="8pE-g7-jwI" secondAttribute="centerX" id="1aZ-cU-l4z"/>
-                            <constraint firstItem="81w-8c-y92" firstAttribute="leading" secondItem="Rpt-ak-gZk" secondAttribute="leading" id="4A7-Mx-hR3"/>
-                            <constraint firstItem="Rpt-ak-gZk" firstAttribute="trailing" secondItem="VYY-JR-mnS" secondAttribute="trailing" id="CWr-bZ-2iM"/>
-                            <constraint firstItem="VYY-JR-mnS" firstAttribute="top" secondItem="81w-8c-y92" secondAttribute="bottom" id="DaT-7d-wG9"/>
-                            <constraint firstItem="VYY-JR-mnS" firstAttribute="leading" secondItem="Rpt-ak-gZk" secondAttribute="leading" id="Epv-49-pEC"/>
+                            <constraint firstItem="Rpt-ak-gZk" firstAttribute="trailing" secondItem="gYf-bK-5Pk" secondAttribute="trailing" id="1ab-1m-WyN"/>
+                            <constraint firstItem="Rpt-ak-gZk" firstAttribute="bottom" secondItem="gYf-bK-5Pk" secondAttribute="bottom" id="BgK-1A-61k"/>
                             <constraint firstItem="2a1-ce-H7W" firstAttribute="trailing" secondItem="Rpt-ak-gZk" secondAttribute="trailing" id="Ic8-8C-orf"/>
                             <constraint firstItem="PT5-2R-clv" firstAttribute="centerY" secondItem="8pE-g7-jwI" secondAttribute="centerY" id="PUh-oR-MY4"/>
                             <constraint firstItem="2a1-ce-H7W" firstAttribute="leading" secondItem="Rpt-ak-gZk" secondAttribute="leading" id="QrH-5C-AzV"/>
-                            <constraint firstItem="Rpt-ak-gZk" firstAttribute="trailing" secondItem="81w-8c-y92" secondAttribute="trailing" id="SV2-rs-9YX"/>
-                            <constraint firstItem="Rpt-ak-gZk" firstAttribute="bottom" secondItem="VYY-JR-mnS" secondAttribute="bottom" id="XGb-AC-rqj"/>
                             <constraint firstItem="2a1-ce-H7W" firstAttribute="top" secondItem="8pE-g7-jwI" secondAttribute="top" id="lfm-c6-pLW"/>
-                            <constraint firstItem="81w-8c-y92" firstAttribute="trailing" secondItem="Rpt-ak-gZk" secondAttribute="trailing" id="ohz-kG-ZWv"/>
-                            <constraint firstItem="81w-8c-y92" firstAttribute="leading" secondItem="Rpt-ak-gZk" secondAttribute="leading" id="s4B-Jc-Mfa"/>
+                            <constraint firstItem="gYf-bK-5Pk" firstAttribute="top" secondItem="2a1-ce-H7W" secondAttribute="bottom" id="pUI-aa-duF"/>
+                            <constraint firstItem="gYf-bK-5Pk" firstAttribute="leading" secondItem="Rpt-ak-gZk" secondAttribute="leading" id="ppM-QL-UuQ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="offersCollectionView" destination="VYY-JR-mnS" id="hG4-SY-vjh"/>
                         <outlet property="spinner" destination="PT5-2R-clv" id="wLL-fu-nWh"/>
+                        <outlet property="webView" destination="gYf-bK-5Pk" id="7lw-0K-AMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeR-co-2Yt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6219" y="2113"/>
+            <point key="canvasLocation" x="7341" y="1373"/>
         </scene>
         <!--Provider CouponsVC-->
         <scene sceneID="1Vw-hd-m7V">
@@ -3220,6 +3206,7 @@
     <resources>
         <image name="Done_Icon" width="47" height="44"/>
         <image name="Group 2890" width="77.5" height="65.5"/>
+        <image name="Icon-log-out" width="26" height="26"/>
         <image name="Icon-mobile" width="17.128999710083008" height="27.406999588012695"/>
         <image name="Icon_calender" width="19.240999221801758" height="21.378999710083008"/>
         <image name="Icon_city" width="15.975000381469727" height="16.86199951171875"/>

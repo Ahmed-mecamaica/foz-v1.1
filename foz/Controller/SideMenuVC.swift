@@ -16,8 +16,7 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func cotactUsBtnTapped(_ sender: Any) {
-        //next line to log out
-        LoginResponse.current = nil
+        
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let contactUsVC = storyboard.instantiateViewController(withIdentifier: "ChatVC")
         present(contactUsVC, animated: true, completion: nil)
@@ -29,5 +28,10 @@ class SideMenuVC: UIViewController {
         present(contactUsVC, animated: true, completion: nil)
     }
     
-
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        LoginResponse.current = nil
+        let loginvc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "login_view_controller") as! LoginVC
+        present(loginvc, animated: true, completion: nil)
+    }
+    
 }

@@ -213,6 +213,7 @@ class ClientService {
     //MARK: contact us VC calls
     func sendMessage(message: String, completion: @escaping (String, Error?) -> ()) {
         taskForPostRequest(url: Endpoint.contactUs.url, body: ContactUsRequest(message: message), responseType: SendMessageResponse.self) { result, error in
+            print("result of send contact us \(result)")
             if let error = error {
                 completion("False", error)
             }
@@ -224,6 +225,7 @@ class ClientService {
     
     func getAllMessage( completion: @escaping ([ContactusMessageArray], Error?) -> ()) {
         taskForGetRequest(url: Endpoint.contactUs.url, response: ContactUsResponse.self) { result, error in
+            print("result of get contact us \(result)")
             if let error = error {
                 completion([], error)
             }
