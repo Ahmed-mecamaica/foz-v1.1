@@ -51,6 +51,11 @@
 		A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */; };
 		A872EAB92726D3ED00FA676D /* ProviderAdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */; };
 		A872EB21272A9B7100FA676D /* OtpErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB20272A9B7000FA676D /* OtpErrorResponse.swift */; };
+		A872EB24272EC44C00FA676D /* MarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB23272EC44B00FA676D /* MarketCell.swift */; };
+		A872EB27272EC48200FA676D /* MarketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB26272EC48200FA676D /* MarketListViewModel.swift */; };
+		A872EB2A272EC4AC00FA676D /* MarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB29272EC4AC00FA676D /* MarketVC.swift */; };
+		A872EB2E272EC4F500FA676D /* MarketListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB2D272EC4F500FA676D /* MarketListCellViewModel.swift */; };
+		A872EB30272EC59900FA676D /* MarketCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EB2F272EC59900FA676D /* MarketCouponsResponse.swift */; };
 		A873D3E2271C1ECF009EDFCF /* SendMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */; };
 		A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */; };
 		A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */; };
@@ -175,6 +180,11 @@
 		A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsCellViewModel.swift; sourceTree = "<group>"; };
 		A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderAdResponse.swift; sourceTree = "<group>"; };
 		A872EB20272A9B7000FA676D /* OtpErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpErrorResponse.swift; sourceTree = "<group>"; };
+		A872EB23272EC44B00FA676D /* MarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCell.swift; sourceTree = "<group>"; };
+		A872EB26272EC48200FA676D /* MarketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListViewModel.swift; sourceTree = "<group>"; };
+		A872EB29272EC4AC00FA676D /* MarketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketVC.swift; sourceTree = "<group>"; };
+		A872EB2D272EC4F500FA676D /* MarketListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListCellViewModel.swift; sourceTree = "<group>"; };
+		A872EB2F272EC59900FA676D /* MarketCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCouponsResponse.swift; sourceTree = "<group>"; };
 		A873D3E1271C1ECE009EDFCF /* SendMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageResponse.swift; sourceTree = "<group>"; };
 		A873D3E3271C4656009EDFCF /* TermsAndConditionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionResponse.swift; sourceTree = "<group>"; };
 		A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewModel.swift; sourceTree = "<group>"; };
@@ -338,6 +348,31 @@
 			path = Auction;
 			sourceTree = "<group>";
 		};
+		A872EB22272EC2B700FA676D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				A872EB23272EC44B00FA676D /* MarketCell.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		A872EB25272EC46200FA676D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				A872EB26272EC48200FA676D /* MarketListViewModel.swift */,
+				A872EB2D272EC4F500FA676D /* MarketListCellViewModel.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		A872EB28272EC48D00FA676D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				A872EB29272EC4AC00FA676D /* MarketVC.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
 		A87A07C626C91552001CE1E7 = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +446,7 @@
 				A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */,
 				A807D8672709A4D1002FADED /* Auctions */,
 				A807D8662709A4B8002FADED /* Offers  */,
+				A872EB28272EC48D00FA676D /* Market */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +469,7 @@
 				A8A0614427183408000A546F /* ContactUsCell.swift */,
 				A872EB1D272A932000FA676D /* Auction */,
 				A8D8407627255B9F00D65632 /* Offers */,
+				A872EB22272EC2B700FA676D /* Market */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +509,7 @@
 				A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */,
 				A872EB1F272A93B100FA676D /* Auction */,
 				A8D8407927255C3F00D65632 /* Offers */,
+				A872EB25272EC46200FA676D /* Market */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,6 +567,7 @@
 				A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */,
 				A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */,
 				A872EB20272A9B7000FA676D /* OtpErrorResponse.swift */,
+				A872EB2F272EC59900FA676D /* MarketCouponsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -813,6 +852,7 @@
 				A873D3E8271C4976009EDFCF /* TermsAndConditionVC.swift in Sources */,
 				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
 				A8C00F6226D79F13001332A5 /* RegisterUserResponse.swift in Sources */,
+				A872EB27272EC48200FA676D /* MarketListViewModel.swift in Sources */,
 				A807D85727034016002FADED /* InactiveAuctionsCellViewModel.swift in Sources */,
 				A8D8407827255BEB00D65632 /* ProvidersListCell.swift in Sources */,
 				A8D8407D27255C8700D65632 /* ProvidersListCellViewModel.swift in Sources */,
@@ -836,6 +876,8 @@
 				A8C00F2E26D507AD001332A5 /* OtpRequest.swift in Sources */,
 				A807D84526FC8E42002FADED /* InactiveAuctionListCellinAuctions.swift in Sources */,
 				A8D8407B27255C6B00D65632 /* ProvidersListViewModel.swift in Sources */,
+				A872EB2E272EC4F500FA676D /* MarketListCellViewModel.swift in Sources */,
+				A872EB2A272EC4AC00FA676D /* MarketVC.swift in Sources */,
 				A807D86D2709BC4C002FADED /* PaymentVC.swift in Sources */,
 				A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
@@ -858,6 +900,7 @@
 				A8C00F6026D6595D001332A5 /* RegisterUserRequest.swift in Sources */,
 				A8C00F2C26D4FC25001332A5 /* OtpViewModel.swift in Sources */,
 				A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */,
+				A872EB24272EC44C00FA676D /* MarketCell.swift in Sources */,
 				A807D84726FC8EAF002FADED /* InactiveAuctionCellinAuctions.swift in Sources */,
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
 				A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */,
@@ -881,6 +924,7 @@
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 				A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */,
+				A872EB30272EC59900FA676D /* MarketCouponsResponse.swift in Sources */,
 				A807D84F27007172002FADED /* ActiveAuctionViewModel.swift in Sources */,
 				A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */,
 				A8A1EE4726D7C99300A6D044 /* InterestListCellViewModel.swift in Sources */,

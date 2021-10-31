@@ -56,9 +56,20 @@ class RegisterUserViewModel {
         })
     }
     
+    func containsOnlyLetters(input: String) -> Bool {
+       for chr in input {
+          if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") ) {
+              print("status of validate is false")
+             return false
+          }
+       }
+        print("status of validate is false")
+       return true
+    }
+    
     func initSignupUser(userName: String, birthDate: String, city: String, gender: String, incomeLevel: String) {
         state = .loading
-        if userName == "" || birthDate == "" || city == "" || gender == "" || incomeLevel == "" {
+        if  birthDate == "" || city == "" || gender == "" || incomeLevel == "" || containsOnlyLetters(input: userName) == false {
             self.state = .empty
             self.alertMessage = "ماتشغلش دماغك وإملا كل الخانات اللي قدامك ديه"
         } else {

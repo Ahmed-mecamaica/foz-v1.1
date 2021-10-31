@@ -63,7 +63,9 @@ class RegisterUserVC: UIViewController, UITextFieldDelegate {
         //date picker mode
         datePicker.calendar = .none
         datePicker.datePickerMode = .date
-        
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -16, to: Date())
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -80, to: Date())
+
         //date picker style
         if #available(iOS 14.0, *) {
             datePicker.preferredDatePickerStyle = .wheels

@@ -27,6 +27,7 @@ class ClientService {
         case defaultAdPhoto
         case providerCoupons(String)
         case providerAd(String)
+        case market
         
         var stringValue: String {
             switch self {
@@ -54,6 +55,8 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/offer/coupons?provider_id=" + providerId
             case .providerAd(let providerId):
                 return AuthService.Endpoints.base + "api/ad/offer?provider_id=" + providerId
+            case .market:
+                return AuthService.Endpoints.base + "api/market"
             }
         }
         
@@ -281,5 +284,20 @@ class ClientService {
                 completion(reult, nil)
             }
         }
+    }
+    
+    //MARK: market coupons vc
+    
+    func getAllMarketCoupon(completion: @escaping (MarketCouponsResponse?, Error?) -> ()) {
+        
+        taskForGetRequest(url: Endpoint.market.url, response: MarketCouponsResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
+            }
+        }
+        
     }
 }
