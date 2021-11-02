@@ -35,6 +35,9 @@
 		A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D870270B2E9B002FADED /* ProviderCouponsVC.swift */; };
 		A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D872270B2FBB002FADED /* ProviderCouponsCell.swift */; };
 		A807D875270B3E4A002FADED /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D874270B3E49002FADED /* CurveView.swift */; };
+		A836A0DF273004F400165C93 /* CouponDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836A0DE273004F400165C93 /* CouponDetailsVC.swift */; };
+		A836A0E12730051500165C93 /* CouponDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836A0E02730051500165C93 /* CouponDetailsViewModel.swift */; };
+		A836A0E427300BD000165C93 /* CouponDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836A0E327300BD000165C93 /* CouponDetailsResponse.swift */; };
 		A8556DAD271434A300BBE815 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8556DAC271434A200BBE815 /* GoogleService-Info.plist */; };
 		A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566126CABFA80014BC35 /* LoginVC.swift */; };
 		A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A566326CD0B2C0014BC35 /* CurveShadowView.swift */; };
@@ -163,6 +166,9 @@
 		A807D870270B2E9B002FADED /* ProviderCouponsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsVC.swift; sourceTree = "<group>"; };
 		A807D872270B2FBB002FADED /* ProviderCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsCell.swift; sourceTree = "<group>"; };
 		A807D874270B3E49002FADED /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
+		A836A0DE273004F400165C93 /* CouponDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailsVC.swift; sourceTree = "<group>"; };
+		A836A0E02730051500165C93 /* CouponDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailsViewModel.swift; sourceTree = "<group>"; };
+		A836A0E327300BD000165C93 /* CouponDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailsResponse.swift; sourceTree = "<group>"; };
 		A8556DAB2714302600BBE815 /* foz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = foz.entitlements; sourceTree = "<group>"; };
 		A8556DAC271434A200BBE815 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A85A566126CABFA80014BC35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -322,6 +328,15 @@
 			path = Auctions;
 			sourceTree = "<group>";
 		};
+		A836A0E227300BAD00165C93 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				A872EB2F272EC59900FA676D /* MarketCouponsResponse.swift */,
+				A836A0E327300BD000165C93 /* CouponDetailsResponse.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
 		A872EB1D272A932000FA676D /* Auction */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +376,7 @@
 			children = (
 				A872EB26272EC48200FA676D /* MarketListViewModel.swift */,
 				A872EB2D272EC4F500FA676D /* MarketListCellViewModel.swift */,
+				A836A0E02730051500165C93 /* CouponDetailsViewModel.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -369,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				A872EB29272EC4AC00FA676D /* MarketVC.swift */,
+				A836A0DE273004F400165C93 /* CouponDetailsVC.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -547,6 +564,7 @@
 		A8C00F2426D3C718001332A5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				A836A0E227300BAD00165C93 /* Market */,
 				A8C00F2526D3C72C001332A5 /* LoginResponse.swift */,
 				A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */,
 				A8C00F6126D79F13001332A5 /* RegisterUserResponse.swift */,
@@ -567,7 +585,6 @@
 				A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */,
 				A872EAB82726D3ED00FA676D /* ProviderAdResponse.swift */,
 				A872EB20272A9B7000FA676D /* OtpErrorResponse.swift */,
-				A872EB2F272EC59900FA676D /* MarketCouponsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -845,6 +862,7 @@
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A807D84B26FCC3C2002FADED /* SoldAuctionListCellinAuctions.swift in Sources */,
 				A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */,
+				A836A0DF273004F400165C93 /* CouponDetailsVC.swift in Sources */,
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
 				A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
@@ -866,6 +884,7 @@
 				A873D3EA271C681E009EDFCF /* ResendOtpResponse.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A807D875270B3E4A002FADED /* CurveView.swift in Sources */,
+				A836A0E12730051500165C93 /* CouponDetailsViewModel.swift in Sources */,
 				A807D85B2703431F002FADED /* InactiveAuctionsResponse.swift in Sources */,
 				A8A06143271827D2000A546F /* ContactUsResponse.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
@@ -922,6 +941,7 @@
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
 				A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */,
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
+				A836A0E427300BD000165C93 /* CouponDetailsResponse.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 				A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */,
 				A872EB30272EC59900FA676D /* MarketCouponsResponse.swift in Sources */,

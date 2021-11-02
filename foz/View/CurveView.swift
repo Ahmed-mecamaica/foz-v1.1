@@ -21,7 +21,7 @@ extension UIView {
     func CurveFooterViewInsideMarketVC(height: CGFloat) {
         self.layer.cornerRadius = height/2
         self.layer.borderColor = #colorLiteral(red: 0.9137254902, green: 0.5803921569, blue: 0.03137254902, alpha: 1)
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 2
     }
     
     func CurveHeaderViewInsideMarketVC() {
@@ -29,4 +29,6 @@ extension UIView {
         self.layer.borderColor = #colorLiteral(red: 0.9137254902, green: 0.5803921569, blue: 0.03137254902, alpha: 1)
         self.layer.borderWidth = 1
     }
+    
+    
 }

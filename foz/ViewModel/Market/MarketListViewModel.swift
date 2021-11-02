@@ -9,6 +9,10 @@ import Foundation
 
 class MarketListViewModel {
     
+    let group = DispatchGroup()
+    
+    var adsPhotoData: DefaultAdsData?
+    
     var marketCouponsData: [MarketCouponsData] = [MarketCouponsData]()
     
     private var marketListCellViewModel: [MarketListCellViewModel] = [MarketListCellViewModel]() {
@@ -27,6 +31,12 @@ class MarketListViewModel {
         }
     }
     
+//    var state2: State = .empty {
+//        didSet {
+//            self.updateLoadingStatus?()
+//        }
+//    }
+    
     var alertMesssage: String? {
         didSet {
             self.showAlertClosure?()
@@ -43,17 +53,39 @@ class MarketListViewModel {
     
     func initFetchMarketData() {
         state = .loading
+        group.enter()
         ClientService.shared.getAllMarketCoupon { [weak self] result, error in
             guard let self = self else { return }
             if let error = error {
                 self.state = .error
                 self.alertMesssage = error.localizedDescription
+                self.group.leave()
             } else {
-                
                 self.proccessFetchedMarketCouponData(data: result!.data)
                 self.state = .populated
+                self.group.leave()
             }
         }
+    }
+    
+    func initAdsPhoto() {
+        state = .loading
+        
+        group.notify(queue: .main) {
+            ClientService.shared.getAdsPhoto { [weak self] result, error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.state = .error
+                    self.alertMesssage = error.localizedDescription
+                    
+                } else {
+                    self.state = .populated
+                    self.adsPhotoData = result?.data
+                    
+                }
+            }
+        }
+        
     }
     
     func getCellViewModel(at indesxPath: IndexPath) -> MarketListCellViewModel {
@@ -62,9 +94,8 @@ class MarketListViewModel {
     
     func createCellViewModel(data: MarketCouponsData) -> MarketListCellViewModel {
         let discountText = data.discount + "%"
-        let realPrice = data.offer_price +  " ريال "
-        let priceBeforDiscount = data.price_before_discount +  " ريال "
-        return MarketListCellViewModel(providerImage: data.provider_image, priceBeforDiscout: priceBeforDiscount, discount: discountText, price: realPrice)
+        
+        return MarketListCellViewModel(providerImage: data.provider_image, priceBeforDiscout: data.price_before_discount, discount: discountText, price: data.offer_price)
     }
     
     private func proccessFetchedMarketCouponData(data: [MarketCouponsData]) {

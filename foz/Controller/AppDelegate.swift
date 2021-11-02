@@ -90,9 +90,10 @@ extension UIViewController {
     }
     
     func hideKeyboardWhenPanGestureAround() {
-        let tap = UIPanGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        let pan = UISwipeGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        pan.direction = .down
+        pan.cancelsTouchesInView = false
+        view.addGestureRecognizer(pan)
     }
     
     @objc func dismissKeyboard(target: AnyObject) {

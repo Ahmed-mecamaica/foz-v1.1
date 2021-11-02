@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MarketVC: UIViewController {
 
@@ -13,6 +14,7 @@ class MarketVC: UIViewController {
     @IBOutlet weak var headerAdImage: UIImageView!
     @IBOutlet weak var marketCouponCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     lazy var viewModel: MarketListViewModel = {
         return MarketListViewModel()
     }()
@@ -31,11 +33,13 @@ class MarketVC: UIViewController {
     
     func initCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: marketCouponCollectionView.frame.width/2 - 20, height: 300)
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        flowLayout.itemSize = CGSize(width: marketCouponCollectionView.frame.width/2 - 30, height: 300)
+        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 12, bottom: 5, right: 12)
 //        flowLayout.scrollDirection = .
         self.marketCouponCollectionView.setCollectionViewLayout(flowLayout, animated: true)
     }
+    
+    
     
     func initFetchMarketData() {
         viewModel.showAlertClosure = { [weak self] in
@@ -56,21 +60,24 @@ class MarketVC: UIViewController {
                     case .empty, .error:
                         self!.spinner.stopAnimating()
                     UIView.animate(withDuration: 0.5) {
-                            
+                        self!.headerAdImage.alpha = 0
                             self!.marketCouponCollectionView.alpha = 0
                         }
                         
                     case .populated:
                         self!.spinner.stopAnimating()
-                    UIView.animate(withDuration: 0.5) {
-                            
+                        if let adImageUrl = self!.viewModel.adsPhotoData?.image_url {
+                            self?.headerAdImage.sd_setImage(with: URL(string: adImageUrl))
+                        }
+                        UIView.animate(withDuration: 0.5) {
+                            self!.headerAdImage.alpha = 1
                             self!.marketCouponCollectionView.alpha = 1
                         }
                         
                     case .loading:
                         self!.spinner.startAnimating()
-                    UIView.animate(withDuration: 0.5) {
-                            
+                        UIView.animate(withDuration: 0.5) {
+                            self!.headerAdImage.alpha = 0
                             self!.marketCouponCollectionView.alpha = 0
                         }
                     }
@@ -82,7 +89,7 @@ class MarketVC: UIViewController {
                 self?.marketCouponCollectionView.reloadData()
             }
         }
-        
+        viewModel.initAdsPhoto()
         viewModel.initFetchMarketData()
     }
 
@@ -110,7 +117,18 @@ extension MarketVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cellvm = viewModel.getCellViewModel(at: indexPath)
         
         cell.marketListCellViewModel = cellvm
-        print("cell at index \(cell.discountLbl.text)")
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let providerCouponsVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "market-coupon-details-vc") as! CouponDetailsVC
+        self.viewModel.userPressed(at: indexPath)
+        let selectedMarket = viewModel.selectedMarket
+        CouponDetailsVC.providerId = "\(selectedMarket!.id)"
+        present(providerCouponsVC, animated: true, completion: nil)
+//        print("data passed successfully and provider id is \()")
+
     }
 }

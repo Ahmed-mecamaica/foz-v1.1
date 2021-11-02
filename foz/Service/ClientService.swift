@@ -28,6 +28,7 @@ class ClientService {
         case providerCoupons(String)
         case providerAd(String)
         case market
+        case couponDetails(String)
         
         var stringValue: String {
             switch self {
@@ -57,6 +58,8 @@ class ClientService {
                 return AuthService.Endpoints.base + "api/ad/offer?provider_id=" + providerId
             case .market:
                 return AuthService.Endpoints.base + "api/market"
+            case .couponDetails(let providerId):
+                return AuthService.Endpoints.base + "api/market/view?market_id=" + providerId
             }
         }
         
@@ -291,6 +294,18 @@ class ClientService {
     func getAllMarketCoupon(completion: @escaping (MarketCouponsResponse?, Error?) -> ()) {
         
         taskForGetRequest(url: Endpoint.market.url, response: MarketCouponsResponse.self) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(result, nil)
+            }
+        }
+    }
+    
+    func getCouponDetails(providerId: String, completion: @escaping (CouponDetailsResponse?, Error?) -> ()) {
+        
+        taskForGetRequest(url: Endpoint.couponDetails(providerId).url, response: CouponDetailsResponse.self) { result, error in
             if let error = error {
                 completion(nil, error)
             }
