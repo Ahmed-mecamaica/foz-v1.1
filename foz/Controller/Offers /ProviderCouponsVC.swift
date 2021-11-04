@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 import AVFoundation
 import SDWebImage
 
@@ -35,11 +36,15 @@ class ProviderCouponsVC: UIViewController {
     let fillRadioBtnImageName = "circle.dashed.inset.fill"
     static var providerID = ""
     static var providerImageUrl = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        discountTblView.rowHeight = 150
+        discountTblView.estimatedRowHeight = 150
         discountTblView.delegate = self
         discountTblView.dataSource = self
+        
         providerImage.sd_setImage(with: URL(string: ProviderCouponsVC.providerImageUrl))
         initPaymentView()
         initProviderCouponsData()
@@ -47,11 +52,14 @@ class ProviderCouponsVC: UIViewController {
         print("provider id \(ProviderCouponsVC.providerID)")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        discountTblView.isSkeletonable = true
+        discountTblView.showGradientSkeleton(usingGradient: .init(baseColor: .lightGray), animated: true, delay: 0.25, transition: .crossDissolve(0.25))
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-           
-        }
 
     }
     
@@ -109,7 +117,7 @@ class ProviderCouponsVC: UIViewController {
                         self!.spinner.stopAnimating()
                         
                     UIView.animate(withDuration: 0.5) {
-                            self!.discountTblView.alpha = 0
+//                            self!.discountTblView.alpha = 0
                             self?.videoView.alpha = 0
                         }
                         
@@ -124,7 +132,7 @@ class ProviderCouponsVC: UIViewController {
                             
                         }
                         UIView.animate(withDuration: 0.5) {
-                            self!.discountTblView.alpha = 1
+//                            self!.discountTblView.alpha = 1
                             self?.videoView.alpha = 1
                         }
                         
@@ -132,14 +140,16 @@ class ProviderCouponsVC: UIViewController {
                         self!.spinner.startAnimating()
                         self?.videoView.alpha = 0
                     UIView.animate(withDuration: 0.5) {
-                            self!.discountTblView.alpha = 0
+//                            self!.discountTblView.alpha = 0
                         }
                     }
             }
         }
         
         viewModel.reloadCollectionViewClousure = { [weak self] () in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self!.discountTblView.stopSkeletonAnimation()
+                self!.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
                 self?.discountTblView.reloadData()
             }
         }
@@ -249,14 +259,20 @@ class ProviderCouponsVC: UIViewController {
     
 }
 
-extension ProviderCouponsVC: UITableViewDelegate, UITableViewDataSource {
+extension ProviderCouponsVC: UITableViewDelegate, SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProviderCouponsCell
+        cell.buyHalfView.backgroundColor = #colorLiteral(red: 0.007843137255, green: 0.5607843137, blue: 0.5607843137, alpha: 1)
+        cell.discountHalfView.backgroundColor = #colorLiteral(red: 0.007843137255, green: 0.5607843137, blue: 0.5607843137, alpha: 1)
         cell.lineOnPriceBeforDiscount.transform = CGAffineTransform(rotationAngle: 0)
         let cellvm = viewModel.getCellViewModel(at: indexPath)
         cell.providerCouponsCellViewModel = cellvm
         return cell
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "cell"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -273,7 +289,7 @@ extension ProviderCouponsVC: UITableViewDelegate, UITableViewDataSource {
         if viewModel.isAllowSegue {
             PaymentVC.screen = "offer"
             PaymentVC.couponPrice = "\(viewModel.selectedCoupon!.price_after_discount)"
-            PaymentVC.couponId = "\(viewModel.selectedCoupon!.id)" 
+            PaymentVC.couponId = "\(viewModel.selectedCoupon!.id)"
             return indexPath
         }
         else {

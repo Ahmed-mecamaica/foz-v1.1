@@ -9,7 +9,7 @@ target 'foz' do
 	pod 'SDWebImage'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Messaging'
-
+	pod 'SkeletonView'
   target 'fozTests' do
     inherit! :search_paths
     # Pods for testing

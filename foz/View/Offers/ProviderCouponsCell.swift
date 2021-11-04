@@ -14,6 +14,9 @@ class ProviderCouponsCell: UITableViewCell {
     @IBOutlet weak var lineOnPriceBeforDiscount: UIView!
     @IBOutlet weak var couponCodeLbl: UILabel!
     @IBOutlet weak var expireDateLbl: UILabel!
+    @IBOutlet weak var discountHalfView: CurveView!
+    @IBOutlet weak var buyHalfView: CurveView!
+    
     
     
     var providerCouponsCellViewModel: ProviderCouponsCellViewModel? {

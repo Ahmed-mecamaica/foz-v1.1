@@ -95,11 +95,13 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SkeletonView (1.25.2)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Messaging
   - SDWebImage
+  - SkeletonView
 
 SPEC REPOS:
   trunk:
@@ -115,6 +117,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SkeletonView
 
 SPEC CHECKSUMS:
   Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
@@ -129,7 +132,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SkeletonView: 820b2bbd180d7408f3f03b6462cfc3cac39d2ef2
 
-PODFILE CHECKSUM: f0a9380436cb316c5f98a182e6d693bae3015bc5
+PODFILE CHECKSUM: 2f4ada4a9ea5ee46f26d471ef83131edc8c9169b
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
