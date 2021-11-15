@@ -7,11 +7,15 @@
 
 import Foundation
 
-class ClientService {
+protocol APIServiceProtocol {
+    func getInactiveAuctionsData( completion: @escaping (InactiveAuctionsResponse?, Error? ) -> () )
+}
+
+class ClientService: APIServiceProtocol {
     
     static let shared = ClientService()
     
-    private init() {}
+//    private init() {}
     
     enum Endpoint {
         
@@ -191,6 +195,8 @@ class ClientService {
     }
     
     //MARK: inactive auction screen
+    
+    
     
     func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, Error?) -> Void) {
         let task = taskForGetRequest(url: Endpoint.inactiveAuction.url, response: InactiveAuctionsResponse.self) { result, error in

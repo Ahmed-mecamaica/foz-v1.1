@@ -1,0 +1,32 @@
+{
+    "state": "Success",
+    "data": [
+        {
+            "id": 2,
+            "title": "موبيل أوبو",
+            "description": "كن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.\r\n",
+            "status": "inactive",
+            "coupon_id": 2,
+            "product_id": null,
+            "start_price": "5",
+            "end_price": "90",
+            "min_bid_amount": "1",
+            "publish_date": "2021-09-21 11:43:55",
+            "image": "public/images/auctions/mobile.png",
+            "video": "",
+            "duration": 10,
+            "created_at": "2021-09-21T11:43:55.000000Z",
+            "updated_at": "2021-09-21T11:43:55.000000Z",
+            "deleted_at": null,
+            "created_by": null,
+            "updated_by": null,
+            "image_url": "https://foz.qbizns.com/current/storage/images/auctions/mobile.png",
+            "provider_image": "https://foz.qbizns.com/current/storage/providers/biik.png",
+            "serial_number": "52109212",
+            "time": "11:43:55",
+            "createby": "",
+            "updateby": ""
+        }
+    ]
+}
+

@@ -9,6 +9,8 @@ import Foundation
 
 class InactiveAuctionsListViewModel {
     
+    var apiService: APIServiceProtocol!
+    
     var InactiveAuctionData: [AuctionData] = [AuctionData]()
     
     private var inActiveAuctionCellViewModel: [InactiveAuctionsCellViewModel] = [InactiveAuctionsCellViewModel]() {
@@ -39,10 +41,13 @@ class InactiveAuctionsListViewModel {
     
     var selectedInactiveAuction: AuctionData?
 
+    init(apiService: APIServiceProtocol = ClientService()) {
+        self.apiService = apiService
+    }
     
     func initData() {
         state = .loading
-        ClientService.shared.getInactiveAuctionsData { [weak self] result, error in
+        apiService.getInactiveAuctionsData { [weak self] result, error in
             guard let self = self else { return }
             if let error = error {
                 self.state = .error

@@ -30,6 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        let urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true)
+         let host = urlComponent?.host
+         if host == "deepLinkingTest" {
+             let loginvc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "login_view_controller") as? LoginVC
+             window?.rootViewController = loginvc
+         }
+        return true
+    }
 
 }
 
