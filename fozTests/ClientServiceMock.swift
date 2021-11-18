@@ -8,12 +8,31 @@
 import XCTest
 @testable import foz
 class ClientServiceMock: APIServiceProtocol {
-    func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, Error?) -> ()) {
+    
+    
+    
+    var fetchInactiveAuctionIsCalled = false
+    var taskForGetRequest = false
+    
+    
+    var inactiveAuctions: InactiveAuctionsResponse?
+    var completionClosure:((InactiveAuctionsResponse?, APIError?) -> ())!
+    
+    func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, APIError?) -> ()) {
         fetchInactiveAuctionIsCalled = true
+        
+        completionClosure = completion
+    }
+    
+    func fetchSuccess() {
+        completionClosure(inactiveAuctions, nil)
+    }
+    
+    func fetchFail(error: APIError?) {
+        completionClosure(nil, error)
     }
     
 
-   var fetchInactiveAuctionIsCalled = false
-    var taskForGetRequest = false
+   
     
 }

@@ -52,6 +52,20 @@
 		A8636B812742541A0039F134 /* Bundle+unitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B802742541A0039F134 /* Bundle+unitTest.swift */; };
 		A8636B8327427DDF0039F134 /* InactiveAuctionsListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B8227427DDF0039F134 /* InactiveAuctionsListViewModelTest.swift */; };
 		A8636B85274283550039F134 /* ClientServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B84274283550039F134 /* ClientServiceMock.swift */; };
+		A8636B882743DA250039F134 /* AdsCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B872743DA240039F134 /* AdsCategoryResponse.swift */; };
+		A8636B8A2743DADB0039F134 /* AdsInsideCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B892743DADB0039F134 /* AdsInsideCategoryResponse.swift */; };
+		A8636B8D2744E9130039F134 /* AdsHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B8C2744E9130039F134 /* AdsHomeVC.swift */; };
+		A8636B902744EC6F0039F134 /* AdsHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B8F2744EC6F0039F134 /* AdsHomeCell.swift */; };
+		A8636B932744ED750039F134 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B922744ED750039F134 /* CategoryListViewModel.swift */; };
+		A8636B952744ED860039F134 /* CategoryListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B942744ED860039F134 /* CategoryListCellViewModel.swift */; };
+		A8636B972744F3500039F134 /* AdsCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B962744F3500039F134 /* AdsCategoryCell.swift */; };
+		A8636B99274539A50039F134 /* AdsInsideCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B98274539A50039F134 /* AdsInsideCategoryVC.swift */; };
+		A8636B9B27453BCE0039F134 /* AdsInsideCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B9A27453BCE0039F134 /* AdsInsideCategoryCell.swift */; };
+		A8636B9D27453C390039F134 /* AdsInsideCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B9C27453C390039F134 /* AdsInsideCategoryViewModel.swift */; };
+		A8636B9F27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636B9E27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift */; };
+		A8636BA1274639E80039F134 /* AdDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA0274639E70039F134 /* AdDetailsResponse.swift */; };
+		A8636BA5274642340039F134 /* AdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA4274642340039F134 /* AdDetailsViewModel.swift */; };
+		A8636BA7274644A80039F134 /* AdDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA6274644A80039F134 /* AdDetailsVC.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
 		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
@@ -189,6 +203,20 @@
 		A8636B802742541A0039F134 /* Bundle+unitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+unitTest.swift"; sourceTree = "<group>"; };
 		A8636B8227427DDF0039F134 /* InactiveAuctionsListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveAuctionsListViewModelTest.swift; sourceTree = "<group>"; };
 		A8636B84274283550039F134 /* ClientServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServiceMock.swift; sourceTree = "<group>"; };
+		A8636B872743DA240039F134 /* AdsCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCategoryResponse.swift; sourceTree = "<group>"; };
+		A8636B892743DADB0039F134 /* AdsInsideCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsInsideCategoryResponse.swift; sourceTree = "<group>"; };
+		A8636B8C2744E9130039F134 /* AdsHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsHomeVC.swift; sourceTree = "<group>"; };
+		A8636B8F2744EC6F0039F134 /* AdsHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsHomeCell.swift; sourceTree = "<group>"; };
+		A8636B922744ED750039F134 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		A8636B942744ED860039F134 /* CategoryListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCellViewModel.swift; sourceTree = "<group>"; };
+		A8636B962744F3500039F134 /* AdsCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCategoryCell.swift; sourceTree = "<group>"; };
+		A8636B98274539A50039F134 /* AdsInsideCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsInsideCategoryVC.swift; sourceTree = "<group>"; };
+		A8636B9A27453BCE0039F134 /* AdsInsideCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsInsideCategoryCell.swift; sourceTree = "<group>"; };
+		A8636B9C27453C390039F134 /* AdsInsideCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsInsideCategoryViewModel.swift; sourceTree = "<group>"; };
+		A8636B9E27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsInsideCategoryCellViewModel.swift; sourceTree = "<group>"; };
+		A8636BA0274639E70039F134 /* AdDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsResponse.swift; sourceTree = "<group>"; };
+		A8636BA4274642340039F134 /* AdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewModel.swift; sourceTree = "<group>"; };
+		A8636BA6274644A80039F134 /* AdDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsVC.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
 		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
@@ -347,6 +375,48 @@
 			path = Market;
 			sourceTree = "<group>";
 		};
+		A8636B862743D9F60039F134 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				A8636B872743DA240039F134 /* AdsCategoryResponse.swift */,
+				A8636B892743DADB0039F134 /* AdsInsideCategoryResponse.swift */,
+				A8636BA0274639E70039F134 /* AdDetailsResponse.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		A8636B8B2744E8130039F134 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				A8636B8C2744E9130039F134 /* AdsHomeVC.swift */,
+				A8636B98274539A50039F134 /* AdsInsideCategoryVC.swift */,
+				A8636BA6274644A80039F134 /* AdDetailsVC.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		A8636B8E2744EC4A0039F134 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				A8636B8F2744EC6F0039F134 /* AdsHomeCell.swift */,
+				A8636B962744F3500039F134 /* AdsCategoryCell.swift */,
+				A8636B9A27453BCE0039F134 /* AdsInsideCategoryCell.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		A8636B912744ED240039F134 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				A8636B922744ED750039F134 /* CategoryListViewModel.swift */,
+				A8636B942744ED860039F134 /* CategoryListCellViewModel.swift */,
+				A8636B9C27453C390039F134 /* AdsInsideCategoryViewModel.swift */,
+				A8636B9E27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift */,
+				A8636BA4274642340039F134 /* AdDetailsViewModel.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
 		A872EB1D272A932000FA676D /* Auction */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +547,7 @@
 				A8A0614A2718390B000A546F /* ContactUsVC.swift */,
 				A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */,
 				A807D8672709A4D1002FADED /* Auctions */,
+				A8636B8B2744E8130039F134 /* Ads */,
 				A807D8662709A4B8002FADED /* Offers  */,
 				A872EB28272EC48D00FA676D /* Market */,
 			);
@@ -500,6 +571,7 @@
 				A807D83C26FB3483002FADED /* HomeTableViewCell.swift */,
 				A8A0614427183408000A546F /* ContactUsCell.swift */,
 				A872EB1D272A932000FA676D /* Auction */,
+				A8636B8E2744EC4A0039F134 /* Ads */,
 				A8D8407627255B9F00D65632 /* Offers */,
 				A872EB22272EC2B700FA676D /* Market */,
 			);
@@ -540,6 +612,7 @@
 				A8A0614827183460000A546F /* ContactUsMessageCellViewModel.swift */,
 				A873D3E5271C4745009EDFCF /* TermsAndConditionViewModel.swift */,
 				A872EB1F272A93B100FA676D /* Auction */,
+				A8636B912744ED240039F134 /* Ads */,
 				A8D8407927255C3F00D65632 /* Offers */,
 				A872EB25272EC46200FA676D /* Market */,
 			);
@@ -579,6 +652,7 @@
 		A8C00F2426D3C718001332A5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				A8636B862743D9F60039F134 /* Ads */,
 				A836A0E227300BAD00165C93 /* Market */,
 				A8C00F2526D3C72C001332A5 /* LoginResponse.swift */,
 				A8C00F5D26D65760001332A5 /* DropListDataResponse.swift */,
@@ -875,6 +949,8 @@
 				A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */,
 				A807D83F26FB67FE002FADED /* AuctionsResponse.swift in Sources */,
 				A807D84126FB6C55002FADED /* ClientService.swift in Sources */,
+				A8636B8D2744E9130039F134 /* AdsHomeVC.swift in Sources */,
+				A8636B902744EC6F0039F134 /* AdsHomeCell.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A807D84B26FCC3C2002FADED /* SoldAuctionListCellinAuctions.swift in Sources */,
 				A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */,
@@ -887,16 +963,20 @@
 				A860D61126E630060050F500 /* ActiveAuctionVC.swift in Sources */,
 				A8C00F6226D79F13001332A5 /* RegisterUserResponse.swift in Sources */,
 				A872EB27272EC48200FA676D /* MarketListViewModel.swift in Sources */,
+				A8636B9D27453C390039F134 /* AdsInsideCategoryViewModel.swift in Sources */,
 				A807D85727034016002FADED /* InactiveAuctionsCellViewModel.swift in Sources */,
 				A8D8407827255BEB00D65632 /* ProvidersListCell.swift in Sources */,
 				A8D8407D27255C8700D65632 /* ProvidersListCellViewModel.swift in Sources */,
 				A807D85127009944002FADED /* ActiveAuctionResponse.swift in Sources */,
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
 				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
+				A8636B932744ED750039F134 /* CategoryListViewModel.swift in Sources */,
 				A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */,
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
 				A872EAB92726D3ED00FA676D /* ProviderAdResponse.swift in Sources */,
 				A807D8592703405C002FADED /* InactiveAuctionsCell.swift in Sources */,
+				A8636BA7274644A80039F134 /* AdDetailsVC.swift in Sources */,
+				A8636B8A2743DADB0039F134 /* AdsInsideCategoryResponse.swift in Sources */,
 				A873D3EA271C681E009EDFCF /* ResendOtpResponse.swift in Sources */,
 				A8C00F2A26D3C8F3001332A5 /* State.swift in Sources */,
 				A807D875270B3E4A002FADED /* CurveView.swift in Sources */,
@@ -917,6 +997,7 @@
 				A85A566426CD0B2C0014BC35 /* CurveShadowView.swift in Sources */,
 				A85A566926CD1AD40014BC35 /* BorderBtn.swift in Sources */,
 				A873D3EC271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift in Sources */,
+				A8636BA5274642340039F134 /* AdDetailsViewModel.swift in Sources */,
 				A807D85F27047BC1002FADED /* SoldAuctionsListViewModel.swift in Sources */,
 				A872EB21272A9B7100FA676D /* OtpErrorResponse.swift in Sources */,
 				A8A0614927183460000A546F /* ContactUsMessageCellViewModel.swift in Sources */,
@@ -937,6 +1018,7 @@
 				A873D3E6271C4745009EDFCF /* TermsAndConditionViewModel.swift in Sources */,
 				A872EB24272EC44C00FA676D /* MarketCell.swift in Sources */,
 				A807D84726FC8EAF002FADED /* InactiveAuctionCellinAuctions.swift in Sources */,
+				A8636B9B27453BCE0039F134 /* AdsInsideCategoryCell.swift in Sources */,
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
 				A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */,
 				A807D85D27047B99002FADED /* SoldAuctionsCell.swift in Sources */,
@@ -945,15 +1027,21 @@
 				A8A0614527183408000A546F /* ContactUsCell.swift in Sources */,
 				A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */,
 				A8D8407F272596A300D65632 /* DefaultAdsResponse.swift in Sources */,
+				A8636B972744F3500039F134 /* AdsCategoryCell.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
+				A8636B952744ED860039F134 /* CategoryListCellViewModel.swift in Sources */,
 				A8C00F5E26D65760001332A5 /* DropListDataResponse.swift in Sources */,
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
 				A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */,
+				A8636B882743DA250039F134 /* AdsCategoryResponse.swift in Sources */,
+				A8636B99274539A50039F134 /* AdsInsideCategoryVC.swift in Sources */,
 				A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */,
 				A8780E58271F6D75002B0CA6 /* completeWatchingResponse.swift in Sources */,
 				A807D86B2709A867002FADED /* OfferCategoryCell.swift in Sources */,
 				A807D85327033DC8002FADED /* InactiveAuctionsVC.swift in Sources */,
+				A8636BA1274639E80039F134 /* AdDetailsResponse.swift in Sources */,
+				A8636B9F27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift in Sources */,
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
 				A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */,
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,

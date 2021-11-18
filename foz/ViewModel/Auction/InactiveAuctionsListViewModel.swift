@@ -49,13 +49,15 @@ class InactiveAuctionsListViewModel {
         state = .loading
         apiService.getInactiveAuctionsData { [weak self] result, error in
             guard let self = self else { return }
-            if let error = error {
+            guard  error == nil else {
                 self.state = .error
-                self.alertMesssage = error.localizedDescription
-            } else {
+                self.alertMesssage = error?.rawValue
+                return
+            }
+//            else {
                 self.state = .populated
                 self.proccessFetchedInactivAuctionData(data: (result?.data)!)
-            }
+//            }
         }
     }
     

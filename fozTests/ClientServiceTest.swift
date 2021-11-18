@@ -22,7 +22,7 @@ class ClientServiceTest: XCTestCase {
         sut = nil
     }
     
-
+//test for api to response back with data
     func testFetchInactiveAuction() {
         let promise = XCTestExpectation(description: "fetch inactive auction")
         var responseError: Error?

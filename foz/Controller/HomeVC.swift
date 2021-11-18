@@ -167,6 +167,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 self.present(auctionVC, animated: true, completion: nil)
             }
         }
+        else if indexPath.row == 1 {
+            
+            let offerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "Ads-Home-VC")
+            DispatchQueue.main.async {
+                self.present(offerVC, animated: true, completion: nil)
+            }
+        }
         else if indexPath.row == 2 {
             
             let offerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "offer_category_vc")

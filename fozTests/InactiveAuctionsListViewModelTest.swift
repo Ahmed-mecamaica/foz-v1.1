@@ -28,7 +28,7 @@ class InactiveAuctionsListViewModelTest: XCTestCase {
         super.tearDown()
     }
     
-    
+    //dose view model create cell
     func testCreatCellViewModel() {
         //given
         let auction = AuctionData(id: 1,
@@ -43,12 +43,25 @@ class InactiveAuctionsListViewModelTest: XCTestCase {
         //when
         let cellViewModel = sut?.createCellViewModel(data: auction)
         //then
+        
         XCTAssertEqual(cellViewModel?.productName, auction.title)
     }
     
-
+    
+//test for call inside view model
     func testInitFetch() {
         sut.initData()
         XCTAssert(clientServiceMock.fetchInactiveAuctionIsCalled)
+    }
+    
+    
+    func testFetchFailer() {
+        let error = APIError.noNetwork
+
+        sut.initData()
+
+        clientServiceMock.fetchFail(error: error)
+
+        XCTAssertEqual(sut.alertMesssage, error.rawValue)
     }
 }

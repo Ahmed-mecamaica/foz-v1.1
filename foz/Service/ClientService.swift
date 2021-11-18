@@ -8,7 +8,13 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    func getInactiveAuctionsData( completion: @escaping (InactiveAuctionsResponse?, Error? ) -> () )
+    func getInactiveAuctionsData( completion: @escaping (InactiveAuctionsResponse?, APIError? ) -> () )
+}
+
+enum APIError: String, Error {
+    case noNetwork = "No Network"
+    case serverOverload = "Server is overloaded"
+    case permissionDenied = "You don't have permission"
 }
 
 class ClientService: APIServiceProtocol {
@@ -16,6 +22,8 @@ class ClientService: APIServiceProtocol {
     static let shared = ClientService()
     
 //    private init() {}
+    
+    
     
     enum Endpoint {
         
@@ -33,37 +41,46 @@ class ClientService: APIServiceProtocol {
         case providerAd(String)
         case market
         case couponDetails(String)
+        case adsCategoryFor(String)
+        case adsInsideCategory(String, String)
+        case adDetails(String)
         
         var stringValue: String {
             switch self {
-            case .auctions:
-                return AuthService.Endpoints.base + "api/auction"
-            case .activeAuction(let auctionID):
-                return AuthService.Endpoints.base + "api/auction/active?auction_id=" + auctionID
-            case .inactiveAuction:
-                return AuthService.Endpoints.base + "api/auction/view/inactive"
-            case .soldAuction:
-                return AuthService.Endpoints.base + "api/auction/view/sold"
-            case .contactUs:
-                return AuthService.Endpoints.base + "api/sidemenu/contacts"
-            case .termsAndConditions:
-                return AuthService.Endpoints.base + "api/sidemenu/page/TERMS_CONDITIONS"
-            case .ActiveAuctionVideoAd(let auctionID):
-                return AuthService.Endpoints.base + "api/ad/auctions?auction_id=" + auctionID
-            case .completWatching(let adID):
-                return AuthService.Endpoints.base + "api/ad/watch?ad_id=" + adID
-            case .offersProvidersList(let query):
-                return AuthService.Endpoints.base + "api/offer/providers?name=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-            case .defaultAdPhoto:
-                return AuthService.Endpoints.base + "api/ad/default"
-            case .providerCoupons(let providerId):
-                return AuthService.Endpoints.base + "api/offer/coupons?provider_id=" + providerId
-            case .providerAd(let providerId):
-                return AuthService.Endpoints.base + "api/ad/offer?provider_id=" + providerId
-            case .market:
-                return AuthService.Endpoints.base + "api/market"
-            case .couponDetails(let providerId):
-                return AuthService.Endpoints.base + "api/market/view?market_id=" + providerId
+                case .auctions:
+                    return AuthService.Endpoints.base + "api/auction"
+                case .activeAuction(let auctionID):
+                    return AuthService.Endpoints.base + "api/auction/active?auction_id=" + auctionID
+                case .inactiveAuction:
+                    return AuthService.Endpoints.base + "api/auction/view/inactive"
+                case .soldAuction:
+                    return AuthService.Endpoints.base + "api/auction/view/sold"
+                case .contactUs:
+                    return AuthService.Endpoints.base + "api/sidemenu/contacts"
+                case .termsAndConditions:
+                    return AuthService.Endpoints.base + "api/sidemenu/page/TERMS_CONDITIONS"
+                case .ActiveAuctionVideoAd(let auctionID):
+                    return AuthService.Endpoints.base + "api/ad/auctions?auction_id=" + auctionID
+                case .completWatching(let adID):
+                    return AuthService.Endpoints.base + "api/ad/watch?ad_id=" + adID
+                case .offersProvidersList(let query):
+                    return AuthService.Endpoints.base + "api/offer/providers?name=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                case .defaultAdPhoto:
+                    return AuthService.Endpoints.base + "api/ad/default"
+                case .providerCoupons(let providerId):
+                    return AuthService.Endpoints.base + "api/offer/coupons?provider_id=" + providerId
+                case .providerAd(let providerId):
+                    return AuthService.Endpoints.base + "api/ad/offer?provider_id=" + providerId
+                case .market:
+                    return AuthService.Endpoints.base + "api/market"
+                case .couponDetails(let providerId):
+                    return AuthService.Endpoints.base + "api/market/view?market_id=" + providerId
+                case .adsCategoryFor(let categoryName):
+                    return AuthService.Endpoints.base + "api/ad/direct/categories/" + categoryName
+                case .adsInsideCategory(let categoryName, let categoryId):
+                    return AuthService.Endpoints.base + "api/ad/direct/categories/" + categoryName + "/" + categoryId
+                case .adDetails(let adId):
+                    return AuthService.Endpoints.base + "api/ad/direct/" + adId
             }
         }
         
@@ -198,10 +215,10 @@ class ClientService: APIServiceProtocol {
     
     
     
-    func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, Error?) -> Void) {
+    func getInactiveAuctionsData(completion: @escaping (InactiveAuctionsResponse?, APIError?) -> Void) {
         let task = taskForGetRequest(url: Endpoint.inactiveAuction.url, response: InactiveAuctionsResponse.self) { result, error in
             if let error = error {
-                completion(nil, error)
+                completion(nil, .noNetwork)
             }
             else {
                 completion(result, nil)
@@ -319,6 +336,41 @@ class ClientService: APIServiceProtocol {
                 completion(result, nil)
             }
         }
-        
     }
+    
+    //MARK: Ads Module Calls
+    
+    func fetchAdsCategory(categoryName: String, completion: @escaping (AdsCategoryResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.adsCategoryFor(categoryName).url, response: AdsCategoryResponse.self) { response, error in
+            
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            completion(response, nil)
+        }
+    }
+    
+    //get all ads inside its category
+    func fetchAdsInsideCategory(categoryName: String, categoryId: String, completion: @escaping (AdsInsideCategoryResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.adsInsideCategory(categoryName, categoryId).url, response: AdsInsideCategoryResponse.self) { response, error in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            completion(response, nil)
+        }
+    }
+    
+    //fetch ad details by ad id
+    func fetchAdDetails(adId: String, completion: @escaping (AdDetailsResponse?, Error?) -> ()) {
+        taskForGetRequest(url: Endpoint.adDetails(adId).url, response: AdDetailsResponse.self) { response, error in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            completion(response, nil)
+        }
+    }
+    
 }
