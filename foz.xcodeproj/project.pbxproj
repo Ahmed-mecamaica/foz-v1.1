@@ -66,6 +66,10 @@
 		A8636BA1274639E80039F134 /* AdDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA0274639E70039F134 /* AdDetailsResponse.swift */; };
 		A8636BA5274642340039F134 /* AdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA4274642340039F134 /* AdDetailsViewModel.swift */; };
 		A8636BA7274644A80039F134 /* AdDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA6274644A80039F134 /* AdDetailsVC.swift */; };
+		A8636BA92749DA430039F134 /* SharedAdsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BA82749DA420039F134 /* SharedAdsListViewModel.swift */; };
+		A8636BAB2749DA640039F134 /* SharedAdsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BAA2749DA640039F134 /* SharedAdsListCellViewModel.swift */; };
+		A8636BAD2749DAC70039F134 /* SharedAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BAC2749DAC70039F134 /* SharedAdsCell.swift */; };
+		A8636BAF2749DAE60039F134 /* SharedAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BAE2749DAE60039F134 /* SharedAdsVC.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
 		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
@@ -217,6 +221,10 @@
 		A8636BA0274639E70039F134 /* AdDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsResponse.swift; sourceTree = "<group>"; };
 		A8636BA4274642340039F134 /* AdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewModel.swift; sourceTree = "<group>"; };
 		A8636BA6274644A80039F134 /* AdDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsVC.swift; sourceTree = "<group>"; };
+		A8636BA82749DA420039F134 /* SharedAdsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAdsListViewModel.swift; sourceTree = "<group>"; };
+		A8636BAA2749DA640039F134 /* SharedAdsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAdsListCellViewModel.swift; sourceTree = "<group>"; };
+		A8636BAC2749DAC70039F134 /* SharedAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAdsCell.swift; sourceTree = "<group>"; };
+		A8636BAE2749DAE60039F134 /* SharedAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAdsVC.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
 		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
@@ -391,6 +399,7 @@
 				A8636B8C2744E9130039F134 /* AdsHomeVC.swift */,
 				A8636B98274539A50039F134 /* AdsInsideCategoryVC.swift */,
 				A8636BA6274644A80039F134 /* AdDetailsVC.swift */,
+				A8636BAE2749DAE60039F134 /* SharedAdsVC.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 				A8636B8F2744EC6F0039F134 /* AdsHomeCell.swift */,
 				A8636B962744F3500039F134 /* AdsCategoryCell.swift */,
 				A8636B9A27453BCE0039F134 /* AdsInsideCategoryCell.swift */,
+				A8636BAC2749DAC70039F134 /* SharedAdsCell.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -413,6 +423,8 @@
 				A8636B9C27453C390039F134 /* AdsInsideCategoryViewModel.swift */,
 				A8636B9E27453C4E0039F134 /* AdsInsideCategoryCellViewModel.swift */,
 				A8636BA4274642340039F134 /* AdDetailsViewModel.swift */,
+				A8636BA82749DA420039F134 /* SharedAdsListViewModel.swift */,
+				A8636BAA2749DA640039F134 /* SharedAdsListCellViewModel.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -956,6 +968,7 @@
 				A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */,
 				A836A0DF273004F400165C93 /* CouponDetailsVC.swift in Sources */,
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
+				A8636BAB2749DA640039F134 /* SharedAdsListCellViewModel.swift in Sources */,
 				A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */,
 				A87A07D726C91553001CE1E7 /* IntroVC.swift in Sources */,
 				A8A061472718344C000A546F /* ContactUsMessageListViewModel.swift in Sources */,
@@ -967,6 +980,7 @@
 				A807D85727034016002FADED /* InactiveAuctionsCellViewModel.swift in Sources */,
 				A8D8407827255BEB00D65632 /* ProvidersListCell.swift in Sources */,
 				A8D8407D27255C8700D65632 /* ProvidersListCellViewModel.swift in Sources */,
+				A8636BA92749DA430039F134 /* SharedAdsListViewModel.swift in Sources */,
 				A807D85127009944002FADED /* ActiveAuctionResponse.swift in Sources */,
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
 				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
@@ -985,6 +999,7 @@
 				A8A06143271827D2000A546F /* ContactUsResponse.swift in Sources */,
 				A85A566226CABFA80014BC35 /* LoginVC.swift in Sources */,
 				A807D8692709A52F002FADED /* OffersCategoryVC.swift in Sources */,
+				A8636BAF2749DAE60039F134 /* SharedAdsVC.swift in Sources */,
 				A8A06141271827A3000A546F /* ContactUsRequest.swift in Sources */,
 				A8A0614B2718390B000A546F /* ContactUsVC.swift in Sources */,
 				A860D60F26E60F380050F500 /* AuctionsVC.swift in Sources */,
@@ -1034,6 +1049,7 @@
 				A8A1EE3D26D7B1E900A6D044 /* SWRevealViewController.m in Sources */,
 				A8A1EE4B26D7CA2900A6D044 /* InterestCollectionViewCell.swift in Sources */,
 				A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */,
+				A8636BAD2749DAC70039F134 /* SharedAdsCell.swift in Sources */,
 				A8636B882743DA250039F134 /* AdsCategoryResponse.swift in Sources */,
 				A8636B99274539A50039F134 /* AdsInsideCategoryVC.swift in Sources */,
 				A807D86327047D2F002FADED /* SoldAuctionsVC.swift in Sources */,

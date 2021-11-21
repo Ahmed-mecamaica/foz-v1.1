@@ -71,7 +71,10 @@ class AdsHomeVC: UIViewController {
                         
                     case .populated:
                         self!.headerAdSpinner.stopAnimating()
-                        self?.headerAdImage.sd_setImage(with: URL(string: self!.viewModel.adsPhotoData!.image_url))
+                    if let headerad = self!.viewModel.adsPhotoData {
+                        self?.headerAdImage.sd_setImage(with: URL(string: headerad.image_url))
+                    }
+                        
                         UIView.animate(withDuration: 0.5) {
                             self!.headerAdImage.alpha = 1
                         }
@@ -186,9 +189,9 @@ extension AdsHomeVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             //TODO:
-//            fetchCategoryData(categoryname: "share")
-//            AdsInsideCategoryVC.categoryName = "share"
-            showAlert("THIS SECTION WILL BE READY SOON...")
+            fetchCategoryData(categoryname: "share")
+            SharedAdsVC.categoryName = "share"
+//            showAlert("THIS SECTION WILL BE READY SOON...")
             categorytype = "share"
         }
         else {
@@ -233,9 +236,12 @@ extension AdsHomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             present(adsImsideCategoryVC, animated: true, completion: nil)
         }
         //TODO:
-//        else if viewModel.isAllowSegue, categorytype == "paid" {
-//
-//        }
+        else if viewModel.isAllowSegue, categorytype == "share" {
+            SharedAdsVC.pageTitle = viewModel.selectedcategory!.name
+            SharedAdsVC.categoryId = "\(viewModel.selectedcategory!.id)"
+            let sharedAdVC = storyboard?.instantiateViewController(withIdentifier: "shared-ad-vc") as! SharedAdsVC
+            present(sharedAdVC, animated: true, completion: nil)
+        }
         
 //        let selectedCategory = viewModel.selectedProvider
 //        ProviderCouponsVC.providerID = "\(selectedCategory!.id)"
