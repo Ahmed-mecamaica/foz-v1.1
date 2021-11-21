@@ -18,5 +18,13 @@ struct AdDetailsData: Codable {
     let image_url: String
     let description: String
     let ad_logo: String
+    let coupon: CouponInAdDetailsData?
 }
 
+struct CouponInAdDetailsData: Codable {
+    let id: Int
+    let code: String
+    let price: String
+    let price_after_discount: Double
+    let expire_date: String
+}

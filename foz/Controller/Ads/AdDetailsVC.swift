@@ -18,6 +18,7 @@ class AdDetailsVC: UIViewController {
     @IBOutlet weak var adDescriptionLbl: UILabel!
     @IBOutlet weak var adHolderView: CustomRoundedView!
     @IBOutlet weak var showVidCompleteBtn: UIButton!
+    @IBOutlet weak var couponTblView: UITableView!
     
     static var adId = ""
     
@@ -31,6 +32,8 @@ class AdDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        couponTblView.delegate = self
+        couponTblView.dataSource = self
         fetchAdsDetails()
         initAdVideoView(videoUrl: AdDetailsVC.adVideoUrl)
     }
@@ -72,6 +75,7 @@ class AdDetailsVC: UIViewController {
                         case .empty, .error:
                             self!.spinner.stopAnimating()
                         UIView.animate(withDuration: 0.5) {
+                            self!.couponTblView.alpha = 0
                             self!.setAlphaForComponent(alpha: 0)
                         }
                             
@@ -81,6 +85,7 @@ class AdDetailsVC: UIViewController {
                             if let adData = self!.viewModel.adDetails {
                                 self!.adDescriptionLbl.text = adData.description
                                 self!.providerLogoImage.sd_setImage(with: URL(string: adData.ad_logo))
+                                self!.couponTblView.reloadData()
                                 print("ad logo: \(adData.ad_logo)")
                             }
                         
@@ -88,17 +93,25 @@ class AdDetailsVC: UIViewController {
                                 self!.headerAdPhoto.sd_setImage(with: URL(string: adPhoto.image_url))
                             }
                             UIView.animate(withDuration: 0.5) {
+                                self!.couponTblView.alpha = 1
                                 self!.setAlphaForComponent(alpha: 1)
                             }
                             
                         case .loading:
                             self!.spinner.startAnimating()
                             UIView.animate(withDuration: 0.5) {
+                                self!.couponTblView.alpha = 0
                                 self!.setAlphaForComponent(alpha: 0)
                             }
                         }
                 }
             }
+        
+        viewModel.reloadCollectionViewClousure = {
+            DispatchQueue.main.async {
+                self.couponTblView.reloadData()
+            }
+        }
         viewModel.initFetchAdDataData(adId: AdDetailsVC.adId)
         viewModel.initAdsPhoto()
     }
@@ -147,5 +160,57 @@ class AdDetailsVC: UIViewController {
     }
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+
+//MARK: coupon section table view
+extension AdDetailsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.adsNumberOfCell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AdDetailsCouponCell
+        cell.layer.cornerRadius = 15
+        if let couponData = viewModel.coupnInAdDetailsData {
+            couponTblView.alpha = 1
+            cell.couponPriceLbl.text = "\(Int( couponData.price_after_discount))"
+            cell.couponExpiredDateLbl.text = "ينتهي في:" + couponData.expire_date
+            cell.priceBeforDiscountLbl.text = couponData.price
+            cell.couponIdLbl.text = couponData.code
+        } else {
+            couponTblView.alpha = 0
+        }
+        
+//        let cellVM = viewModel.getCellViewModel(at: indexPath)
+//        cell.adDetailsCouponCellViewModel = cellVM
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did select")
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let adDetailsVC = UIStoryboard.init(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ad-details-vc") as! AdDetailsVC
+//        present(adDetailsVC, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        print("will select")
+        viewModel.userPressed(at: indexPath)
+        
+        if viewModel.isAllowSegue {
+            print("allow select")
+//            self.performSegue(withIdentifier: "to-ad-details", sender: nil)
+            return indexPath
+        } else {
+            print("not allow select")
+            return nil
+        }
     }
 }

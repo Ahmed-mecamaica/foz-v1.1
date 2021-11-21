@@ -12,8 +12,7 @@ class SharedAdsCell: UITableViewCell {
 
     @IBOutlet weak var adLogoImage: UIImageView!
     @IBOutlet weak var adNameLbl: UILabel!
-    @IBOutlet weak var adDescLbl: UILabel!
-    
+    @IBOutlet weak var adDescLbl: UILabel!    
     var sharedAdsListCellViewModel: SharedAdsListCellViewModel? {
         didSet {
             adNameLbl.text = sharedAdsListCellViewModel?.adName
