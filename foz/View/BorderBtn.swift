@@ -17,3 +17,11 @@ class BorderBtn: UIButton {
     }
 
 }
+
+extension UIButton {
+    func myCouponBorderBtn(height: Double) {
+        self.layer.cornerRadius = height / 2
+        self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.layer.borderWidth = 2
+    }
+}

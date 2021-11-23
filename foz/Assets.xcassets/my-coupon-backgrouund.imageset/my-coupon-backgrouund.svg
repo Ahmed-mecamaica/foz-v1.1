@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124" height="71.215" viewBox="0 0 124 71.215">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.039" y1="0.014" x2="0.949" y2="0.987" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3b373e"/>
+      <stop offset="0.509" stop-color="#11141a"/>
+      <stop offset="0.701" stop-color="#090e13"/>
+      <stop offset="1" stop-color="#090e13"/>
+    </linearGradient>
+    <filter id="Rectangle_17380" x="20.319" y="43.698" width="85.27" height="27.517" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#fb9d02"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_20367" x="36.05" y="6.144" width="51.291" height="51.291" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#fb9d02"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(0.228, 0.974, -0.974, 0.228, 0.873, -0.101)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fffece"/>
+      <stop offset="0.039" stop-color="#f7febc" stop-opacity="0.918"/>
+      <stop offset="0.147" stop-color="#e5fe90" stop-opacity="0.702"/>
+      <stop offset="0.258" stop-color="#d4fe6a" stop-opacity="0.518"/>
+      <stop offset="0.372" stop-color="#c7fe49" stop-opacity="0.357"/>
+      <stop offset="0.487" stop-color="#bbfe2e" stop-opacity="0.227"/>
+      <stop offset="0.605" stop-color="#b3fe1a" stop-opacity="0.129"/>
+      <stop offset="0.727" stop-color="#acfe0b" stop-opacity="0.055"/>
+      <stop offset="0.856" stop-color="#a9fe02" stop-opacity="0.016"/>
+      <stop offset="1" stop-color="#a8fe00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(0.802, 0.597, -0.597, 0.802, 0.397, -0.2)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="0.5" cy="0.5" r="0.047" gradientTransform="matrix(0.707, 0.707, -10.587, 10.587, -71.663, 58.873)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="0.5" cy="0.5" r="0.047" gradientTransform="matrix(-0.707, 0.707, -10.587, -10.587, -149.34, -79.243)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="0.5" cy="0.5" r="0.5" gradientTransform="translate(-20.676 -3.736) rotate(-45)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-6" cx="0.5" cy="0.5" r="0.5" gradientTransform="translate(-133.996 -168.785) rotate(90)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.072" stop-color="#fff" stop-opacity="0.875"/>
+      <stop offset="0.216" stop-color="#fff" stop-opacity="0.647"/>
+      <stop offset="0.359" stop-color="#fff" stop-opacity="0.447"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.286"/>
+      <stop offset="0.636" stop-color="#fff" stop-opacity="0.161"/>
+      <stop offset="0.767" stop-color="#fff" stop-opacity="0.071"/>
+      <stop offset="0.891" stop-color="#fff" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-7" cx="0.5" cy="0.5" r="0.047" gradientTransform="matrix(-0.707, 0.707, -10.587, -10.587, -264.085, -161.774)" xlink:href="#radial-gradient-6"/>
+    <radialGradient id="radial-gradient-8" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(0.707, -0.707, 0.707, 0.707, -23.021, -5.747)" xlink:href="#radial-gradient-6"/>
+  </defs>
+  <g id="Group_3338" data-name="Group 3338" transform="translate(-240 -148)">
+    <rect id="Rectangle_17379" data-name="Rectangle 17379" width="124" height="66.287" rx="12" transform="translate(240 148)" opacity="0.9" fill="url(#linear-gradient)"/>
+    <g id="Group_3335" data-name="Group 3335">
+      <path id="Rectangle_17382" data-name="Rectangle 17382" d="M0,0H57.531a0,0,0,0,1,0,0V1.534a10,10,0,0,1-10,10H10a10,10,0,0,1-10-10V0A0,0,0,0,1,0,0Z" transform="translate(274 148)" fill="#fb9d02" opacity="0.9"/>
+      <text id="كوبون_بقيمة" data-name="كوبون بقيمة" transform="translate(318 156)" fill="#fff" font-size="5" font-family="Cairo-Bold, Cairo" font-weight="700"><tspan x="-29.35" y="0">كوبون بقيمة</tspan></text>
+    </g>
+    <g id="Group_3337" data-name="Group 3337">
+      <g transform="matrix(1, 0, 0, 1, 240, 148)" filter="url(#Rectangle_17380)">
+        <rect id="Rectangle_17380-2" data-name="Rectangle 17380" width="68.27" height="10.517" rx="5.259" transform="translate(28.82 52.2)" fill="none" stroke="#e99408" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+      <rect id="Rectangle_17381" data-name="Rectangle 17381" width="68.27" height="10.517" rx="5.259" transform="translate(269 200.327)" fill="#028f8f" opacity="0.29"/>
+    </g>
+    <g id="Group_3333" data-name="Group 3333" transform="translate(-2.396 -1.105)">
+      <g id="Group_3022" data-name="Group 3022" transform="translate(279.816 148.292)">
+        <g transform="matrix(1, 0, 0, 1, -37.42, 0.81)" filter="url(#Path_20367)" style="mix-blend-mode: lighten;isolation: isolate">
+          <path id="Path_20367-2" data-name="Path 20367" d="M331.51,168.183a14.618,14.618,0,1,1-4.19-3.407" transform="translate(-258.64 -145.86)" fill="none" stroke="#fb9d02" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        </g>
+        <g id="Group_3021" data-name="Group 3021" transform="translate(12.48 12.347)">
+          <ellipse id="Ellipse_46" data-name="Ellipse 46" cx="4.021" cy="4.021" rx="4.021" ry="4.021" transform="translate(19.299 16.355) rotate(-76.845)" fill="url(#radial-gradient)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+          <ellipse id="Ellipse_47" data-name="Ellipse 47" cx="4.021" cy="4.021" rx="4.021" ry="4.021" transform="matrix(0.802, -0.597, 0.597, 0.802, -1.684, 31.236)" fill="url(#radial-gradient-2)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+          <g id="Group_3019" data-name="Group 3019" transform="translate(12.927)" style="mix-blend-mode: color-dodge;isolation: isolate">
+            <path id="Path_20368" data-name="Path 20368" d="M389.082,149.982c-2.706,2.706-5.046,4.753-5.227,4.572s1.866-2.521,4.572-5.227,5.046-4.753,5.227-4.572S391.788,147.276,389.082,149.982Z" transform="translate(-383.844 -144.744)" fill="url(#radial-gradient-3)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+            <path id="Path_20369" data-name="Path 20369" d="M388.428,149.982c-2.706-2.706-4.753-5.046-4.572-5.227s2.521,1.866,5.227,4.572,4.753,5.046,4.572,5.227S391.134,152.688,388.428,149.982Z" transform="translate(-383.844 -144.744)" fill="url(#radial-gradient-4)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+            <ellipse id="Ellipse_48" data-name="Ellipse 48" cx="2.548" cy="2.548" rx="2.548" ry="2.548" transform="translate(2.362 2.362)" fill="url(#radial-gradient-5)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+          </g>
+          <g id="Group_3020" data-name="Group 3020" transform="translate(0.93 11.408)">
+            <ellipse id="Ellipse_49" data-name="Ellipse 49" cx="3.993" cy="0.267" rx="3.993" ry="0.267" transform="translate(0 5.648) rotate(-45)" fill="url(#radial-gradient-6)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+            <path id="Path_20370" data-name="Path 20370" d="M315.735,202.793a15.185,15.185,0,0,1-2.635-3.013,30.014,30.014,0,0,1,5.648,5.648A15.19,15.19,0,0,1,315.735,202.793Z" transform="translate(-312.911 -199.592)" fill="url(#radial-gradient-7)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+            <ellipse id="Ellipse_50" data-name="Ellipse 50" cx="2.096" cy="2.096" rx="2.096" ry="2.096" transform="translate(0.917 0.917)" fill="url(#radial-gradient-8)" style="mix-blend-mode: color-dodge;isolation: isolate"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

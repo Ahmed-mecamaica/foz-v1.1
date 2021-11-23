@@ -72,6 +72,12 @@
 		A8636BAF2749DAE60039F134 /* SharedAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BAE2749DAE60039F134 /* SharedAdsVC.swift */; };
 		A8636BB1274AC6110039F134 /* AdDetailsCouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BB0274AC6110039F134 /* AdDetailsCouponCell.swift */; };
 		A8636BB3274AC9AB0039F134 /* AdDetailsCouponCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BB2274AC9AA0039F134 /* AdDetailsCouponCellViewModel.swift */; };
+		A8636BB6274D13560039F134 /* MyCouponsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BB5274D13550039F134 /* MyCouponsVC.swift */; };
+		A8636BB9274D18080039F134 /* AllCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BB8274D18080039F134 /* AllCouponsCell.swift */; };
+		A8636BBB274D183D0039F134 /* MarketCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BBA274D183C0039F134 /* MarketCouponsCell.swift */; };
+		A8636BBE274D20F10039F134 /* MyCouponsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */; };
+		A8636BC0274D21300039F134 /* AllCouponsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */; };
+		A8636BC2274D217B0039F134 /* MarketCouponsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
 		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
@@ -229,6 +235,12 @@
 		A8636BAE2749DAE60039F134 /* SharedAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAdsVC.swift; sourceTree = "<group>"; };
 		A8636BB0274AC6110039F134 /* AdDetailsCouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsCouponCell.swift; sourceTree = "<group>"; };
 		A8636BB2274AC9AA0039F134 /* AdDetailsCouponCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsCouponCellViewModel.swift; sourceTree = "<group>"; };
+		A8636BB5274D13550039F134 /* MyCouponsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponsVC.swift; sourceTree = "<group>"; };
+		A8636BB8274D18080039F134 /* AllCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCouponsCell.swift; sourceTree = "<group>"; };
+		A8636BBA274D183C0039F134 /* MarketCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCouponsCell.swift; sourceTree = "<group>"; };
+		A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponsListViewModel.swift; sourceTree = "<group>"; };
+		A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCouponsListCellViewModel.swift; sourceTree = "<group>"; };
+		A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCouponsListCellViewModel.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
 		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
@@ -435,6 +447,33 @@
 			path = Ads;
 			sourceTree = "<group>";
 		};
+		A8636BB4274D130A0039F134 /* MyCoupons */ = {
+			isa = PBXGroup;
+			children = (
+				A8636BB5274D13550039F134 /* MyCouponsVC.swift */,
+			);
+			path = MyCoupons;
+			sourceTree = "<group>";
+		};
+		A8636BB7274D16190039F134 /* MyCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				A8636BB8274D18080039F134 /* AllCouponsCell.swift */,
+				A8636BBA274D183C0039F134 /* MarketCouponsCell.swift */,
+			);
+			path = MyCoupon;
+			sourceTree = "<group>";
+		};
+		A8636BBC274D20C00039F134 /* MyCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */,
+				A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */,
+				A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */,
+			);
+			path = MyCoupon;
+			sourceTree = "<group>";
+		};
 		A872EB1D272A932000FA676D /* Auction */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +607,7 @@
 				A8636B8B2744E8130039F134 /* Ads */,
 				A807D8662709A4B8002FADED /* Offers  */,
 				A872EB28272EC48D00FA676D /* Market */,
+				A8636BB4274D130A0039F134 /* MyCoupons */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -592,6 +632,7 @@
 				A8636B8E2744EC4A0039F134 /* Ads */,
 				A8D8407627255B9F00D65632 /* Offers */,
 				A872EB22272EC2B700FA676D /* Market */,
+				A8636BB7274D16190039F134 /* MyCoupon */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,6 +674,7 @@
 				A8636B912744ED240039F134 /* Ads */,
 				A8D8407927255C3F00D65632 /* Offers */,
 				A872EB25272EC46200FA676D /* Market */,
+				A8636BBC274D20C00039F134 /* MyCoupon */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -963,6 +1005,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8636BC2274D217B0039F134 /* MarketCouponsListCellViewModel.swift in Sources */,
 				A860D60D26E4F9A00050F500 /* BottomRadiusView.swift in Sources */,
 				A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */,
 				A807D83F26FB67FE002FADED /* AuctionsResponse.swift in Sources */,
@@ -972,6 +1015,7 @@
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,
 				A807D84B26FCC3C2002FADED /* SoldAuctionListCellinAuctions.swift in Sources */,
 				A807D871270B2E9C002FADED /* ProviderCouponsVC.swift in Sources */,
+				A8636BBE274D20F10039F134 /* MyCouponsListViewModel.swift in Sources */,
 				A836A0DF273004F400165C93 /* CouponDetailsVC.swift in Sources */,
 				A807D84D26FCC404002FADED /* SoldAuctionCellinAuctions.swift in Sources */,
 				A8636BAB2749DA640039F134 /* SharedAdsListCellViewModel.swift in Sources */,
@@ -1020,6 +1064,7 @@
 				A873D3EC271DBA5E009EDFCF /* ActiveAuctionVideoAdsResponse.swift in Sources */,
 				A8636BA5274642340039F134 /* AdDetailsViewModel.swift in Sources */,
 				A807D85F27047BC1002FADED /* SoldAuctionsListViewModel.swift in Sources */,
+				A8636BC0274D21300039F134 /* AllCouponsListCellViewModel.swift in Sources */,
 				A872EB21272A9B7100FA676D /* OtpErrorResponse.swift in Sources */,
 				A8A0614927183460000A546F /* ContactUsMessageCellViewModel.swift in Sources */,
 				A8A1EE4326D7B52400A6D044 /* InterestsVC.swift in Sources */,
@@ -1044,10 +1089,12 @@
 				A807D85527033FF3002FADED /* InactiveAuctionsListViewModel.swift in Sources */,
 				A807D873270B2FBB002FADED /* ProviderCouponsCell.swift in Sources */,
 				A807D85D27047B99002FADED /* SoldAuctionsCell.swift in Sources */,
+				A8636BBB274D183D0039F134 /* MarketCouponsCell.swift in Sources */,
 				A8A1EE4926D7C9EA00A6D044 /* InterestListViewModel.swift in Sources */,
 				A8C00F5C26D6420E001332A5 /* RegisterUserBorderBtn.swift in Sources */,
 				A8A0614527183408000A546F /* ContactUsCell.swift in Sources */,
 				A873D3E4271C4656009EDFCF /* TermsAndConditionResponse.swift in Sources */,
+				A8636BB9274D18080039F134 /* AllCouponsCell.swift in Sources */,
 				A8D8407F272596A300D65632 /* DefaultAdsResponse.swift in Sources */,
 				A8636B972744F3500039F134 /* AdsCategoryCell.swift in Sources */,
 				A85A566626CD17A30014BC35 /* CurveTextField.swift in Sources */,
@@ -1069,6 +1116,7 @@
 				A8C00F2026D3C6D8001332A5 /* LoginRequest.swift in Sources */,
 				A807D86F2709BD0C002FADED /* OffersCell.swift in Sources */,
 				A860D60B26E4E9CA0050F500 /* CustomRoundedView.swift in Sources */,
+				A8636BB6274D13560039F134 /* MyCouponsVC.swift in Sources */,
 				A836A0E427300BD000165C93 /* CouponDetailsResponse.swift in Sources */,
 				A8C00F3026D5366F001332A5 /* RegisterUserViewModel.swift in Sources */,
 				A807D83D26FB3484002FADED /* HomeTableViewCell.swift in Sources */,
