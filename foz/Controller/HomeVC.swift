@@ -188,5 +188,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 self.present(offerVC, animated: true, completion: nil)
             }
         }
+        else if indexPath.row == 5 {
+            let offerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "my-coupon-vc")
+            DispatchQueue.main.async {
+                self.present(offerVC, animated: true, completion: nil)
+            }
+        }
     }
 }

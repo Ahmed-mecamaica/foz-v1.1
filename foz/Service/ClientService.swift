@@ -44,6 +44,8 @@ class ClientService: APIServiceProtocol {
         case adsCategoryFor(String)
         case adsInsideCategory(String, String)
         case adDetails(String)
+        case allCoupon
+        case marketCoupon
         
         var stringValue: String {
             switch self {
@@ -81,6 +83,10 @@ class ClientService: APIServiceProtocol {
                     return AuthService.Endpoints.base + "api/ad/direct/categories/" + categoryName + "/" + categoryId
                 case .adDetails(let adId):
                     return AuthService.Endpoints.base + "api/ad/direct/" + adId
+                case .allCoupon:
+                    return AuthService.Endpoints.base + "api/coupons/all-coupons"
+                case .marketCoupon:
+                    return AuthService.Endpoints.base + "api/coupons/market-coupons"
             }
         }
         
@@ -373,4 +379,32 @@ class ClientService: APIServiceProtocol {
         }
     }
     
+    //MARK: my coupons module call
+    
+    //this func will fetch all coupons
+    func fetchAllCoupon(completion: @escaping (AllCouponResponse?, Error?) -> ()) {
+
+        taskForGetRequest(url: Endpoint.allCoupon.url, response: AllCouponResponse.self) { result, error in
+            guard error == nil else {
+
+                completion(nil, error)
+                return
+            }
+            completion(result, nil)
+        }
+    }
+    
+    //this func will fetch market coupons
+    func fetchMarketCoupon(completion: @escaping (AllCouponResponse?, Error?) -> ()) {
+
+        taskForGetRequest(url: Endpoint.marketCoupon.url, response: AllCouponResponse.self) { result, error in
+            guard error == nil else {
+
+                completion(nil, error)
+                return
+            }
+            
+            completion(result, nil)
+        }
+    }
 }

@@ -3219,13 +3219,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط والاحكام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIJ-Cg-SYP">
-                                        <rect key="frame" x="133.5" y="48" width="147" height="42"/>
+                                        <rect key="frame" x="133.5" y="48.5" width="147" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-m1-xM4">
-                                        <rect key="frame" x="88.5" y="59" width="20" height="20"/>
+                                        <rect key="frame" x="88.5" y="59.5" width="20" height="20"/>
                                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -3281,7 +3281,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPx-I9-Tyn">
-                                        <rect key="frame" x="385" y="58" width="13" height="22"/>
+                                        <rect key="frame" x="385" y="58.5" width="13" height="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="chevron.backward" catalog="system"/>
                                         <connections>
@@ -3289,7 +3289,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السوق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai6-k7-x7t">
-                                        <rect key="frame" x="176" y="48" width="62.5" height="42"/>
+                                        <rect key="frame" x="176" y="48.5" width="62.5" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4052,7 +4052,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإعلانات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycD-TP-DXB">
-                                        <rect key="frame" x="170" y="48" width="74" height="42"/>
+                                        <rect key="frame" x="170" y="48.5" width="74" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4277,7 +4277,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-HK-BQo">
-                                        <rect key="frame" x="368" y="58" width="30" height="30"/>
+                                        <rect key="frame" x="368" y="58.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="0PW-fG-DMm"/>
                                             <constraint firstAttribute="height" constant="30" id="dvd-gR-uwV"/>
@@ -4291,7 +4291,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإعلانات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyX-Zt-H4N">
-                                        <rect key="frame" x="170" y="52" width="74" height="42"/>
+                                        <rect key="frame" x="170" y="52.5" width="74" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5052,7 +5052,7 @@
         <!--My CouponsVC-->
         <scene sceneID="Xxv-34-52B">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="NXt-PK-rfh" customClass="MyCouponsVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="my-coupon-vc" modalPresentationStyle="fullScreen" id="NXt-PK-rfh" customClass="MyCouponsVC" customModule="foz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u29-Os-bWU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5102,7 +5102,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kr-vR-Rbp" customClass="CurveShadowView" customModule="foz" customModuleProvider="target">
-                                                            <rect key="frame" x="22.5" y="29.5" width="30" height="1.5"/>
+                                                            <rect key="frame" x="22.5" y="18.5" width="30" height="1.5"/>
                                                             <color key="backgroundColor" red="0.98431372549999996" green="0.61568627450000002" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1.5" id="c4N-hu-iPe"/>
@@ -5113,7 +5113,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME2-Ph-OS4">
-                                                            <rect key="frame" x="27.5" y="19" width="20.5" height="22.5"/>
+                                                            <rect key="frame" x="27" y="8" width="21" height="22"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -5126,19 +5126,19 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كوبون بقيمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcW-Fa-3gR">
-                                                            <rect key="frame" x="83" y="0.5" width="34" height="11.5"/>
+                                                            <rect key="frame" x="83" y="0.5" width="34" height="11"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="6"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REW-N5-PWi">
-                                                            <rect key="frame" x="152.5" y="19" width="20.5" height="22.5"/>
+                                                            <rect key="frame" x="152.5" y="10" width="20" height="22.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
                                                             <color key="textColor" red="0.98431372549999996" green="0.61568627450000002" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYR-XN-PFc">
-                                                            <rect key="frame" x="92" y="23.5" width="16" height="13.5"/>
+                                                            <rect key="frame" x="92" y="23" width="16" height="14"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="7"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -5174,22 +5174,26 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Az4-Iq-36J" secondAttribute="trailing" id="0nn-le-qGk"/>
                                                         <constraint firstItem="cwF-u4-i8P" firstAttribute="leading" secondItem="yAF-Gb-vZ9" secondAttribute="trailing" constant="10" id="3RS-qc-iI1"/>
+                                                        <constraint firstItem="REW-N5-PWi" firstAttribute="leading" secondItem="s7w-0e-F6a" secondAttribute="trailing" constant="22.5" id="4p3-Mw-6Is"/>
+                                                        <constraint firstItem="cwF-u4-i8P" firstAttribute="top" secondItem="REW-N5-PWi" secondAttribute="bottom" constant="7.5" id="84q-Q6-eLh"/>
                                                         <constraint firstItem="TcW-Fa-3gR" firstAttribute="centerX" secondItem="zff-ts-ket" secondAttribute="centerX" id="8Hh-MH-C3o"/>
                                                         <constraint firstItem="CYR-XN-PFc" firstAttribute="centerX" secondItem="zff-ts-ket" secondAttribute="centerX" id="BkV-u6-T5v"/>
                                                         <constraint firstAttribute="bottom" secondItem="cwF-u4-i8P" secondAttribute="bottom" constant="5" id="EBy-eN-7oi"/>
+                                                        <constraint firstItem="ME2-Ph-OS4" firstAttribute="top" secondItem="zff-ts-ket" secondAttribute="topMargin" id="GBp-SM-UAE"/>
                                                         <constraint firstAttribute="bottom" secondItem="Az4-Iq-36J" secondAttribute="bottom" id="GGS-Kv-DKq"/>
-                                                        <constraint firstItem="REW-N5-PWi" firstAttribute="centerY" secondItem="CYR-XN-PFc" secondAttribute="centerY" id="H7q-Rw-ha1"/>
                                                         <constraint firstItem="8B4-MK-czu" firstAttribute="leading" secondItem="0DP-Ct-Sun" secondAttribute="trailing" constant="10" id="Nq6-G3-s9g"/>
+                                                        <constraint firstItem="s7w-0e-F6a" firstAttribute="leading" secondItem="ME2-Ph-OS4" secondAttribute="trailing" constant="22" id="Qkm-Qd-SuO"/>
                                                         <constraint firstAttribute="trailing" secondItem="cwF-u4-i8P" secondAttribute="trailing" constant="30" id="WwB-XM-z2y"/>
                                                         <constraint firstItem="5Kr-vR-Rbp" firstAttribute="centerY" secondItem="ME2-Ph-OS4" secondAttribute="centerY" id="X8e-dt-X9V"/>
                                                         <constraint firstItem="CYR-XN-PFc" firstAttribute="centerY" secondItem="zff-ts-ket" secondAttribute="centerY" id="XNg-JE-nuU"/>
                                                         <constraint firstItem="s7w-0e-F6a" firstAttribute="centerX" secondItem="zff-ts-ket" secondAttribute="centerX" id="Xsy-Qz-Qgn"/>
-                                                        <constraint firstItem="ME2-Ph-OS4" firstAttribute="centerY" secondItem="CYR-XN-PFc" secondAttribute="centerY" id="dbM-hS-G01"/>
+                                                        <constraint firstItem="REW-N5-PWi" firstAttribute="bottom" secondItem="CYR-XN-PFc" secondAttribute="baseline" id="dB2-bM-3Sm"/>
                                                         <constraint firstItem="s7w-0e-F6a" firstAttribute="centerY" secondItem="zff-ts-ket" secondAttribute="centerY" id="fLX-KD-7zm"/>
                                                         <constraint firstItem="TcW-Fa-3gR" firstAttribute="top" secondItem="zff-ts-ket" secondAttribute="top" constant="0.5" id="jES-Gc-NZ6"/>
                                                         <constraint firstItem="0DP-Ct-Sun" firstAttribute="leading" secondItem="zff-ts-ket" secondAttribute="leading" constant="30" id="ode-ID-4RT"/>
                                                         <constraint firstItem="5Kr-vR-Rbp" firstAttribute="centerX" secondItem="ME2-Ph-OS4" secondAttribute="centerX" id="pBc-ec-kXA"/>
                                                         <constraint firstItem="Az4-Iq-36J" firstAttribute="top" secondItem="zff-ts-ket" secondAttribute="top" id="pgj-5k-QKA"/>
+                                                        <constraint firstItem="CYR-XN-PFc" firstAttribute="top" secondItem="TcW-Fa-3gR" secondAttribute="bottom" constant="11.5" id="qWd-8v-Fed"/>
                                                         <constraint firstItem="ME2-Ph-OS4" firstAttribute="centerX" secondItem="0DP-Ct-Sun" secondAttribute="centerX" id="rVh-xi-CxM"/>
                                                         <constraint firstAttribute="bottom" secondItem="0DP-Ct-Sun" secondAttribute="bottom" constant="5" id="sJM-ZP-z5o"/>
                                                         <constraint firstAttribute="width" constant="200" id="utV-sB-1J8"/>
@@ -5198,6 +5202,7 @@
                                                         <constraint firstItem="yAF-Gb-vZ9" firstAttribute="bottom" secondItem="cwF-u4-i8P" secondAttribute="bottom" id="w2l-aN-JHN"/>
                                                         <constraint firstAttribute="height" constant="60" id="wcU-dG-2wE"/>
                                                         <constraint firstItem="Az4-Iq-36J" firstAttribute="leading" secondItem="zff-ts-ket" secondAttribute="leading" id="zBT-Tj-OWD"/>
+                                                        <constraint firstItem="ME2-Ph-OS4" firstAttribute="baseline" secondItem="CYR-XN-PFc" secondAttribute="top" id="zH2-Pz-Rbw"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-coupon-background" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-ii-ENG">
@@ -5272,6 +5277,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="PvK-jq-IUI" secondAttribute="trailing" constant="25" id="ziY-4D-Nag"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cancelOfferBtn" destination="2IV-Y3-Asv" id="4dc-vY-bfR"/>
+                                            <outlet property="couponExpiredDate" destination="8B4-MK-czu" id="RLg-2k-zvX"/>
+                                            <outlet property="couponPriceAfterDIscountLbl" destination="REW-N5-PWi" id="p6m-HD-ACS"/>
+                                            <outlet property="couponPriceLbl" destination="ME2-Ph-OS4" id="nVB-Ya-9Zf"/>
+                                            <outlet property="couponSerialNumLbl" destination="yAF-Gb-vZ9" id="0uU-AN-KdC"/>
+                                            <outlet property="directSaleBtn" destination="1Jf-8P-O0r" id="LDq-j9-fPx"/>
+                                            <outlet property="discountPercenageLbl" destination="CYR-XN-PFc" id="RxW-vk-rB4"/>
+                                            <outlet property="priceEditeBtn" destination="rjD-mS-t9D" id="qvB-Aj-FmB"/>
+                                            <outlet property="providerMainLogoImage" destination="OrG-ii-ENG" id="tZd-mj-hci"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -5279,15 +5295,15 @@
                                 <rect key="frame" x="0.0" y="235" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="162" id="CR5-Eg-1mR" customClass="AllCouponsCell" customModule="foz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="162"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="202" id="CR5-Eg-1mR" customClass="AllCouponsCell" customModule="foz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CR5-Eg-1mR" id="1bZ-KV-Ttg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhD-aS-Qro">
-                                                    <rect key="frame" x="35" y="31" width="200" height="80"/>
+                                                    <rect key="frame" x="35" y="41" width="200" height="80"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-coupon-all-background" translatesAutoresizingMaskIntoConstraints="NO" id="Vg0-JT-Z7r">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="80"/>
@@ -5300,7 +5316,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rs-icon" translatesAutoresizingMaskIntoConstraints="NO" id="QOF-BK-E0w">
-                                                            <rect key="frame" x="155" y="52" width="10" height="10"/>
+                                                            <rect key="frame" x="155" y="48.5" width="10" height="10"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="NEb-SG-ucC"/>
                                                                 <constraint firstAttribute="width" constant="10" id="UIC-em-KmH"/>
@@ -5313,22 +5329,15 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxT-cJ-Uoc">
-                                                            <rect key="frame" x="149.5" y="29" width="20.5" height="22.5"/>
+                                                            <rect key="frame" x="149.5" y="16" width="20.5" height="22.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
                                                             <color key="textColor" red="0.0078431372550000003" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="code: dfggd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ca-fV-i1d">
-                                                            <rect key="frame" x="20" y="51" width="29.5" height="11.5"/>
+                                                            <rect key="frame" x="20" y="47.5" width="29.5" height="11.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="6"/>
                                                             <color key="textColor" red="0.0078431372550000003" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="etgtegtge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-Q9-HLl">
-                                                            <rect key="frame" x="55" y="67.5" width="16.5" height="7.5"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="4"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strok-line" translatesAutoresizingMaskIntoConstraints="NO" id="l8I-Z9-ohx">
@@ -5338,15 +5347,8 @@
                                                                 <constraint firstAttribute="height" constant="40" id="iLJ-5D-oZ3"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="etgtegtge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw3-WT-aKK">
-                                                            <rect key="frame" x="128.5" y="196" width="16.5" height="7.5"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="4"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expired: 1-12-2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5a-PJ-aWf">
-                                                            <rect key="frame" x="74.5" y="51" width="50" height="11.5"/>
+                                                            <rect key="frame" x="74.5" y="47.5" width="50" height="11.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="6"/>
                                                             <color key="textColor" red="0.0078431372550000003" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -5356,9 +5358,10 @@
                                                     <constraints>
                                                         <constraint firstItem="bxT-cJ-Uoc" firstAttribute="leading" secondItem="l8I-Z9-ohx" secondAttribute="trailing" constant="10" id="0bj-ae-Z6l"/>
                                                         <constraint firstItem="1ca-fV-i1d" firstAttribute="leading" secondItem="LhD-aS-Qro" secondAttribute="leading" constant="20" id="1CO-wG-kJH"/>
+                                                        <constraint firstItem="l8I-Z9-ohx" firstAttribute="centerY" secondItem="Vg0-JT-Z7r" secondAttribute="centerY" id="1hv-vG-Zaf"/>
                                                         <constraint firstItem="s5a-PJ-aWf" firstAttribute="centerY" secondItem="QOF-BK-E0w" secondAttribute="centerY" id="6Pg-Nd-MEM"/>
                                                         <constraint firstItem="Vg0-JT-Z7r" firstAttribute="top" secondItem="LhD-aS-Qro" secondAttribute="top" id="7ed-it-oNC"/>
-                                                        <constraint firstItem="QOF-BK-E0w" firstAttribute="top" secondItem="bxT-cJ-Uoc" secondAttribute="bottom" constant="0.5" id="8jk-nS-47P"/>
+                                                        <constraint firstItem="QOF-BK-E0w" firstAttribute="top" secondItem="bxT-cJ-Uoc" secondAttribute="bottom" constant="10" id="8jk-nS-47P"/>
                                                         <constraint firstItem="yzJ-n6-e0b" firstAttribute="top" secondItem="gzf-Vp-tef" secondAttribute="bottom" id="DBj-w6-gaU"/>
                                                         <constraint firstItem="gzf-Vp-tef" firstAttribute="centerX" secondItem="LhD-aS-Qro" secondAttribute="centerX" id="EFp-c3-TJf"/>
                                                         <constraint firstItem="Vg0-JT-Z7r" firstAttribute="leading" secondItem="LhD-aS-Qro" secondAttribute="leading" id="GsB-vu-q65"/>
@@ -5368,26 +5371,25 @@
                                                         <constraint firstItem="gzf-Vp-tef" firstAttribute="top" secondItem="LhD-aS-Qro" secondAttribute="top" constant="0.5" id="SMe-Pc-jt6"/>
                                                         <constraint firstAttribute="height" constant="80" id="Z6P-9R-Yx3"/>
                                                         <constraint firstAttribute="width" constant="200" id="aWN-49-lQq"/>
-                                                        <constraint firstItem="bxT-cJ-Uoc" firstAttribute="centerY" secondItem="Vg0-JT-Z7r" secondAttribute="centerY" id="da5-eA-rUd"/>
                                                         <constraint firstAttribute="trailing" secondItem="bxT-cJ-Uoc" secondAttribute="trailing" constant="30" id="ggT-9I-4e4"/>
+                                                        <constraint firstItem="bxT-cJ-Uoc" firstAttribute="centerY" secondItem="yzJ-n6-e0b" secondAttribute="centerY" id="jKP-c9-E5d"/>
                                                         <constraint firstItem="l8I-Z9-ohx" firstAttribute="leading" secondItem="s5a-PJ-aWf" secondAttribute="trailing" constant="10" id="jlb-sb-zBb"/>
                                                         <constraint firstAttribute="trailing" secondItem="Vg0-JT-Z7r" secondAttribute="trailing" id="kag-r9-hiL"/>
                                                         <constraint firstItem="QOF-BK-E0w" firstAttribute="centerX" secondItem="bxT-cJ-Uoc" secondAttribute="centerX" id="qU1-dc-ppr"/>
-                                                        <constraint firstItem="l8I-Z9-ohx" firstAttribute="centerY" secondItem="bxT-cJ-Uoc" secondAttribute="centerY" id="zkt-qg-DQH"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-coupon-background" translatesAutoresizingMaskIntoConstraints="NO" id="Ane-bU-skF">
-                                                    <rect key="frame" x="309" y="36" width="70" height="70"/>
+                                                    <rect key="frame" x="309" y="46" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="kdt-hx-AJL"/>
                                                         <constraint firstAttribute="width" constant="70" id="yib-wt-lYN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-tj-3xU">
-                                                    <rect key="frame" x="20" y="127" width="374" height="25"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-tj-3xU">
+                                                    <rect key="frame" x="20" y="167" width="374" height="25"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-QX-Yjk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="25"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain">
@@ -5403,7 +5405,7 @@
                                                             </buttonConfiguration>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe3-B9-KWP">
-                                                            <rect key="frame" x="131.5" y="0.0" width="111" height="25"/>
+                                                            <rect key="frame" x="128" y="0.0" width="118" height="25"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain">
@@ -5417,17 +5419,16 @@
                                                                 </attributedString>
                                                             </buttonConfiguration>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01e-YI-hL6">
-                                                            <rect key="frame" x="262.5" y="0.0" width="111.5" height="25"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01e-YI-hL6">
+                                                            <rect key="frame" x="256" y="0.0" width="118" height="25"/>
                                                             <color key="backgroundColor" red="0.98431372549999996" green="0.61568627450000002" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain">
+                                                            <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
                                                                 <attributedString key="attributedTitle">
                                                                     <fragment content="عرض في السوق">
                                                                         <attributes>
                                                                             <font key="NSFont" size="12" name="Cairo-Regular"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -5441,17 +5442,49 @@
                                                         <constraint firstAttribute="height" constant="25" id="Jf6-Dr-hRJ"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1d-Ox-juh">
+                                                    <rect key="frame" x="162" y="-14" width="90" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIC-36-FKX">
+                                                            <rect key="frame" x="29" y="13.5" width="32" height="26.5"/>
+                                                            <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0078431372550000003" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="2A9-Yt-SzR"/>
+                                                        <constraint firstItem="GIC-36-FKX" firstAttribute="centerX" secondItem="P1d-Ox-juh" secondAttribute="centerX" id="Cnr-Cp-Ehc"/>
+                                                        <constraint firstAttribute="width" constant="90" id="Vrz-A7-Rms"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GIC-36-FKX" secondAttribute="bottom" id="tB8-Mi-r2x"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="NVX-tj-3xU" secondAttribute="trailing" constant="20" id="9pk-vj-vAo"/>
                                                 <constraint firstItem="LhD-aS-Qro" firstAttribute="leading" secondItem="1bZ-KV-Ttg" secondAttribute="leadingMargin" constant="15" id="DAe-fy-cxx"/>
+                                                <constraint firstItem="P1d-Ox-juh" firstAttribute="centerX" secondItem="1bZ-KV-Ttg" secondAttribute="centerX" id="DNZ-Ak-Nwc"/>
                                                 <constraint firstAttribute="bottom" secondItem="NVX-tj-3xU" secondAttribute="bottom" constant="10" id="Iuj-fy-zdO"/>
                                                 <constraint firstItem="Ane-bU-skF" firstAttribute="centerY" secondItem="Vg0-JT-Z7r" secondAttribute="centerY" id="TIe-tj-A8s"/>
-                                                <constraint firstItem="LhD-aS-Qro" firstAttribute="top" secondItem="1bZ-KV-Ttg" secondAttribute="topMargin" constant="20" id="XA6-o7-DSc"/>
+                                                <constraint firstItem="P1d-Ox-juh" firstAttribute="top" secondItem="1bZ-KV-Ttg" secondAttribute="topMargin" constant="-25" id="Zmk-4u-dfD"/>
+                                                <constraint firstItem="LhD-aS-Qro" firstAttribute="top" secondItem="P1d-Ox-juh" secondAttribute="bottom" constant="15" id="dqb-f1-Hjz"/>
                                                 <constraint firstItem="NVX-tj-3xU" firstAttribute="leading" secondItem="1bZ-KV-Ttg" secondAttribute="leading" constant="20" id="mdp-yk-R8J"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ane-bU-skF" secondAttribute="trailing" constant="15" id="tK9-0r-Ei1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="couponExpiredDate" destination="1ca-fV-i1d" id="oHB-bk-icq"/>
+                                            <outlet property="couponPriceAfterDIscountLbl" destination="bxT-cJ-Uoc" id="CDs-Sw-IWh"/>
+                                            <outlet property="couponSerialNumLbl" destination="1ca-fV-i1d" id="1ai-af-0Y9"/>
+                                            <outlet property="couponTypeHolderView" destination="P1d-Ox-juh" id="GgQ-2P-7Rf"/>
+                                            <outlet property="couponTypeLbl" destination="GIC-36-FKX" id="IGA-kz-r8J"/>
+                                            <outlet property="giftBtn" destination="pe3-B9-KWP" id="vJh-09-0hn"/>
+                                            <outlet property="providerLogoInsideCouponImage" destination="yzJ-n6-e0b" id="jUm-im-Kfj"/>
+                                            <outlet property="providerMainLogoImage" destination="Ane-bU-skF" id="qgc-pm-9pG"/>
+                                            <outlet property="showInMarketBtn" destination="01e-YI-hL6" id="Huk-5y-Ztm"/>
+                                            <outlet property="useCouponBtn" destination="gTe-QX-Yjk" id="z4N-fo-vlA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

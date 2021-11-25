@@ -19,9 +19,15 @@ class BorderBtn: UIButton {
 }
 
 extension UIButton {
-    func myCouponBorderBtn(height: Double) {
+    func myCouponBorderBtn(height: CGFloat) {
         self.layer.cornerRadius = height / 2
         self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.layer.borderWidth = 2
+        self.layer.borderWidth = 0.7
+    }
+    
+    func myCouponRedBorderBtn(height: CGFloat) {
+        self.layer.cornerRadius = height / 2
+        self.layer.borderColor = #colorLiteral(red: 0.6980392157, green: 0.2745098039, blue: 0.2745098039, alpha: 1)
+        self.layer.borderWidth = 0.7
     }
 }

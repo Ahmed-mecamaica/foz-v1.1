@@ -78,6 +78,7 @@
 		A8636BBE274D20F10039F134 /* MyCouponsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */; };
 		A8636BC0274D21300039F134 /* AllCouponsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */; };
 		A8636BC2274D217B0039F134 /* MarketCouponsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */; };
+		A8636BC5274D30E70039F134 /* AllCouponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BC4274D30E70039F134 /* AllCouponResponse.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
 		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
@@ -241,6 +242,7 @@
 		A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponsListViewModel.swift; sourceTree = "<group>"; };
 		A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCouponsListCellViewModel.swift; sourceTree = "<group>"; };
 		A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCouponsListCellViewModel.swift; sourceTree = "<group>"; };
+		A8636BC4274D30E70039F134 /* AllCouponResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCouponResponse.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
 		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
@@ -470,6 +472,14 @@
 				A8636BBD274D20F10039F134 /* MyCouponsListViewModel.swift */,
 				A8636BBF274D21300039F134 /* AllCouponsListCellViewModel.swift */,
 				A8636BC1274D217A0039F134 /* MarketCouponsListCellViewModel.swift */,
+			);
+			path = MyCoupon;
+			sourceTree = "<group>";
+		};
+		A8636BC3274D30B30039F134 /* MyCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				A8636BC4274D30E70039F134 /* AllCouponResponse.swift */,
 			);
 			path = MyCoupon;
 			sourceTree = "<group>";
@@ -712,6 +722,7 @@
 		A8C00F2426D3C718001332A5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				A8636BC3274D30B30039F134 /* MyCoupon */,
 				A8636B862743D9F60039F134 /* Ads */,
 				A836A0E227300BAD00165C93 /* Market */,
 				A8C00F2526D3C72C001332A5 /* LoginResponse.swift */,
@@ -1035,6 +1046,7 @@
 				A87A080F26CA8829001CE1E7 /* RoundedButton.swift in Sources */,
 				A8C00F2626D3C72C001332A5 /* LoginResponse.swift in Sources */,
 				A8636B932744ED750039F134 /* CategoryListViewModel.swift in Sources */,
+				A8636BC5274D30E70039F134 /* AllCouponResponse.swift in Sources */,
 				A8C00F1926D3C5A7001332A5 /* OtpVC.swift in Sources */,
 				A8A1EE4526D7C82500A6D044 /* InterestsDataResponse.swift in Sources */,
 				A872EAB92726D3ED00FA676D /* ProviderAdResponse.swift in Sources */,

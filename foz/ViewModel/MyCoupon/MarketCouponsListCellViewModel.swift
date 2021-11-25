@@ -7,6 +7,13 @@
 
 import Foundation
 
-class MarketCouponsListCellViewModel {
-    
+struct MarketCouponsListCellViewModel {
+    let id: Int
+    let userId: Int
+    let providerLogo: String
+    let price: String
+    let discount: String
+    let priceAfterDiscount: Int
+    let expiredDate: String
+    let serialNum: String
 }
