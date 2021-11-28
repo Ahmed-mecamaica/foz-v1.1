@@ -28,6 +28,12 @@ class SideMenuVC: UIViewController {
         present(contactUsVC, animated: true, completion: nil)
     }
     
+    @IBAction func inviteFriendBtntapped(_ sender: Any) {
+        //invite-friend-vc
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let inviteFriendVC = storyboard.instantiateViewController(withIdentifier: "invite-friend-vc") as! InviteFriendVC
+        present(inviteFriendVC, animated: true, completion: nil)
+    }
     @IBAction func logoutBtnTapped(_ sender: Any) {
         LoginResponse.current = nil
         let loginvc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "login_view_controller") as! LoginVC

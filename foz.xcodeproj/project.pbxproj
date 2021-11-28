@@ -81,6 +81,7 @@
 		A8636BC5274D30E70039F134 /* AllCouponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8636BC4274D30E70039F134 /* AllCouponResponse.swift */; };
 		A8643B3E27144AC70055E128 /* FcmTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */; };
 		A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8643B3F27144B700055E128 /* FcmTokenResponse.swift */; };
+		A872400D27538ABA006C5486 /* InviteFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872400C27538ABA006C5486 /* InviteFriendVC.swift */; };
 		A872EAB32726AF5800FA676D /* ProviderCouponsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */; };
 		A872EAB52726B27600FA676D /* ProviderCouponsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB42726B27600FA676D /* ProviderCouponsViewModel.swift */; };
 		A872EAB72726B29100FA676D /* ProviderCouponsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */; };
@@ -245,6 +246,7 @@
 		A8636BC4274D30E70039F134 /* AllCouponResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCouponResponse.swift; sourceTree = "<group>"; };
 		A8643B3D27144AC70055E128 /* FcmTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenRequest.swift; sourceTree = "<group>"; };
 		A8643B3F27144B700055E128 /* FcmTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmTokenResponse.swift; sourceTree = "<group>"; };
+		A872400C27538ABA006C5486 /* InviteFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendVC.swift; sourceTree = "<group>"; };
 		A872EAB22726AF5800FA676D /* ProviderCouponsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsResponse.swift; sourceTree = "<group>"; };
 		A872EAB42726B27600FA676D /* ProviderCouponsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsViewModel.swift; sourceTree = "<group>"; };
 		A872EAB62726B29100FA676D /* ProviderCouponsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCouponsCellViewModel.swift; sourceTree = "<group>"; };
@@ -484,6 +486,17 @@
 			path = MyCoupon;
 			sourceTree = "<group>";
 		};
+		A872400B27538A7F006C5486 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A8A1EE4026D7B30E00A6D044 /* SideMenuVC.swift */,
+				A8A0614A2718390B000A546F /* ContactUsVC.swift */,
+				A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */,
+				A872400C27538ABA006C5486 /* InviteFriendVC.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		A872EB1D272A932000FA676D /* Auction */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,9 +623,7 @@
 				A8C00F1A26D3C5BF001332A5 /* RegisterUserVC.swift */,
 				A8A1EE4226D7B52400A6D044 /* InterestsVC.swift */,
 				A8A1EE3E26D7B2FC00A6D044 /* HomeVC.swift */,
-				A8A1EE4026D7B30E00A6D044 /* SideMenuVC.swift */,
-				A8A0614A2718390B000A546F /* ContactUsVC.swift */,
-				A873D3E7271C4976009EDFCF /* TermsAndConditionVC.swift */,
+				A872400B27538A7F006C5486 /* SideMenu */,
 				A807D8672709A4D1002FADED /* Auctions */,
 				A8636B8B2744E8130039F134 /* Ads */,
 				A807D8662709A4B8002FADED /* Offers  */,
@@ -1021,6 +1032,7 @@
 				A8643B4027144B700055E128 /* FcmTokenResponse.swift in Sources */,
 				A807D83F26FB67FE002FADED /* AuctionsResponse.swift in Sources */,
 				A807D84126FB6C55002FADED /* ClientService.swift in Sources */,
+				A872400D27538ABA006C5486 /* InviteFriendVC.swift in Sources */,
 				A8636B8D2744E9130039F134 /* AdsHomeVC.swift in Sources */,
 				A8636B902744EC6F0039F134 /* AdsHomeCell.swift in Sources */,
 				A8C00F2826D3C827001332A5 /* AuthService.swift in Sources */,

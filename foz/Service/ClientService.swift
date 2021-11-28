@@ -399,11 +399,9 @@ class ClientService: APIServiceProtocol {
 
         taskForGetRequest(url: Endpoint.marketCoupon.url, response: AllCouponResponse.self) { result, error in
             guard error == nil else {
-
                 completion(nil, error)
                 return
             }
-            
             completion(result, nil)
         }
     }
