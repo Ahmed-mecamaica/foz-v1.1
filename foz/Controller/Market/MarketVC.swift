@@ -34,7 +34,7 @@ class MarketVC: UIViewController {
     func initCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: marketCouponCollectionView.frame.width/2 - 30, height: 300)
-        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 12, bottom: 5, right: 12)
+        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 //        flowLayout.scrollDirection = .
         self.marketCouponCollectionView.setCollectionViewLayout(flowLayout, animated: true)
     }

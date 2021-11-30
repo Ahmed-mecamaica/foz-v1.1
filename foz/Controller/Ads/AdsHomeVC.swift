@@ -40,8 +40,8 @@ class AdsHomeVC: UIViewController {
     //this func make customization for category collection view
     func initViewForCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: adsCategoryCollectionView.frame.width/2 - 20, height: adsCategoryCollectionView.frame.width/2 - 20)
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        flowLayout.itemSize = CGSize(width: adsCategoryCollectionView.frame.width/2 - 30, height: adsCategoryCollectionView.frame.width/2 - 30)
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
 //        flowLayout.scrollDirection = .
         self.adsCategoryCollectionView.setCollectionViewLayout(flowLayout, animated: true)
     }

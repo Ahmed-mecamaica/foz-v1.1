@@ -100,7 +100,7 @@ class InviteFriendVC: UIViewController {
          if #available(iOS 11.0, *){
 
             self.bottomTxtFieldConstraint.constant = 319//keyboardHeight! - view.safeAreaInsets.bottom
-             let bottomOffset = CGPoint(x: 0, y:  keyboardHeight! - 190)
+             let bottomOffset = CGPoint(x: 0, y:  keyboardHeight! - 100)
              scrollView.setContentOffset(bottomOffset, animated: true)
              
 
@@ -108,7 +108,7 @@ class InviteFriendVC: UIViewController {
           else {
             self.bottomTxtFieldConstraint.constant = 319//keyboardHeight! - view.safeAreaInsets.bottom
            //view.safeAreaInsets.bottom
-              let bottomOffset = CGPoint(x: 0, y:  keyboardHeight! - 190)
+              let bottomOffset = CGPoint(x: 0, y:  keyboardHeight! - 100)
               scrollView.setContentOffset(bottomOffset, animated: true)
              }
 
